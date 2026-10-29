@@ -11,8 +11,8 @@ A10 = Path("results/study-20261028T065939Z")
 L4 = Path("results/l4-continuation-20261028T224638Z")
 BATCHES = ((1, "serial"), (8, "batch8"), (32, "batch32"))
 ARMS = ("default", "batch_invariant")
-LEAD = "Batch size changed about 2–5% of greedy answers. For the near-tied Llama3B/Qwen3-4B pair, the observed flip was a one-item margin out of 500, within exploratory paired 95% intervals of roughly ±3 percentage points. The separate sampling analysis projects roughly 800–1,100 items to resolve a 3-point gap, with ten sampled answers per item per model."
-MITIGATION = "Under batch invariance, decoded outputs were identical across A10 and L4 for all four replicated models. Switching to invariance can itself change the winner: at A10 batch 1, the lead moves from Qwen3-4B to Llama3B. Median token throughput was 32–60% lower in the repeated A10 timing study."
+LEAD = "Default decoding changed about 2–5% of greedy answers across batch settings. Same-batch repeats also varied, so this measures batch-setting plus run-to-run variation under default decoding. Qwen3-4B changed text and correctness on `parallel_multiple_37` between repeated A10 timing runs at the same batch size. For the near-tied Llama3B/Qwen3-4B pair, each untied lead is one correct answer out of 500; the reversal is a two-answer net swing. These leads lie within exploratory paired 95% intervals of roughly ±3 percentage points. The separate sampling analysis projects roughly 800–1,100 items to resolve a 3-point gap, with ten sampled answers per item per model."
+MITIGATION = "Batch invariance removed all observed text changes across batch settings and timing repeats. Decoded outputs were identical across A10 and L4 for all four replicated models. Switching to invariance can itself change the winner: at A10 batch 1, the lead moves from Qwen3-4B to Llama3B. Median token throughput was 32–60% lower in the repeated A10 timing study."
 
 
 def read(path):
@@ -415,7 +415,7 @@ def render(data, output, full=False):
             [
                 "Every count is correct calls out of the same 500 items. Higher rank means a higher observed score, not established population superiority. Batch size is controlled offline request submission, with the engine limit fixed at 64 sequences.",
                 winners(data),
-                "On A10, Qwen3-4B ranks above Llama3B at batch 1, they tie at batch 8, and Llama3B ranks above Qwen3-4B at batch 32. On L4, Llama3B ranks above Qwen3-4B at batch 1, they tie at batch 8, and Qwen3-4B ranks above Llama3B at batch 32. Thus the strict full-set flip reproduces, but the winner at each untied setting reverses between GPUs.",
+                "On A10, Qwen3-4B ranks above Llama3B at batch 1, they tie at batch 8, and Llama3B ranks above Qwen3-4B at batch 32. On L4, Llama3B ranks above Qwen3-4B at batch 1, they tie at batch 8, and Qwen3-4B ranks above Llama3B at batch 32. Thus the strict full-set flip reproduces, but the winner at each untied setting reverses between GPUs. Each untied lead is one correct answer out of 500; the batch-1 to batch-32 reversal is a two-answer net swing.",
                 "Qwen3-1.7B ranks above Qwen2.5-3B at every default batch size on both GPUs. A near tie does not require a flip.",
                 f"![Llama and Qwen default and invariant scores, zoomed y-axis]({image(l4, 'rank-order-pair1.png')})",
                 f"![Qwen pair default and invariant scores, zoomed y-axis]({image(l4, 'rank-order-pair2.png')})",
@@ -424,7 +424,7 @@ def render(data, output, full=False):
         ),
     )
     add(
-        "Batch invariance removes the observed batch dependence",
+        "Batch invariance removes all observed changes across settings and repeats",
         "\n\n".join(
             [
                 invariant_scores(data),
@@ -471,7 +471,7 @@ def render(data, output, full=False):
         "Text changes and correctness changes",
         "\n\n".join(
             [
-                "An item changes text if any of its three batch outputs differ. Correctness changes count items whose official BFCL pass/fail result differs. Wilson intervals below are exploratory under an independent-item approximation. Questions recur across models and GPUs, so these observations must not be pooled as independent questions.",
+                "An item changes text if any of its three batch outputs differ. Same-batch timing repeats also varied under default decoding, so these counts include batch-setting plus run-to-run variation. Correctness changes count items whose official BFCL pass/fail result differs. Wilson intervals below are exploratory under an independent-item approximation. Questions recur across models and GPUs, so these observations must not be pooled as independent questions.",
                 changes(data),
                 "Zero invariant changes on 500 items gives a per-model exploratory Wilson upper bound of about 0.76%. Shared function templates can violate item independence. Stable scores can hide text changes, as Llama's A10 default counts show.",
             ]
@@ -537,7 +537,7 @@ def main():
         start + "<!-- results:start -->\n" + render(data, args.out) + "\n<!-- results:end -->" + end
     )
     report = (
-        "# Batching changes 2–5% of greedy answers: combined A10/L4 report\n\n"
+        "# Default answers vary across batch settings and runs: combined A10/L4 report\n\n"
         + LEAD
         + "\n\n"
         + MITIGATION
@@ -547,8 +547,9 @@ def main():
         + render(data, args.report, full=True)
         + "\n\n## Methods and interpretation\n\n"
         + f"The [merged article]({link(args.out, args.report)}) explains selection, prompting, seeds, "
-        "mitigation, and inference controls. GPU family is not causally isolated: generation history, "
-        "CPU caps, host, and driver also differ. Each comparison has only one recorded card per GPU family. "
+        "mitigation, and inference controls. GPU family is not causally isolated: generation history "
+        "and CPU caps differ, and host allocations are uncontrolled. All retained driver versions are "
+        "610.57.04; host identities are not uniformly recorded. Each comparison has only one recorded card per GPU family. "
         "The A10 default process sampled before greedy generation; L4 starts greedy evaluation after smoke "
         "and the same warmup protocol. L4 requests and caps two CPU cores; A10 requested two and capped four. "
         "Findings do not cover other serving schedules, training seeds, native tool APIs, or executed code.\n"

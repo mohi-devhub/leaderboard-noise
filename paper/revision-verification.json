@@ -1,0 +1,50 @@
+{
+  "baseline_commit": "5e86b8c428d6209963d7f9f8e3eb167a6fd56ace",
+  "scope": "wording, author affiliation/contact, diagram labels, release availability and documentation navigation only",
+  "audit": "AUDIT.md",
+  "audit_resolution": {
+    "M1": "Scoped differences to batch-setting plus run-to-run variation; same-batch timing example adjacent to claims",
+    "M2": "One-item leads distinguished from the two-answer net swing",
+    "L1": "Retained driver versions match; host identities not uniformly recorded",
+    "L2": "Greedy-only batch/arm labels; A10 default-only sampling explained in caption",
+    "L3": "Original link bases and current destinations documented; historical copies unchanged"
+  },
+  "pdf_sha256": "ea1d5b12f3586ddb644b9f2b175604e94ebe2a8c530dbbab99c74357a53d4ca0",
+  "pdf_pages": 10,
+  "main_pages": 7,
+  "appendix_pages": 3,
+  "original_frozen_manifest": "paper/verification.json",
+  "original_frozen_manifest_changed_paths": [
+    "results/REPORT.md"
+  ],
+  "authorized_editorial_exception": "results/REPORT.md wording only; every table row is byte-identical",
+  "unchanged_original_frozen_paths": 493,
+  "all_empirical_artifacts_unchanged": true,
+  "original_combined_manifest_unchanged": true,
+  "numerical_assets_sha256": {
+    "paper/numbers.tex": "76cce58747d07a865d0c5bb5ad59c35e86fe1eb3a3040407f85ec418a4882319",
+    "paper/tables/analysis-seeds.tex": "ad36d50dbcdaa00db5adba85ba870d2397094af77d9b692855a7757e290aa6ba",
+    "paper/tables/sampling.tex": "949d95db9a99ca74ef4b96f1f0105a01a890b5b9bf1396be23d029ae75361ea8",
+    "paper/tables/winners.tex": "13af94d6de78c00361bcd4cc9bd42cb459c52e6877bf1479e6ce73ef57f06d4e",
+    "paper/tables/mdd.tex": "bdf005e14aa0c375cf28d5e9a43f66978daf221b395d3edee4d486230a4a77cb",
+    "paper/tables/changes.tex": "1080aaa8eeaed8a365a0cdd678af9348ddf61f738c1ccb03626f0ecacdb59bd5",
+    "paper/tables/hardware.tex": "c0fb6b0b2896290c5df0d8697b42939d3eec5c881c7acdc93add5aadd608ce1f",
+    "paper/tables/flips.tex": "9f9d1a8bfcb013d351ffee5916692aea4085a7c362305cea46ec15c7c839f2f6",
+    "paper/tables/gaps.tex": "3c4a20d77d87c29b13f4cd11435da1aac93a7698774b13218b5fea309fecca7d",
+    "paper/tables/revisions.tex": "8e5056734582e3a8b3a9f2e369f78a2aa2184e0da678f5b37e978ddd7379463a",
+    "paper/figures/throughput.pdf": "ac502072a2f9605a694739747d022346807960050d28b171803fb774914ba2b0",
+    "paper/figures/rank-order.pdf": "e00db93e347fc4f5faccd05f966eaca8d1902f245a2e9471ab9e066ab1bbac01"
+  },
+  "publication_document_tables_unchanged": true,
+  "python_changes_only_string_literals": true,
+  "tests": "56 passed in 0.63s",
+  "ruff": "check and format checks passed for both modified Python files",
+  "post_word_count": 537,
+  "prose_inventory": "docs/REVISION_SENTENCES.md",
+  "sentence_change_groups": 58,
+  "prose_inventory_sha256": "5816b1808211e2bf280017551aba9017a8768e58c1bdffb846a040be1598ee4a",
+  "no_overfull_boxes_or_undefined_references": true,
+  "new_model_inference_or_scoring_or_study_resampling": false,
+  "release_tag": "v0.1.0-paper",
+  "post_publication_checks": "Remote release/tag identity and live URLs are checked after publication; see publication-verification.json release asset."
+}

@@ -1,8 +1,8 @@
-# Batching changes 2–5% of greedy answers; a one-item lead can swap ranks
+# Default answers vary across batch settings and runs; one-item leads reverse
 
-Batch size changed about 2–5% of greedy answers. For the near-tied Llama3B/Qwen3-4B pair, the observed flip was a one-item margin out of 500, within exploratory paired 95% intervals of roughly ±3 percentage points. The separate sampling analysis projects roughly 800–1,100 items to resolve a 3-point gap, with ten sampled answers per item per model.
+Default decoding changed about 2–5% of greedy answers across batch settings. Same-batch repeats also varied, so this measures batch-setting plus run-to-run variation under default decoding. Qwen3-4B changed text and correctness on `parallel_multiple_37` between repeated A10 timing runs at the same batch size. For the near-tied Llama3B/Qwen3-4B pair, each untied lead is one correct answer out of 500; the reversal is a two-answer net swing. These leads lie within exploratory paired 95% intervals of roughly ±3 percentage points. The separate sampling analysis projects roughly 800–1,100 items to resolve a 3-point gap, with ten sampled answers per item per model.
 
-Under batch invariance, decoded outputs were identical across A10 and L4 for all four replicated models. Switching to invariance can itself change the winner: at A10 batch 1, the lead moves from Qwen3-4B to Llama3B. Median token throughput was 32–60% lower in the repeated A10 timing study.
+Batch invariance removed all observed text changes across batch settings and timing repeats. Decoded outputs were identical across A10 and L4 for all four replicated models. Switching to invariance can itself change the winner: at A10 batch 1, the lead moves from Qwen3-4B to Llama3B. Median token throughput was 32–60% lower in the repeated A10 timing study.
 
 This article combines the six-model A10 study and the four-model L4 replication, completed October 29, 2026. It presents measurement and mitigation on small open models, with the reusable `evalnoise` CLI. The [combined numerical report](../results/REPORT.md) retains every A10 pair, paired score-difference intervals, physical GPU assignments, and accounting. Frozen per-session artifacts remain the provenance record. This merge adds no inference.
 
@@ -26,7 +26,7 @@ Every count is correct calls out of the same 500 items. Higher rank means a high
 | Qwen2.5-3B-Instruct vs Qwen3-1.7B | L4 | 8 | 428 | 433 | Qwen3-1.7B |
 | Qwen2.5-3B-Instruct vs Qwen3-1.7B | L4 | 32 | 428 | 434 | Qwen3-1.7B |
 
-On A10, Qwen3-4B ranks above Llama3B at batch 1, they tie at batch 8, and Llama3B ranks above Qwen3-4B at batch 32. On L4, Llama3B ranks above Qwen3-4B at batch 1, they tie at batch 8, and Qwen3-4B ranks above Llama3B at batch 32. Thus the strict full-set flip reproduces, but the winner at each untied setting reverses between GPUs.
+On A10, Qwen3-4B ranks above Llama3B at batch 1, they tie at batch 8, and Llama3B ranks above Qwen3-4B at batch 32. On L4, Llama3B ranks above Qwen3-4B at batch 1, they tie at batch 8, and Qwen3-4B ranks above Llama3B at batch 32. Thus the strict full-set flip reproduces, but the winner at each untied setting reverses between GPUs. Each untied lead is one correct answer out of 500; the batch-1 to batch-32 reversal is a two-answer net swing.
 
 Qwen3-1.7B ranks above Qwen2.5-3B at every default batch size on both GPUs. A near tie does not require a flip.
 
@@ -36,7 +36,7 @@ Qwen3-1.7B ranks above Qwen2.5-3B at every default batch size on both GPUs. A ne
 
 Both figures zoom the vertical axis. One correct call equals 0.2 percentage points.
 
-## Batch invariance removes the observed batch dependence
+## Batch invariance removes all observed changes across settings and repeats
 
 | Pair, A vs B | GPU | Invariant A, batches 1 / 8 / 32 | Invariant B, batches 1 / 8 / 32 | Higher at every batch |
 |---|---|---|---|---|
@@ -106,7 +106,7 @@ The intervals in this sampling figure are exploratory 95% item-bootstrap interva
 
 ## Text changes and correctness changes
 
-An item changes text if any of its three batch outputs differ. Correctness changes count items whose official BFCL pass/fail result differs. Wilson intervals below are exploratory under an independent-item approximation. Questions recur across models and GPUs, so these observations must not be pooled as independent questions.
+An item changes text if any of its three batch outputs differ. Same-batch timing repeats also varied under default decoding, so these counts include batch-setting plus run-to-run variation. Correctness changes count items whose official BFCL pass/fail result differs. Wilson intervals below are exploratory under an independent-item approximation. Questions recur across models and GPUs, so these observations must not be pooled as independent questions.
 
 | GPU | Model | Default text changes [exploratory Wilson 95% interval] | Invariant text changes [exploratory Wilson 95% interval] | Correctness changes, default / invariant |
 |---|---|---|---|---|
@@ -160,7 +160,7 @@ A greedy decoder chooses the next token with the largest computed score. Tempera
 
 Thinking Machines Lab explains the mechanism and mitigation in [Defeating Nondeterminism in LLM Inference](https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/). The pinned [vLLM 0.32.0 implementation](https://docs.vllm.ai/en/v0.32.0/features/batch_invariance/) provides `VLLM_BATCH_INVARIANT=1`.
 
-An answer can change while remaining correct. Correctness can change while the same model stays ahead. Our research question concerns the final step: do batch-sensitive outputs change the ranking of small models on the same BFCL questions, and does batch invariance remove the flip at a measured throughput cost?
+An answer can change while remaining correct. Correctness can change while the same model stays ahead. Our research question concerns the final step: do output differences across batch settings and runs change small-model rankings on the same BFCL questions, and does batch invariance remove the observed flip at a measured throughput cost?
 
 The statistical foundations are established work. [Madaan et al.](https://arxiv.org/html/2406.10229v1) study benchmark variance, including variation across training runs and checkpoints. [Evan Miller](https://arxiv.org/html/2411.00640v1) develops paired evaluation uncertainty and power analysis. [Sida Wang](https://arxiv.org/html/2512.21326v1) separates prediction and data noise and compares model pairs. Our contribution is a practical small-model replication with frozen checkpoints, official BFCL scoring, explicit cost accounting, and a reusable CLI. We claim no new variance decomposition or determinism mechanism. The [related-work review](../docs/RELATED_WORK.md) distinguishes inference variation from training-seed variation.
 
@@ -186,7 +186,7 @@ Before Llama's first A10 generation, a tokenization preflight found that its ren
 
 The first A10 allocation completed the anchor model before an infrastructure interruption. The other five models, including both close pairs, shared a second physical A10. The L4 primary pair completed before preemption; the unfinished Qwen pair then used a second L4. Each requested pair and each model's arms share one physical card within a GPU tier. UUIDs remain in the combined report.
 
-GPU architecture is not causally isolated. The L4 workers request and cap two CPU cores; A10 requested two and capped four. Hosts, regions, and drivers differ. A10's default process generated stochastic samples before greedy evaluation, while L4 begins greedy evaluation after smoke and the same per-condition warmup. The result establishes sensitivity on these recorded setups, not behavior on every A10, L4, or serving schedule.
+GPU architecture is not causally isolated. The L4 workers request and cap two CPU cores; A10 requested two and capped four. All retained driver versions are 610.57.04. Host identities and regions are not uniformly recorded, and host allocations are uncontrolled. A10's default process generated stochastic samples before greedy evaluation, while L4 begins greedy evaluation after smoke and the same per-condition warmup. The result establishes sensitivity on these recorded setups, not behavior on every A10, L4, or serving schedule.
 
 ## How to read the exploratory intervals
 
@@ -217,10 +217,10 @@ The CLI also reports paired win and tie fractions, rank distributions, and appro
 From the `leaderboard-noise` project directory, run:
 
 ```sh
-.venv/bin/python scripts/write_study_article.py
+.venv/bin/python scripts/write_study_article.py --manifest /tmp/leaderboard-noise-combined-sources.json
 ```
 
-This command reads saved summaries and writes this article, `results/REPORT.md`, and `results/combined-sources.json`. It does not contact Modal, score new outputs, or submit inference. The source manifest records the input hashes and explicit winners at every default GPU/batch configuration. The [README](../README.md) documents installation, while [LEARNING.md](../LEARNING.md) gives the two-minute explanation and interview questions.
+This command reads saved summaries and writes this article, `results/REPORT.md`, and a source-hash and winner manifest at the specified temporary path. The original `results/combined-sources.json` remains the record of the pre-audit documents. It does not contact Modal, score new outputs, or submit inference. The source manifest records the input hashes and explicit winners at every default GPU/batch configuration. The [README](../README.md) documents installation, while [LEARNING.md](../LEARNING.md) gives the two-minute explanation and interview questions.
 
 Dependencies come from official PyPI with hashes in uv lockfiles. The inference images passed CPU compiler preflights and package audits. Only documented user-approved setuptools advisories with absent attack paths were accepted. [Security](../SECURITY.md), [budget](../BUDGET.md), and [decisions](../DECISIONS.md) retain the evidence.
 

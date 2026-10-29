@@ -103,10 +103,10 @@ def package(root, out, tag=TAG, distributions=None):
                 payload["distributions/" + p.name] = p.read_bytes()
     release = {
         "tag": tag,
-        "tag_status": "local release candidate; no remote publication by this script",
+        "tag_status": "release tag; publication managed separately from packaging",
         "source_commit": commit,
         "public_repository": "https://github.com/mohi-devhub/leaderboard-noise",
-        "fresh_session_audit": "pending",
+        "fresh_session_audit": "completed; see AUDIT.md and paper/revision-verification.json",
         "new_inference_or_resampling": False,
         "licenses": ["LICENSE", "third_party/BFCL/LICENSE", "third_party/BFCL/NOTICE"],
         "file_count_without_generated_manifests": len(payload),

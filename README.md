@@ -1,8 +1,8 @@
-# leaderboard-noise: 2–5% of greedy answers change with batching
+# leaderboard-noise: default answers vary across batch settings and runs
 
-Batch size changed about 2–5% of greedy answers. For the near-tied Llama3B/Qwen3-4B pair, the observed flip was a one-item margin out of 500, within exploratory paired 95% intervals of roughly ±3 percentage points. The separate sampling analysis projects roughly 800–1,100 items to resolve a 3-point gap, with ten sampled answers per item per model.
+Default decoding changed about 2–5% of greedy answers across batch settings. Same-batch repeats also varied, so this measures batch-setting plus run-to-run variation under default decoding. Qwen3-4B changed text and correctness on `parallel_multiple_37` between repeated A10 timing runs at the same batch size. For the near-tied Llama3B/Qwen3-4B pair, each untied lead is one correct answer out of 500; the reversal is a two-answer net swing. These leads lie within exploratory paired 95% intervals of roughly ±3 percentage points. The separate sampling analysis projects roughly 800–1,100 items to resolve a 3-point gap, with ten sampled answers per item per model.
 
-Under batch invariance, decoded outputs were identical across A10 and L4 for all four replicated models. Switching to invariance can itself change the winner: at A10 batch 1, the lead moves from Qwen3-4B to Llama3B. Median token throughput was 32–60% lower in the repeated A10 timing study.
+Batch invariance removed all observed text changes across batch settings and timing repeats. Decoded outputs were identical across A10 and L4 for all four replicated models. Switching to invariance can itself change the winner: at A10 batch 1, the lead moves from Qwen3-4B to Llama3B. Median token throughput was 32–60% lower in the repeated A10 timing study.
 
 This project combines a six-model A10 study and a four-model L4 replication on 500 frozen BFCL items, with 70,800 scored outputs including timing repetitions. The reusable CLI remains `evalnoise`. All research confidence intervals are exploratory. L4 has no repeated throughput measurement.
 
@@ -46,10 +46,10 @@ Default: 5,000 resamples, fixed seed 20261101, 95% percentile CIs. The `items` r
 From the `leaderboard-noise` directory, run:
 
 ```sh
-.venv/bin/python scripts/write_study_article.py
+.venv/bin/python scripts/write_study_article.py --manifest /tmp/leaderboard-noise-combined-sources.json
 ```
 
-This local command reads saved A10 and L4 summaries and regenerates `blog/STUDY.md`, `results/REPORT.md`, and the source-hash and winner manifest `results/combined-sources.json`. It does not contact Modal, regrade answers, or launch inference. All 15 A10 pairs remain in the combined report, including null and preselected comparisons. Raw per-session reports, model outputs, receipts, and source snapshots remain frozen provenance.
+This local command reads saved A10 and L4 summaries and regenerates `blog/STUDY.md`, `results/REPORT.md`, and a source-hash and winner manifest at the specified temporary path. The original `results/combined-sources.json` remains the record of the pre-audit documents. It does not contact Modal, regrade answers, or launch inference. All 15 A10 pairs remain in the combined report, including null and preselected comparisons. Raw per-session reports, model outputs, receipts, and source snapshots remain frozen provenance.
 
 To recreate the existing figures from saved summaries:
 
@@ -81,12 +81,12 @@ The corrected image adds Debian `build-essential=12.12` and passes a CPU compile
 
 `run_pilot.py` reserves $4.50 against the $12 cap and does not launch the six-model experiment. The October 28 authorization uses one detached, 90-minute-bounded job with ordered L4/A10 allocation, one five-request smoke gate, and all model/arm stages in the same container. The saved call ID permits one fresh-connection reattachment; it is never resubmitted. Worker failures stop the run. Cleanup in `finally` stops only this app. After scoring, read the pilot report and BUDGET.md and obtain the user's OK before any full run. No automatic scheduled run is installed.
 
-The baseline collects 10 samples at temperature .7, then three greedy request batch sizes (1/8/32). The fix arm repeats those three greedy configurations with `VLLM_BATCH_INVARIANT=1`. Both use the same max engine concurrency (64), same eager execution and no prefix cache. This tests batch sensitivity with controlled offline inference submission, not a production HTTP load generator. The official BFCL prompting-mode instructions and AST checker define correctness. Scores are for a selected Python single-turn subset, not the complete leaderboard.
+The baseline collects 10 samples at temperature .7, then three greedy request batch sizes (1/8/32). The fix arm repeats those three greedy configurations with `VLLM_BATCH_INVARIANT=1`. Both use the same max engine concurrency (64), same eager execution and no prefix cache. This measures variation across batch settings and runs with controlled offline inference submission, not a production HTTP load generator. The official BFCL prompting-mode instructions and AST checker define correctness. Scores are for a selected Python single-turn subset, not the complete leaderboard.
 
 Generated model code for optional EvalPlus must execute on isolated CPU infrastructure, with no secrets or writable host mounts. `experiments/evalplus.in` is the optional dependency entry point; no code benchmark is launched by the pilot. The full model/benchmark plan stays in scope and needs a measured budget estimate after pilot review.
 
-## Standalone paper and local release candidate
+## Standalone paper and release
 
-The [LaTeX manuscript](paper/main.tex) builds to [main.pdf](paper/main.pdf), with six main pages and an appendix. The paper uses only saved results and discloses the one-item rank margin, exploratory intervals, A10-only throughput cost, hardware confounds, and source-attestation limits. See [paper build instructions](paper/README.md) and the [executed-source provenance](provenance/README.md).
+The [LaTeX manuscript](paper/main.tex) builds to [main.pdf](paper/main.pdf), with an appendix. The paper uses only saved results and discloses same-batch run variation, one-item leads and the two-answer net reversal, exploratory intervals, A10-only throughput cost, hardware confounds, and source-attestation limits. See [paper build instructions](paper/README.md) and the [executed-source provenance](provenance/README.md).
 
-Original code is [MIT-licensed](LICENSE); [BFCL attribution and Apache-2.0 notices](THIRD_PARTY_NOTICES.md) remain separate. The local release archive includes both license texts, the BFCL notice, source snapshots, data, paper, and SHA256 checksums. The intended local tag is `v0.1.0-paper`. A fresh-session audit and approval are pending; the GitHub release and remote tag have not been published.
+Original code is [MIT-licensed](LICENSE); [BFCL attribution and Apache-2.0 notices](THIRD_PARTY_NOTICES.md) remain separate. The [v0.1.0-paper release](https://github.com/mohi-devhub/leaderboard-noise/releases/tag/v0.1.0-paper) includes both license texts, the BFCL notice, source snapshots, data, paper, and SHA256 checksums. The [audit](AUDIT.md), [sentence-by-sentence revision record](docs/REVISION_SENTENCES.md), and [verification record](paper/revision-verification.json) document the wording corrections. See the [snapshot navigation guide](provenance/README.md#historical-document-navigation) for original relative-link context.

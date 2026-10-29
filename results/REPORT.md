@@ -1,8 +1,8 @@
-# Batching changes 2–5% of greedy answers: combined A10/L4 report
+# Default answers vary across batch settings and runs: combined A10/L4 report
 
-Batch size changed about 2–5% of greedy answers. For the near-tied Llama3B/Qwen3-4B pair, the observed flip was a one-item margin out of 500, within exploratory paired 95% intervals of roughly ±3 percentage points. The separate sampling analysis projects roughly 800–1,100 items to resolve a 3-point gap, with ten sampled answers per item per model.
+Default decoding changed about 2–5% of greedy answers across batch settings. Same-batch repeats also varied, so this measures batch-setting plus run-to-run variation under default decoding. Qwen3-4B changed text and correctness on `parallel_multiple_37` between repeated A10 timing runs at the same batch size. For the near-tied Llama3B/Qwen3-4B pair, each untied lead is one correct answer out of 500; the reversal is a two-answer net swing. These leads lie within exploratory paired 95% intervals of roughly ±3 percentage points. The separate sampling analysis projects roughly 800–1,100 items to resolve a 3-point gap, with ten sampled answers per item per model.
 
-Under batch invariance, decoded outputs were identical across A10 and L4 for all four replicated models. Switching to invariance can itself change the winner: at A10 batch 1, the lead moves from Qwen3-4B to Llama3B. Median token throughput was 32–60% lower in the repeated A10 timing study.
+Batch invariance removed all observed text changes across batch settings and timing repeats. Decoded outputs were identical across A10 and L4 for all four replicated models. Switching to invariance can itself change the winner: at A10 batch 1, the lead moves from Qwen3-4B to Llama3B. Median token throughput was 32–60% lower in the repeated A10 timing study.
 
 Completed October 29, 2026. All confidence intervals are exploratory. This report combines saved six-model A10 results and the four-model L4 replication. It does not pool repeated questions or add model runs.
 
@@ -25,7 +25,7 @@ Every count is correct calls out of the same 500 items. Higher rank means a high
 | Qwen2.5-3B-Instruct vs Qwen3-1.7B | L4 | 8 | 428 | 433 | Qwen3-1.7B |
 | Qwen2.5-3B-Instruct vs Qwen3-1.7B | L4 | 32 | 428 | 434 | Qwen3-1.7B |
 
-On A10, Qwen3-4B ranks above Llama3B at batch 1, they tie at batch 8, and Llama3B ranks above Qwen3-4B at batch 32. On L4, Llama3B ranks above Qwen3-4B at batch 1, they tie at batch 8, and Qwen3-4B ranks above Llama3B at batch 32. Thus the strict full-set flip reproduces, but the winner at each untied setting reverses between GPUs.
+On A10, Qwen3-4B ranks above Llama3B at batch 1, they tie at batch 8, and Llama3B ranks above Qwen3-4B at batch 32. On L4, Llama3B ranks above Qwen3-4B at batch 1, they tie at batch 8, and Qwen3-4B ranks above Llama3B at batch 32. Thus the strict full-set flip reproduces, but the winner at each untied setting reverses between GPUs. Each untied lead is one correct answer out of 500; the batch-1 to batch-32 reversal is a two-answer net swing.
 
 Qwen3-1.7B ranks above Qwen2.5-3B at every default batch size on both GPUs. A near tie does not require a flip.
 
@@ -35,7 +35,7 @@ Qwen3-1.7B ranks above Qwen2.5-3B at every default batch size on both GPUs. A ne
 
 Both figures zoom the vertical axis. One correct call equals 0.2 percentage points.
 
-## Batch invariance removes the observed batch dependence
+## Batch invariance removes all observed changes across settings and repeats
 
 | Pair, A vs B | GPU | Invariant A, batches 1 / 8 / 32 | Invariant B, batches 1 / 8 / 32 | Higher at every batch |
 |---|---|---|---|---|
@@ -117,7 +117,7 @@ The intervals in this sampling figure are exploratory 95% item-bootstrap interva
 
 ## Text changes and correctness changes
 
-An item changes text if any of its three batch outputs differ. Correctness changes count items whose official BFCL pass/fail result differs. Wilson intervals below are exploratory under an independent-item approximation. Questions recur across models and GPUs, so these observations must not be pooled as independent questions.
+An item changes text if any of its three batch outputs differ. Same-batch timing repeats also varied under default decoding, so these counts include batch-setting plus run-to-run variation. Correctness changes count items whose official BFCL pass/fail result differs. Wilson intervals below are exploratory under an independent-item approximation. Questions recur across models and GPUs, so these observations must not be pooled as independent questions.
 
 | GPU | Model | Default text changes [exploratory Wilson 95% interval] | Invariant text changes [exploratory Wilson 95% interval] | Correctness changes, default / invariant |
 |---|---|---|---|---|
@@ -267,4 +267,4 @@ All owned study apps are stopped, running owned containers are zero, holds are r
 
 ## Methods and interpretation
 
-The [merged article](../blog/STUDY.md) explains selection, prompting, seeds, mitigation, and inference controls. GPU family is not causally isolated: generation history, CPU caps, host, and driver also differ. Each comparison has only one recorded card per GPU family. The A10 default process sampled before greedy generation; L4 starts greedy evaluation after smoke and the same warmup protocol. L4 requests and caps two CPU cores; A10 requested two and capped four. Findings do not cover other serving schedules, training seeds, native tool APIs, or executed code.
+The [merged article](../blog/STUDY.md) explains selection, prompting, seeds, mitigation, and inference controls. GPU family is not causally isolated: generation history and CPU caps differ, and host allocations are uncontrolled. All retained driver versions are 610.57.04; host identities are not uniformly recorded. Each comparison has only one recorded card per GPU family. The A10 default process sampled before greedy generation; L4 starts greedy evaluation after smoke and the same warmup protocol. L4 requests and caps two CPU cores; A10 requested two and capped four. Findings do not cover other serving schedules, training seeds, native tool APIs, or executed code.

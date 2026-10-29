@@ -10,7 +10,7 @@ Run from the project root with the existing uv environment:
 
 The official Tectonic binary and its SHA256 are recorded in `toolchain.json`; cached TeX resources are not redistributed. A standard LaTeX installation with BibTeX can also compile the source. `artifact-map.json` maps generated numbers and tables to frozen inputs. `references-verified.json` records primary-source citation checks. All intervals are exploratory and unadjusted.
 
-The intended local release-candidate tag is `v0.1.0-paper`. The archive, local tag, and manuscript await a fresh-session audit and approval. No public GitHub release or remote tag is published by the build or release packager.
+The [v0.1.0-paper release](https://github.com/mohi-devhub/leaderboard-noise/releases/tag/v0.1.0-paper) contains the manuscript and reproducibility archive. The [pre-release audit](../AUDIT.md), [wording revision record](../docs/REVISION_SENTENCES.md), and [revision verification](revision-verification.json) document the corrections. The original `verification.json` and `results/combined-sources.json` preserve the pre-audit candidate record, including its original document digests. Only the current combined report has a wording-only change among the original frozen-manifest paths; all empirical artifacts remain unchanged. Build and packaging scripts do not publish releases.
 
 Build the Python distributions using the separately hash-locked backend environment, then create the local research archive:
 

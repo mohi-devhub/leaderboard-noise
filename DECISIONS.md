@@ -113,3 +113,8 @@ Metadata correction: all retained models report NVIDIA driver 610.57.04. The pap
 The TeX compiler is official Tectonic 0.17.0 with its official release-asset digest, using the versioned default_bundle_v33 resource bundle. Python packaging uses a separate hash-locked official-PyPI build environment that audits clean. Original runtime/GPU/BFCL lockfiles are unchanged. Source and wheel distributions include MIT LICENSE, the BFCL Apache-2.0 LICENSE, and the project-supplied BFCL attribution NOTICE. No model weights or secrets are packaged.
 
 The local candidate tag is v0.1.0-paper. A content-checksummed local archive and its external checksum are prepared. No remote tag, source push, or GitHub release is performed. Fresh-session audit is pending, not claimed complete.
+
+
+## October 29, 2026: apply the release audit
+
+The user authorized wording corrections and publication of `v0.1.0-paper`. Default output differences are described as batch-setting plus run-to-run variation because saved same-batch timing repeats also vary. One-item leads are distinguished from the two-answer net reversal. The author affiliation and email are updated as supplied by the user. Driver disclosures, the greedy-only method diagram, and historical snapshot navigation are corrected. Empirical values, tables, quantitative figures, provenance snapshots, and the original verification receipts remain unchanged. The current combined report receives only the explicitly requested wording corrections. The sentence record and revision verification identify every editorial change before publication.

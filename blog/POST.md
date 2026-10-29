@@ -1,10 +1,10 @@
-# Batching changes 2–5% of greedy answers. One answer can swap the winner.
+# Default answers vary across batch settings and runs. One-item leads reverse.
 
-Changing batch size changed about 2–5% of greedy answers in my small-model study. For Llama3B and Qwen3-4B, that was enough to swap rank: the lead was one correct answer out of 500, inside exploratory paired 95% intervals of roughly ±3 percentage points. The flip is real in the recorded scores; it does not establish which model is better on new questions.
+Default decoding changed about 2–5% of greedy answers across batch settings in my small-model study. Same-batch repeats also varied, so this measures batch-setting plus run-to-run variation under default decoding. Qwen3-4B changed text and correctness on `parallel_multiple_37` between A10 timing repeats at the same batch size. Each untied Llama3B/Qwen3-4B lead is one correct answer out of 500; the reversal is a two-answer net swing. Those leads sit inside exploratory paired 95% intervals of roughly ±3 percentage points.
 
-I tested tool calling: choosing the right function and supplying the right arguments. Six small models ran on an A10 GPU. I then repeated the two closest comparisons on L4 GPUs, keeping the same questions, model versions, prompts, and grading rules. Batch sizes were 1, 8, and 32.
+I tested tool calling: choosing functions and arguments. Six small models ran on A10. I repeated the two closest comparisons on L4, retaining the questions, checkpoints, prompts, and grading. Greedy batch sizes were 1, 8, and 32.
 
-Each table cell names the model with more correct answers. A tie means both scored the same. "Invariant" is vLLM's setting that removes dependence on the batch.
+Each cell names the model with more correct answers. "Invariant" is vLLM's batch-invariance setting.
 
 | GPU | Decoding | Batch 1 winner | Batch 8 winner | Batch 32 winner |
 |---|---|---|---|---|
@@ -13,22 +13,22 @@ Each table cell names the model with more correct answers. A tie means both scor
 | A10 | Invariant | Llama3B | Llama3B | Llama3B |
 | L4 | Invariant | Llama3B | Llama3B | Llama3B |
 
-The default winner sequence reverses between GPUs. On A10, Qwen scores 458, 457, and 456 correct answers while Llama stays at 457. On L4, Llama scores 458, 457, and 458, while Qwen scores 457, 457, and 459. The second close pair, Qwen2.5-3B versus Qwen3-1.7B, never swaps order.
+The default winner sequence reverses between GPUs. On A10, Qwen scores 458, 457, and 456 correct answers while Llama stays at 457. On L4, Llama scores 458, 457, and 458, while Qwen scores 457, 457, and 459. Qwen2.5-3B versus Qwen3-1.7B never swaps order.
 
 ![Correct answers at each batch size, default and invariant, on A10 and L4](https://github.com/mohi-devhub/leaderboard-noise/blob/main/blog/rank-order-pair1.png?raw=true)
 
 The figure zooms the vertical axis: each step is one correct answer, or 0.2 percentage points.
 
-Greedy decoding always picks the token with the highest computed score. But changing a batch can change floating-point arithmetic. Near a token tie, a tiny numerical difference can change the chosen word and the rest of the answer. Changed text does not always change correctness, which is why a few changed answers need not overturn a clear lead.
+Greedy decoding picks the token with the highest computed score. Batch shape can change floating-point arithmetic. Near a token tie, a tiny difference can change the chosen word and the answer. Changed text does not always change correctness.
 
-Batch invariance removed the observed text changes. For all four models repeated on L4, the invariant outputs were also identical across A10 and L4. But switching it on can itself change the winner: A10's batch-1 lead moves from Qwen to Llama. Here, invariance stabilizes outputs; it does not choose the best answer.
+Batch invariance removed all observed text changes across batch settings and timing repeats. For all four models repeated on L4, invariant outputs were identical across A10 and L4. Switching it on can itself change the winner: A10's batch-1 lead moves from Qwen to Llama. Stability does not choose the best answer.
 
-That stability costs speed. Across the A10 configurations, median token throughput was 32–60% lower with invariance, measured with three repetitions per configuration.
+Across A10 configurations, median token throughput was 32–60% lower with invariance, measured with three repetitions per configuration.
 
-The separate sampling analysis projects roughly 800–1,100 questions to resolve a 3-percentage-point gap, with ten sampled answers per question per model. The two close pairs need approximately 834 and 1,100 items. More answers to the same questions cannot replace broader question coverage.
+The separate sampling analysis projects roughly 800–1,100 questions to resolve a 3-percentage-point gap, with ten sampled answers per question per model. The close pairs need approximately 834 and 1,100 items. More answers to the same questions cannot replace broader question coverage.
 
-If you compare models on your own evals, fix the batch size for every model or enable batch invariance for all of them. On a few hundred questions, don't trust gaps under about 3 percentage points as evidence that one model is better.
+For your own evals, use the same batch size for every model and repeat default runs, or enable batch invariance throughout. A fixed batch size alone did not ensure stable outputs here. On a few hundred questions, don't trust gaps under about 3 percentage points as evidence that one model is better.
 
-These findings cover a frozen BFCL subset and the recorded setups. All confidence intervals are exploratory; host settings, drivers, and generation history also differ between GPUs. I did not repeat throughput measurements on L4, and zero observed invariant changes is not a universal determinism guarantee.
+These findings cover the frozen BFCL subset and recorded setups. All intervals are exploratory and unadjusted. CPU limits and generation history differ; hosts are uncontrolled, while retained driver versions match. I did not repeat throughput measurements on L4, and zero observed invariant changes is not a universal guarantee.
 
-The [full report](https://github.com/mohi-devhub/leaderboard-noise/blob/main/results/REPORT.md) includes every model pair, intervals, timings, and costs. The reusable `evalnoise` CLI applies the same uncertainty analysis to saved per-item results.
+The [full report](https://github.com/mohi-devhub/leaderboard-noise/blob/main/results/REPORT.md) includes every pair, intervals, timings, and costs. The `evalnoise` CLI analyzes saved per-item results.
