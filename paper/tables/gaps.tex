@@ -1,0 +1,30 @@
+\begin{tabular}{lllrrr}
+\toprule
+Pair & GPU & Arm & Batch & Gap (pp) & Expl. 95\% CI (pp) \\
+\midrule
+Llama3.2-3B minus Qwen3-4B & A10 & default & 1 & -0.20 & [-3.20, 2.80] \\
+Llama3.2-3B minus Qwen3-4B & A10 & default & 8 & +0.00 & [-3.00, 3.00] \\
+Llama3.2-3B minus Qwen3-4B & A10 & default & 32 & +0.20 & [-2.80, 3.20] \\
+Llama3.2-3B minus Qwen3-4B & A10 & batch\_invariant & 1 & +0.20 & [-2.80, 3.20] \\
+Llama3.2-3B minus Qwen3-4B & A10 & batch\_invariant & 8 & +0.20 & [-2.80, 3.20] \\
+Llama3.2-3B minus Qwen3-4B & A10 & batch\_invariant & 32 & +0.20 & [-2.80, 3.20] \\
+Llama3.2-3B minus Qwen3-4B & L4 & default & 1 & +0.20 & [-2.80, 3.20] \\
+Llama3.2-3B minus Qwen3-4B & L4 & default & 8 & +0.00 & [-3.00, 3.00] \\
+Llama3.2-3B minus Qwen3-4B & L4 & default & 32 & -0.20 & [-3.00, 2.80] \\
+Llama3.2-3B minus Qwen3-4B & L4 & batch\_invariant & 1 & +0.20 & [-2.80, 3.20] \\
+Llama3.2-3B minus Qwen3-4B & L4 & batch\_invariant & 8 & +0.20 & [-2.80, 3.20] \\
+Llama3.2-3B minus Qwen3-4B & L4 & batch\_invariant & 32 & +0.20 & [-2.80, 3.20] \\
+Qwen2.5-3B minus Qwen3-1.7B & A10 & default & 1 & -1.60 & [-5.20, 1.80] \\
+Qwen2.5-3B minus Qwen3-1.7B & A10 & default & 8 & -0.80 & [-4.20, 2.60] \\
+Qwen2.5-3B minus Qwen3-1.7B & A10 & default & 32 & -1.20 & [-4.80, 2.20] \\
+Qwen2.5-3B minus Qwen3-1.7B & A10 & batch\_invariant & 1 & -2.00 & [-5.60, 1.60] \\
+Qwen2.5-3B minus Qwen3-1.7B & A10 & batch\_invariant & 8 & -2.00 & [-5.60, 1.60] \\
+Qwen2.5-3B minus Qwen3-1.7B & A10 & batch\_invariant & 32 & -2.00 & [-5.60, 1.60] \\
+Qwen2.5-3B minus Qwen3-1.7B & L4 & default & 1 & -1.00 & [-4.40, 2.40] \\
+Qwen2.5-3B minus Qwen3-1.7B & L4 & default & 8 & -1.00 & [-4.60, 2.40] \\
+Qwen2.5-3B minus Qwen3-1.7B & L4 & default & 32 & -1.20 & [-4.60, 2.20] \\
+Qwen2.5-3B minus Qwen3-1.7B & L4 & batch\_invariant & 1 & -2.00 & [-5.60, 1.60] \\
+Qwen2.5-3B minus Qwen3-1.7B & L4 & batch\_invariant & 8 & -2.00 & [-5.60, 1.60] \\
+Qwen2.5-3B minus Qwen3-1.7B & L4 & batch\_invariant & 32 & -2.00 & [-5.60, 1.60] \\
+\bottomrule
+\end{tabular}

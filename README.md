@@ -84,3 +84,9 @@ The corrected image adds Debian `build-essential=12.12` and passes a CPU compile
 The baseline collects 10 samples at temperature .7, then three greedy request batch sizes (1/8/32). The fix arm repeats those three greedy configurations with `VLLM_BATCH_INVARIANT=1`. Both use the same max engine concurrency (64), same eager execution and no prefix cache. This tests batch sensitivity with controlled offline inference submission, not a production HTTP load generator. The official BFCL prompting-mode instructions and AST checker define correctness. Scores are for a selected Python single-turn subset, not the complete leaderboard.
 
 Generated model code for optional EvalPlus must execute on isolated CPU infrastructure, with no secrets or writable host mounts. `experiments/evalplus.in` is the optional dependency entry point; no code benchmark is launched by the pilot. The full model/benchmark plan stays in scope and needs a measured budget estimate after pilot review.
+
+## Standalone paper and local release candidate
+
+The [LaTeX manuscript](paper/main.tex) builds to [main.pdf](paper/main.pdf), with six main pages and an appendix. The paper uses only saved results and discloses the one-item rank margin, exploratory intervals, A10-only throughput cost, hardware confounds, and source-attestation limits. See [paper build instructions](paper/README.md) and the [executed-source provenance](provenance/README.md).
+
+Original code is [MIT-licensed](LICENSE); [BFCL attribution and Apache-2.0 notices](THIRD_PARTY_NOTICES.md) remain separate. The local release archive includes both license texts, the BFCL notice, source snapshots, data, paper, and SHA256 checksums. The intended local tag is `v0.1.0-paper`. A fresh-session audit and approval are pending; the GitHub release and remote tag have not been published.

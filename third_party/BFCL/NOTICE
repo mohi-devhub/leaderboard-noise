@@ -1,0 +1,24 @@
+BFCL attribution notice prepared by leaderboard-noise
+
+This notice is project-supplied attribution, not a claim that upstream shipped
+an identically named NOTICE file.
+
+Berkeley Function Calling Leaderboard (BFCL), part of the Gorilla project:
+https://github.com/ShishirPatil/gorilla/tree/main/berkeley-function-call-leaderboard
+
+Reference: Shishir G Patil, Huanzhi Mao, Fanjia Yan, Charlie Cheng-Jie Ji,
+Vishnu Suresh, Ion Stoica, and Joseph E. Gonzalez. The Berkeley Function Calling
+Leaderboard (BFCL): From Tool Use to Agentic Evaluation of Large Language
+Models. Proceedings of Machine Learning Research, volume 267, pages
+48371-48392, 2025. https://proceedings.mlr.press/v267/patil25a.html
+
+This project uses the official bfcl-eval==2026.3.23 prompting instructions and
+AST checker and retains a frozen Python single-turn subset and derived
+per-item outputs. BFCL-derived material remains under the upstream Apache
+License, Version 2.0. The full license is supplied alongside this notice.
+The saved license text matches the official Gorilla repository LICENSE.
+Retain upstream copyright and attribution notices. Project-specific MIT
+licensing does not replace BFCL licensing or individual model licenses.
+
+The subset is not the official overall BFCL leaderboard. Generated calls
+were AST-checked rather than executed. No model weights are redistributed.

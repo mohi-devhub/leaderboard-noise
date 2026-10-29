@@ -1,0 +1,10 @@
+{
+  "tectonic_version": "0.17.0",
+  "source": "https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%400.17.0/tectonic-0.17.0-aarch64-apple-darwin.tar.gz",
+  "archive_sha256": "a3f1cac7c5678f01661a92212f58480ae3b0634115d880dbc59e2953ded45667",
+  "source_published_at": "2026-07-27T01:00:41Z",
+  "verification": "Official GitHub release asset digest",
+  "bundle_url": "https://relay.fullyjustified.net/default_bundle_v33.tar",
+  "bundle_cache_identifier": "6ffe055852f8faf66c0acbe1a7fb27f87b869a90bad1204f3bf4d9683f597c7c",
+  "note": "Official engine archive is digest-verified. Bundle identifier is Tectonic cache metadata, not a claimed independently hashed download of the entire bundle."
+}

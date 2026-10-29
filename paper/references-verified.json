@@ -1,0 +1,589 @@
+{
+  "checked_at": "2026-10-29T04:09:21.289407+00:00",
+  "references": [
+    {
+      "key": "madaan2024variance",
+      "expected_title": "Quantifying Variance in Evaluation Benchmarks",
+      "url": "https://arxiv.org/abs/2406.10229v1",
+      "bibtex_entry_sha256": "b5d853182b7092addaf93a2dbee847399304adcc0112e10719af577a871fdc65",
+      "resolved_url": "https://arxiv.org/abs/2406.10229v1",
+      "status": 200,
+      "body_sha256": "6a4e29dd7ae68dd2332163a65e8fd8649d66f6a1e317b9663b4720d380554782",
+      "citation_title": [
+        "Quantifying Variance in Evaluation Benchmarks"
+      ],
+      "citation_authors": [
+        "Madaan, Lovish",
+        "Singh, Aaditya K.",
+        "Schaeffer, Rylan",
+        "Poulton, Andrew",
+        "Koyejo, Sanmi",
+        "Stenetorp, Pontus",
+        "Narang, Sharan",
+        "Hupkes, Dieuwke"
+      ],
+      "citation_date": [
+        "2024/06/14"
+      ],
+      "primary_source": true,
+      "title_verified_against_primary_source": true
+    },
+    {
+      "key": "miller2024errorbars",
+      "expected_title": "Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations",
+      "url": "https://arxiv.org/abs/2411.00640v1",
+      "bibtex_entry_sha256": "cccbe1ed50aa1e65ae1bba457404d8f06780cbf3dfe3674444d57c582b55b334",
+      "resolved_url": "https://arxiv.org/abs/2411.00640v1",
+      "status": 200,
+      "body_sha256": "533b4053888acfb6adae517858c6673b710b24fad1393a58b965f83092093415",
+      "citation_title": [
+        "Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations"
+      ],
+      "citation_authors": [
+        "Miller, Evan"
+      ],
+      "citation_date": [
+        "2024/11/01"
+      ],
+      "primary_source": true,
+      "title_verified_against_primary_source": true
+    },
+    {
+      "key": "wang2025noise",
+      "expected_title": "Measuring all the noises of {LLM} Evals",
+      "url": "https://arxiv.org/abs/2512.21326v1",
+      "bibtex_entry_sha256": "20f47a51095e1cc04a858bf4bae9dcdb018a16bf74e9cca0cc8f9f155d347fe9",
+      "resolved_url": "https://arxiv.org/abs/2512.21326v1",
+      "status": 200,
+      "body_sha256": "f1f93bd8880b059fe33e762542a74c549c9e3175088985cfdf41cad0b590b25a",
+      "citation_title": [
+        "Measuring all the noises of LLM Evals"
+      ],
+      "citation_authors": [
+        "Wang, Sida"
+      ],
+      "citation_date": [
+        "2025/12/24"
+      ],
+      "primary_source": true,
+      "title_verified_against_primary_source": true
+    },
+    {
+      "key": "he2025nondeterminism",
+      "expected_title": "Defeating Nondeterminism in {LLM} Inference",
+      "url": "https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/",
+      "bibtex_entry_sha256": "e9dc488afb05b528da86bdddf9d97082fe3a3a8318d837ef6a7baae5f1c16d01",
+      "resolved_url": "https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/",
+      "status": 200,
+      "body_sha256": "6dd59684f7b163a98273834c2a73b098ac6ca29b5ded068e21aed3923a3c977d",
+      "citation_title": [
+        "Defeating Nondeterminism in LLM Inference"
+      ],
+      "citation_authors": [],
+      "citation_date": [],
+      "primary_source": true,
+      "title_verified_against_primary_source": true
+    },
+    {
+      "key": "vllm032",
+      "expected_title": "Batch Invariance",
+      "url": "https://docs.vllm.ai/en/v0.32.0/features/batch_invariance/",
+      "bibtex_entry_sha256": "d05ab844885d4f9d7dc1da1f7ebf0862de90b582f27fda28daea97e1bf8b95aa",
+      "resolved_url": "https://docs.vllm.ai/en/v0.32.0/features/batch_invariance/",
+      "status": 200,
+      "body_sha256": "3ed7ad2823a247534649a3678c3e475649c475490cf15c417f75bf0b505bbc71",
+      "citation_title": [
+        "Batch Invariance<a class=\"headerlink\" href=\"#batch-invariance\" title=\"Permanent link\">\u00b6</a>"
+      ],
+      "citation_authors": [],
+      "citation_date": [],
+      "primary_source": true,
+      "title_verified_against_primary_source": true
+    },
+    {
+      "key": "patil2025bfcl",
+      "expected_title": "The Berkeley Function Calling Leaderboard ({BFCL}): From Tool Use to Agentic Evaluation of Large Language Models",
+      "url": "https://proceedings.mlr.press/v267/patil25a.html",
+      "bibtex_entry_sha256": "370adea2afd25557712cbd5e16915e46b105cbf0949af08cc4fb88ff3c58cda0",
+      "resolved_url": "https://proceedings.mlr.press/v267/patil25a.html",
+      "status": 200,
+      "body_sha256": "9fd266880a8368c677b42ea887d82820440b8f053c5c5a7ca134be531dfc7458",
+      "citation_title": [
+        "The Berkeley Function Calling Leaderboard (BFCL): From Tool Use to Agentic Evaluation of Large Language Models"
+      ],
+      "citation_authors": [
+        "Shishir G Patil",
+        "Huanzhi Mao",
+        "Fanjia Yan",
+        "Charlie Cheng-Jie Ji",
+        "Vishnu Suresh",
+        "Ion Stoica",
+        "Joseph E. Gonzalez"
+      ],
+      "citation_date": [
+        "2025/10/06"
+      ],
+      "primary_source": true,
+      "title_verified_against_primary_source": true
+    },
+    {
+      "key": "chen2021code",
+      "expected_title": "Evaluating Large Language Models Trained on Code",
+      "url": "https://arxiv.org/abs/2107.03374v2",
+      "bibtex_entry_sha256": "879d71314794c68d7a91e323bc89e9eaf1853a6c9c72eac32c6955a1af63a2d4",
+      "resolved_url": "https://arxiv.org/abs/2107.03374v2",
+      "status": 200,
+      "body_sha256": "b0ff62f8dde21a3f300cf644f5d4ac24e5140b3deea9ab42a4062624a10efccd",
+      "citation_title": [
+        "Evaluating Large Language Models Trained on Code"
+      ],
+      "citation_authors": [
+        "Chen, Mark",
+        "Tworek, Jerry",
+        "Jun, Heewoo",
+        "Yuan, Qiming",
+        "Pinto, Henrique Ponde de Oliveira",
+        "Kaplan, Jared",
+        "Edwards, Harri",
+        "Burda, Yuri",
+        "Joseph, Nicholas",
+        "Brockman, Greg",
+        "Ray, Alex",
+        "Puri, Raul",
+        "Krueger, Gretchen",
+        "Petrov, Michael",
+        "Khlaaf, Heidy",
+        "Sastry, Girish",
+        "Mishkin, Pamela",
+        "Chan, Brooke",
+        "Gray, Scott",
+        "Ryder, Nick",
+        "Pavlov, Mikhail",
+        "Power, Alethea",
+        "Kaiser, Lukasz",
+        "Bavarian, Mohammad",
+        "Winter, Clemens",
+        "Tillet, Philippe",
+        "Such, Felipe Petroski",
+        "Cummings, Dave",
+        "Plappert, Matthias",
+        "Chantzis, Fotios",
+        "Barnes, Elizabeth",
+        "Herbert-Voss, Ariel",
+        "Guss, William Hebgen",
+        "Nichol, Alex",
+        "Paino, Alex",
+        "Tezak, Nikolas",
+        "Tang, Jie",
+        "Babuschkin, Igor",
+        "Balaji, Suchir",
+        "Jain, Shantanu",
+        "Saunders, William",
+        "Hesse, Christopher",
+        "Carr, Andrew N.",
+        "Leike, Jan",
+        "Achiam, Josh",
+        "Misra, Vedant",
+        "Morikawa, Evan",
+        "Radford, Alec",
+        "Knight, Matthew",
+        "Brundage, Miles",
+        "Murati, Mira",
+        "Mayer, Katie",
+        "Welinder, Peter",
+        "McGrew, Bob",
+        "Amodei, Dario",
+        "McCandlish, Sam",
+        "Sutskever, Ilya",
+        "Zaremba, Wojciech"
+      ],
+      "citation_date": [
+        "2021/07/07"
+      ],
+      "primary_source": true,
+      "title_verified_against_primary_source": true
+    },
+    {
+      "key": "yuan2025numerical",
+      "expected_title": "Understanding and Mitigating Numerical Sources of Nondeterminism in {LLM} Inference",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/f80094a824ba5912d4a2de169c404a40-Abstract-Conference.html",
+      "bibtex_entry_sha256": "3c5a82a5495ac8896b7f47cea4f0bad70bea536a7bbb042a2cd992385332affc",
+      "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/f80094a824ba5912d4a2de169c404a40-Abstract-Conference.html",
+      "status": 200,
+      "body_sha256": "c4957d5aa1c67bd3ce029e016898e10ac055e301efeaed9751d591651f3ab3df",
+      "citation_title": [
+        "Understanding and Mitigating Numerical Sources of Nondeterminism in LLM Inference"
+      ],
+      "citation_authors": [
+        "Yuan, Jiayi",
+        "Li, Hao",
+        "Ding, Xinheng",
+        "Xie, Wenya",
+        "Li, Yu-Jhe",
+        "Zhao, Wentian",
+        "Wan, Kun",
+        "Shi, Jing",
+        "Hu, Xia",
+        "Liu, Zirui"
+      ],
+      "citation_date": [
+        "2026-04-23"
+      ],
+      "primary_source": true,
+      "title_verified_against_primary_source": true
+    },
+    {
+      "key": "atil2025hosted",
+      "expected_title": "Non-Determinism of ``Deterministic'' {LLM} System Settings in Hosted Environments",
+      "url": "https://aclanthology.org/2025.eval4nlp-1.12/",
+      "bibtex_entry_sha256": "1a371617e4068bdba78012eea9e41ad3f31b27e2aa445bd004726c7fa6b50bf1",
+      "resolved_url": "https://aclanthology.org/2025.eval4nlp-1.12/",
+      "status": 200,
+      "body_sha256": "a129684759abbbe9c584cab53304dc605606297ed8c7776c7588a879e75f9b88",
+      "citation_title": [
+        "Non-Determinism of \u201cDeterministic\u201d LLM System Settings in Hosted Environments"
+      ],
+      "citation_authors": [
+        "Berk At\u0131l",
+        "Sarp Aykent",
+        "Alexa Chittams",
+        "Lisheng Fu",
+        "Rebecca J. Passonneau",
+        "Evan Radcliffe",
+        "Guru Rajan Rajagopal",
+        "Adam Sloan",
+        "Tomasz Tudrej",
+        "Ferhan T\u00fcre",
+        "Zhe Wu",
+        "Lixinyu Xu",
+        "Breck Baldwin"
+      ],
+      "citation_date": [
+        "2025/12"
+      ],
+      "primary_source": true,
+      "title_verified_against_primary_source": true
+    },
+    {
+      "key": "song2025greedy",
+      "expected_title": "The Good, The Bad, and The Greedy: Evaluation of {LLM}s Should Not Ignore Non-Determinism",
+      "url": "https://aclanthology.org/2025.naacl-long.211/",
+      "bibtex_entry_sha256": "74de0e528c945568d3068ae7a4191357e5a930b597bd0891b363c18ab46e06aa",
+      "resolved_url": "https://aclanthology.org/2025.naacl-long.211/",
+      "status": 200,
+      "body_sha256": "c0cefe647bbed528acdf3a4cce1e221630ed3087bad5d366414d7858d80cc9e4",
+      "citation_title": [
+        "The Good, The Bad, and The Greedy: Evaluation of LLMs Should Not Ignore Non-Determinism"
+      ],
+      "citation_authors": [
+        "Yifan Song",
+        "Guoyin Wang",
+        "Sujian Li (\u674e\u7d20\u5efa)",
+        "Bill Yuchen Lin"
+      ],
+      "citation_date": [
+        "2025/4"
+      ],
+      "primary_source": true,
+      "title_verified_against_primary_source": true
+    },
+    {
+      "key": "gond2026llm42",
+      "expected_title": "{LLM-42}: Enabling Determinism in {LLM} Inference with Verified Speculation",
+      "url": "https://arxiv.org/abs/2601.17768v2",
+      "bibtex_entry_sha256": "b415adadab80c5d18635f65d5b1973a46bae1e5c8bb14e06c83035ced215b45f",
+      "resolved_url": "https://arxiv.org/abs/2601.17768v2",
+      "status": 200,
+      "body_sha256": "c38438ac945379761978a0a5eb001b55029edc0af108c921775758724c24696e",
+      "citation_title": [
+        "LLM-42: Enabling Determinism in LLM Inference with Verified Speculation"
+      ],
+      "citation_authors": [
+        "Gond, Raja",
+        "Kamath, Aditya K",
+        "Ramjee, Ramachandran",
+        "Panwar, Ashish"
+      ],
+      "citation_date": [
+        "2026/01/25"
+      ],
+      "primary_source": true,
+      "title_verified_against_primary_source": true
+    }
+  ],
+  "links": [
+    {
+      "url": "https://aclanthology.org/2025.eval4nlp-1.12/",
+      "resolved_url": "https://aclanthology.org/2025.eval4nlp-1.12/",
+      "status": 200,
+      "body_sha256": "a129684759abbbe9c584cab53304dc605606297ed8c7776c7588a879e75f9b88",
+      "citation_title": [
+        "Non-Determinism of \u201cDeterministic\u201d LLM System Settings in Hosted Environments"
+      ],
+      "citation_authors": [
+        "Berk At\u0131l",
+        "Sarp Aykent",
+        "Alexa Chittams",
+        "Lisheng Fu",
+        "Rebecca J. Passonneau",
+        "Evan Radcliffe",
+        "Guru Rajan Rajagopal",
+        "Adam Sloan",
+        "Tomasz Tudrej",
+        "Ferhan T\u00fcre",
+        "Zhe Wu",
+        "Lixinyu Xu",
+        "Breck Baldwin"
+      ],
+      "citation_date": [
+        "2025/12"
+      ]
+    },
+    {
+      "url": "https://aclanthology.org/2025.naacl-long.211/",
+      "resolved_url": "https://aclanthology.org/2025.naacl-long.211/",
+      "status": 200,
+      "body_sha256": "c0cefe647bbed528acdf3a4cce1e221630ed3087bad5d366414d7858d80cc9e4",
+      "citation_title": [
+        "The Good, The Bad, and The Greedy: Evaluation of LLMs Should Not Ignore Non-Determinism"
+      ],
+      "citation_authors": [
+        "Yifan Song",
+        "Guoyin Wang",
+        "Sujian Li (\u674e\u7d20\u5efa)",
+        "Bill Yuchen Lin"
+      ],
+      "citation_date": [
+        "2025/4"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/abs/2107.03374v2",
+      "resolved_url": "https://arxiv.org/abs/2107.03374v2",
+      "status": 200,
+      "body_sha256": "b0ff62f8dde21a3f300cf644f5d4ac24e5140b3deea9ab42a4062624a10efccd",
+      "citation_title": [
+        "Evaluating Large Language Models Trained on Code"
+      ],
+      "citation_authors": [
+        "Chen, Mark",
+        "Tworek, Jerry",
+        "Jun, Heewoo",
+        "Yuan, Qiming",
+        "Pinto, Henrique Ponde de Oliveira",
+        "Kaplan, Jared",
+        "Edwards, Harri",
+        "Burda, Yuri",
+        "Joseph, Nicholas",
+        "Brockman, Greg",
+        "Ray, Alex",
+        "Puri, Raul",
+        "Krueger, Gretchen",
+        "Petrov, Michael",
+        "Khlaaf, Heidy",
+        "Sastry, Girish",
+        "Mishkin, Pamela",
+        "Chan, Brooke",
+        "Gray, Scott",
+        "Ryder, Nick",
+        "Pavlov, Mikhail",
+        "Power, Alethea",
+        "Kaiser, Lukasz",
+        "Bavarian, Mohammad",
+        "Winter, Clemens",
+        "Tillet, Philippe",
+        "Such, Felipe Petroski",
+        "Cummings, Dave",
+        "Plappert, Matthias",
+        "Chantzis, Fotios",
+        "Barnes, Elizabeth",
+        "Herbert-Voss, Ariel",
+        "Guss, William Hebgen",
+        "Nichol, Alex",
+        "Paino, Alex",
+        "Tezak, Nikolas",
+        "Tang, Jie",
+        "Babuschkin, Igor",
+        "Balaji, Suchir",
+        "Jain, Shantanu",
+        "Saunders, William",
+        "Hesse, Christopher",
+        "Carr, Andrew N.",
+        "Leike, Jan",
+        "Achiam, Josh",
+        "Misra, Vedant",
+        "Morikawa, Evan",
+        "Radford, Alec",
+        "Knight, Matthew",
+        "Brundage, Miles",
+        "Murati, Mira",
+        "Mayer, Katie",
+        "Welinder, Peter",
+        "McGrew, Bob",
+        "Amodei, Dario",
+        "McCandlish, Sam",
+        "Sutskever, Ilya",
+        "Zaremba, Wojciech"
+      ],
+      "citation_date": [
+        "2021/07/07"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/abs/2406.10229v1",
+      "resolved_url": "https://arxiv.org/abs/2406.10229v1",
+      "status": 200,
+      "body_sha256": "6a4e29dd7ae68dd2332163a65e8fd8649d66f6a1e317b9663b4720d380554782",
+      "citation_title": [
+        "Quantifying Variance in Evaluation Benchmarks"
+      ],
+      "citation_authors": [
+        "Madaan, Lovish",
+        "Singh, Aaditya K.",
+        "Schaeffer, Rylan",
+        "Poulton, Andrew",
+        "Koyejo, Sanmi",
+        "Stenetorp, Pontus",
+        "Narang, Sharan",
+        "Hupkes, Dieuwke"
+      ],
+      "citation_date": [
+        "2024/06/14"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/abs/2411.00640v1",
+      "resolved_url": "https://arxiv.org/abs/2411.00640v1",
+      "status": 200,
+      "body_sha256": "533b4053888acfb6adae517858c6673b710b24fad1393a58b965f83092093415",
+      "citation_title": [
+        "Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations"
+      ],
+      "citation_authors": [
+        "Miller, Evan"
+      ],
+      "citation_date": [
+        "2024/11/01"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/abs/2512.21326v1",
+      "resolved_url": "https://arxiv.org/abs/2512.21326v1",
+      "status": 200,
+      "body_sha256": "f1f93bd8880b059fe33e762542a74c549c9e3175088985cfdf41cad0b590b25a",
+      "citation_title": [
+        "Measuring all the noises of LLM Evals"
+      ],
+      "citation_authors": [
+        "Wang, Sida"
+      ],
+      "citation_date": [
+        "2025/12/24"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/abs/2601.17768v2",
+      "resolved_url": "https://arxiv.org/abs/2601.17768v2",
+      "status": 200,
+      "body_sha256": "c38438ac945379761978a0a5eb001b55029edc0af108c921775758724c24696e",
+      "citation_title": [
+        "LLM-42: Enabling Determinism in LLM Inference with Verified Speculation"
+      ],
+      "citation_authors": [
+        "Gond, Raja",
+        "Kamath, Aditya K",
+        "Ramjee, Ramachandran",
+        "Panwar, Ashish"
+      ],
+      "citation_date": [
+        "2026/01/25"
+      ]
+    },
+    {
+      "url": "https://docs.vllm.ai/en/v0.32.0/features/batch_invariance/",
+      "resolved_url": "https://docs.vllm.ai/en/v0.32.0/features/batch_invariance/",
+      "status": 200,
+      "body_sha256": "3ed7ad2823a247534649a3678c3e475649c475490cf15c417f75bf0b505bbc71",
+      "citation_title": [
+        "Batch Invariance<a class=\"headerlink\" href=\"#batch-invariance\" title=\"Permanent link\">\u00b6</a>"
+      ],
+      "citation_authors": [],
+      "citation_date": []
+    },
+    {
+      "url": "https://github.com/mohi-devhub/leaderboard-noise",
+      "resolved_url": "https://github.com/mohi-devhub/leaderboard-noise",
+      "status": 200,
+      "body_sha256": "e11b8f501403ff7e4aafcd9aaafd94cc0c059f9e99f59bcd36d2916d468c415c",
+      "citation_title": [
+        "GitHub - mohi-devhub/leaderboard-noise: Greedy batching, leaderboard uncertainty, and an auditable small-model BFCL replication on A10 and L4"
+      ],
+      "citation_authors": [],
+      "citation_date": []
+    },
+    {
+      "url": "https://proceedings.mlr.press/v267/patil25a.html",
+      "resolved_url": "https://proceedings.mlr.press/v267/patil25a.html",
+      "status": 200,
+      "body_sha256": "9fd266880a8368c677b42ea887d82820440b8f053c5c5a7ca134be531dfc7458",
+      "citation_title": [
+        "The Berkeley Function Calling Leaderboard (BFCL): From Tool Use to Agentic Evaluation of Large Language Models"
+      ],
+      "citation_authors": [
+        "Shishir G Patil",
+        "Huanzhi Mao",
+        "Fanjia Yan",
+        "Charlie Cheng-Jie Ji",
+        "Vishnu Suresh",
+        "Ion Stoica",
+        "Joseph E. Gonzalez"
+      ],
+      "citation_date": [
+        "2025/10/06"
+      ]
+    },
+    {
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/f80094a824ba5912d4a2de169c404a40-Abstract-Conference.html",
+      "resolved_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/f80094a824ba5912d4a2de169c404a40-Abstract-Conference.html",
+      "status": 200,
+      "body_sha256": "c4957d5aa1c67bd3ce029e016898e10ac055e301efeaed9751d591651f3ab3df",
+      "citation_title": [
+        "Understanding and Mitigating Numerical Sources of Nondeterminism in LLM Inference"
+      ],
+      "citation_authors": [
+        "Yuan, Jiayi",
+        "Li, Hao",
+        "Ding, Xinheng",
+        "Xie, Wenya",
+        "Li, Yu-Jhe",
+        "Zhao, Wentian",
+        "Wan, Kun",
+        "Shi, Jing",
+        "Hu, Xia",
+        "Liu, Zirui"
+      ],
+      "citation_date": [
+        "2026-04-23"
+      ]
+    },
+    {
+      "url": "https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/",
+      "resolved_url": "https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/",
+      "status": 200,
+      "body_sha256": "6dd59684f7b163a98273834c2a73b098ac6ca29b5ded068e21aed3923a3c977d",
+      "citation_title": [
+        "Defeating Nondeterminism in LLM Inference"
+      ],
+      "citation_authors": [],
+      "citation_date": []
+    }
+  ],
+  "scope": "Primary paper/author/project sources. BibTeX metadata and associated claims were also read against those primary sources; no citation inferred from a secondary index.",
+  "searched_additional_work": [
+    "numerical inference reproducibility; batch size/GPU changes",
+    "hosted deterministic settings and raw vs parsed agreement",
+    "greedy vs sampling evaluation",
+    "verified speculation as a mitigation"
+  ],
+  "new_inference": false
+}

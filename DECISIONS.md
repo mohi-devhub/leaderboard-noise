@@ -101,3 +101,15 @@ The user requested a narrower headline: batch size changed about 2–5% of greed
 The first paragraphs of README.md, blog/STUDY.md, and results/REPORT.md now state that scale. Their early mitigation paragraph emphasizes identical invariant decoded outputs across the recorded A10 and L4 runs and that enabling invariance can itself change the winner. The 32–60% throughput cost remains attributed only to repeated A10 timings. The renderer is updated so regeneration preserves the framing.
 
 blog/POST.md is replaced with an approximately 500-word plain-language summary, one four-row GPU/arm winner table, one existing figure, and a short caveat paragraph. Its earlier pilot article is preserved byte for byte in results/editorial-reframe-20261029. Frozen run results, confidence intervals, figures, and lockfiles are unchanged. No inference, rescoring, bootstrap rerun, or paid compute is performed. Only targeted publication checks are run. Work stops here; a fresh-session audit is pending, not completed.
+
+## October 29: standalone paper and local release candidate
+
+The user requested a standalone LaTeX paper, vector grayscale figures, primary-verified citations, executed-source provenance, MIT code licensing, BFCL Apache-2.0 attribution, packaging, tests, link checks, and a fresh-session audit before release publication. No inference, grader rerun, or bootstrap run is authorized or performed. Paper assets read saved JSON summaries and record their input hashes and numerical macro sources.
+
+The main paper has six pages plus an appendix. All confidence intervals remain exploratory and unadjusted. Approximate ±3-point language is paired with exact endpoints reaching ±3.2. The 800–1,100-item range is rounded from 834 and 1,100 at ten samples per item per model. Throughput ranges remain observed A10 repetitions, not confidence intervals or L4 measurements.
+
+Metadata correction: all retained models report NVIDIA driver 610.57.04. The paper does not claim that driver versions differ. CPU caps, allocations, and generation history differ, while host identity is not uniformly recorded; GPU architecture remains causally unisolated. Early A10 workers lack runtime self-hashes and are explicitly launch-attested. Later A10 and L4 workers record self-hashes. Thirteen byte-matched snapshots map forty-four retained model/arm processes; original before/after BOS files and captured serialized function sources remain separate.
+
+The TeX compiler is official Tectonic 0.17.0 with its official release-asset digest, using the versioned default_bundle_v33 resource bundle. Python packaging uses a separate hash-locked official-PyPI build environment that audits clean. Original runtime/GPU/BFCL lockfiles are unchanged. Source and wheel distributions include MIT LICENSE, the BFCL Apache-2.0 LICENSE, and the project-supplied BFCL attribution NOTICE. No model weights or secrets are packaged.
+
+The local candidate tag is v0.1.0-paper. A content-checksummed local archive and its external checksum are prepared. No remote tag, source push, or GitHub release is performed. Fresh-session audit is pending, not claimed complete.

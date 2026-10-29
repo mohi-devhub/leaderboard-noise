@@ -13,3 +13,12 @@ vendor/*
 !vendor/.gitkeep
 results/raw/
 .DS_Store
+
+.ruff_cache/
+releases/
+paper/*.aux
+paper/*.log
+paper/*.bbl
+paper/*.blg
+paper/*.out
+paper/*.synctex.gz

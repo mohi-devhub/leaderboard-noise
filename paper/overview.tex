@@ -1,0 +1,11 @@
+\begin{tikzpicture}[node distance=3mm and 4mm, box/.style={draw,rounded corners=1pt,fill=black!4,align=center,font=\small,inner sep=4pt}, arr/.style={-{Latex[length=1.7mm]},thick}]
+\node[box,text width=25mm] (items) {\NItems{} frozen BFCL items\\Python single-turn};
+\node[box,text width=26mm,right=of items] (a10) {A10: \NAtenModels{} models\\sampling + greedy};
+\node[box,text width=30mm,right=of a10] (arms) {Default / invariant\\batches 1, 8, 32};
+\node[box,text width=23mm,right=of arms] (score) {Official BFCL\\AST checker};
+\node[box,text width=25mm,right=of score] (analysis) {Paired-item analysis\\text, score, ranks};
+\node[box,text width=49mm,below=6mm of a10.south,anchor=north west,xshift=-14mm] (l4) {L4: two close pairs (\NLfourModels{} models)\\greedy only; same items and settings};
+\draw[arr] (items)--(a10);\draw[arr] (a10)--(arms);\draw[arr] (arms)--(score);\draw[arr] (score)--(analysis);
+\draw[arr] (items.south)|-(l4.west);\draw[arr] (a10.south)--node[right,font=\scriptsize]{select before L4}(l4.north);
+\draw[arr] (l4.east)-|(arms.south);
+\end{tikzpicture}

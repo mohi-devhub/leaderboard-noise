@@ -78,3 +78,9 @@ The completed L4 follow-up passed all eight model/arm five-request smoke gates a
 ## Editorial merge and workspace rename
 
 The merged article and report use only saved summaries. No inference, scoring, Modal request, dependency upgrade, or paid compute is needed. The project directory is renamed to leaderboard-noise while the package and CLI remain evalnoise. Virtual-environment entry points and editable-install paths are rebased to the new directory; package versions and all hash lockfiles are unchanged. Current verification is recorded in results/metadata/verification-merged.json. Earlier verification manifests and byte-preserved document snapshots remain the historical record.
+
+## Local paper build and release packaging
+
+This manuscript uses frozen artifacts only. The original runtime, GPU, and BFCL locks remain unchanged. The official Tectonic 0.17.0 macOS ARM binary is verified against the GitHub release SHA256, and the TeX bundle URL is versioned. Its local compiler cache is outside the release. `paper/toolchain.json` records this document toolchain separately from inference.
+
+Python packaging uses `paper/build-requirements.lock`, a hash-locked official-PyPI environment with zero known findings in `paper/build-audit.json`. Package license metadata includes the original MIT text plus BFCL Apache-2.0 text and attribution. Executed-source copies are byte-preserved and have both per-file checksums and process-level attestation labels. The release packager requires these files and rejects cache, credential, and weight paths. It does not create remote tags or releases. Audit/publication approval remains pending.

@@ -1,0 +1,495 @@
+{
+  "files": [
+    {
+      "path": "provenance/a10/worker-pre-bos.py",
+      "sha256": "6465f289db0e4603dc679b6c5aed2ec177c9dfe0c5cd98dbb4297f702aeb8aae",
+      "saved_source": "results/study-20261028T065939Z/continuation-checkpoints/runtime-fixes/tokenization/before.py",
+      "recorded_in": "results/study-20261028T065939Z/launch-source-sha256.json",
+      "attestation": "launch-recorded source digest; early workers have no runtime self-hash"
+    },
+    {
+      "path": "provenance/a10/run_study.py",
+      "sha256": "d879dea04669dca00b4de30813b939c8c3461d44e88d6fab69bc42baeab37be2",
+      "saved_source": "scripts/run_study.py",
+      "recorded_in": "results/study-20261028T065939Z/launch-source-sha256.json",
+      "attestation": "launch-recorded source digest; early workers have no runtime self-hash"
+    },
+    {
+      "path": "provenance/a10/worker-bos-fixed.py",
+      "sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "saved_source": "results/l4-followup-20261028T190732Z/source-before/gpu_worker.py",
+      "recorded_in": "results/study-20261028T065939Z/tokenization-fix-archive.json",
+      "attestation": "runtime worker self-hash on later A10 models; correction installed before Llama"
+    },
+    {
+      "path": "provenance/a10/study_model_job.py",
+      "sha256": "270ecc9be9e4c2e5d0dda8156c75f6ff6db54857a4199238fc2f02f94f291e6c",
+      "saved_source": "results/l4-followup-20261028T190732Z/source-before/study_model_job.py",
+      "recorded_in": "results/study-20261028T065939Z/remaining-launch-source-sha256.json",
+      "attestation": "launch-recorded source digest"
+    },
+    {
+      "path": "provenance/a10/gpu_job.py",
+      "sha256": "7a62567a091c087c0ec4567e3c7193323514f903436976862fb7f7737ee04258",
+      "saved_source": "results/study-20261028T065939Z/snapshot-gpu_job.py",
+      "recorded_in": "results/study-20261028T065939Z/submitted-function-source.json",
+      "attestation": "captured normalized function source; recorded digest matches snapshot bytes"
+    },
+    {
+      "path": "provenance/a10/server_controller.py",
+      "sha256": "8d59b6db4d25d114a3c6401ec72bcff0416d1d11d12907561ba4ebe261d9b2ad",
+      "saved_source": "results/study-20261028T065939Z/snapshot-server_controller.py",
+      "recorded_in": "results/study-20261028T065939Z/submitted-function-source.json",
+      "attestation": "captured normalized function source; recorded digest matches snapshot bytes"
+    },
+    {
+      "path": "provenance/l4-initial/gpu_worker.py",
+      "sha256": "4342292d7b16c92c9df78b20b81ce048d9c8915f1c69ebef38cbfde7e3bca007",
+      "saved_source": "scripts/gpu_worker.py",
+      "recorded_in": "results/l4-followup-20261028T190732Z/source-hashes.json",
+      "attestation": "launch-recorded source digest; inference worker digest also recorded at runtime"
+    },
+    {
+      "path": "provenance/l4-initial/study_model_job.py",
+      "sha256": "5bfd65f102bb079937620c92a7273d76a98e328b69a284c49118e1aa0a23254b",
+      "saved_source": "scripts/study_model_job.py",
+      "recorded_in": "results/l4-followup-20261028T190732Z/source-hashes.json",
+      "attestation": "launch-recorded source digest; inference worker digest also recorded at runtime"
+    },
+    {
+      "path": "provenance/l4-initial/run_l4_followup.py",
+      "sha256": "3392e1f269739081a5d16124238cb114e1b7de575f23e335f195426f23ca8add",
+      "saved_source": "results/l4-followup-20261028T190732Z/source-before-launch/run_l4_followup.py",
+      "recorded_in": "results/l4-followup-20261028T190732Z/source-hashes.json",
+      "attestation": "launch-recorded source digest; inference worker digest also recorded at runtime"
+    },
+    {
+      "path": "provenance/l4-continuation/gpu_worker.py",
+      "sha256": "4342292d7b16c92c9df78b20b81ce048d9c8915f1c69ebef38cbfde7e3bca007",
+      "saved_source": "scripts/gpu_worker.py",
+      "recorded_in": "results/l4-continuation-20261028T224638Z/source-hashes.json",
+      "attestation": "launch-recorded source digest; inference worker digest also recorded at runtime"
+    },
+    {
+      "path": "provenance/l4-continuation/study_model_job.py",
+      "sha256": "5bfd65f102bb079937620c92a7273d76a98e328b69a284c49118e1aa0a23254b",
+      "saved_source": "scripts/study_model_job.py",
+      "recorded_in": "results/l4-continuation-20261028T224638Z/source-hashes.json",
+      "attestation": "launch-recorded source digest; inference worker digest also recorded at runtime"
+    },
+    {
+      "path": "provenance/l4-continuation/run_l4_followup.py",
+      "sha256": "cb1987e81d1a6b2e9b3629410053d7e002e222d311d9264cf7af1c3a640ba583",
+      "saved_source": "scripts/run_l4_followup.py",
+      "recorded_in": "results/l4-continuation-20261028T224638Z/source-hashes.json",
+      "attestation": "launch-recorded source digest; inference worker digest also recorded at runtime"
+    },
+    {
+      "path": "provenance/l4-continuation/followup_state.py",
+      "sha256": "d4dd41b1e7f83e8f3fe4d61a82a607fcb36a0db4e4739f24b0055083cdbb8ca4",
+      "saved_source": "scripts/followup_state.py",
+      "recorded_in": "results/l4-continuation-20261028T224638Z/source-hashes.json",
+      "attestation": "launch-recorded source digest; inference worker digest also recorded at runtime"
+    }
+  ],
+  "process_mapping": [
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "process_index": 0,
+      "arm": "default",
+      "worker_source_sha256": "6465f289db0e4603dc679b6c5aed2ec177c9dfe0c5cd98dbb4297f702aeb8aae",
+      "attestation": "launch_only_no_runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-pre-bos.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "process_index": 1,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "6465f289db0e4603dc679b6c5aed2ec177c9dfe0c5cd98dbb4297f702aeb8aae",
+      "attestation": "launch_only_no_runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-pre-bos.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "process_index": 2,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "6465f289db0e4603dc679b6c5aed2ec177c9dfe0c5cd98dbb4297f702aeb8aae",
+      "attestation": "launch_only_no_runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-pre-bos.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "process_index": 3,
+      "arm": "default",
+      "worker_source_sha256": "6465f289db0e4603dc679b6c5aed2ec177c9dfe0c5cd98dbb4297f702aeb8aae",
+      "attestation": "launch_only_no_runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-pre-bos.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "process_index": 4,
+      "arm": "default",
+      "worker_source_sha256": "6465f289db0e4603dc679b6c5aed2ec177c9dfe0c5cd98dbb4297f702aeb8aae",
+      "attestation": "launch_only_no_runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-pre-bos.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "process_index": 5,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "6465f289db0e4603dc679b6c5aed2ec177c9dfe0c5cd98dbb4297f702aeb8aae",
+      "attestation": "launch_only_no_runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-pre-bos.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "process_index": 0,
+      "arm": "default",
+      "worker_source_sha256": "6465f289db0e4603dc679b6c5aed2ec177c9dfe0c5cd98dbb4297f702aeb8aae",
+      "attestation": "launch_only_no_runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-pre-bos.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "process_index": 1,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "6465f289db0e4603dc679b6c5aed2ec177c9dfe0c5cd98dbb4297f702aeb8aae",
+      "attestation": "launch_only_no_runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-pre-bos.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "process_index": 2,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "6465f289db0e4603dc679b6c5aed2ec177c9dfe0c5cd98dbb4297f702aeb8aae",
+      "attestation": "launch_only_no_runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-pre-bos.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "process_index": 3,
+      "arm": "default",
+      "worker_source_sha256": "6465f289db0e4603dc679b6c5aed2ec177c9dfe0c5cd98dbb4297f702aeb8aae",
+      "attestation": "launch_only_no_runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-pre-bos.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "process_index": 4,
+      "arm": "default",
+      "worker_source_sha256": "6465f289db0e4603dc679b6c5aed2ec177c9dfe0c5cd98dbb4297f702aeb8aae",
+      "attestation": "launch_only_no_runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-pre-bos.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "process_index": 5,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "6465f289db0e4603dc679b6c5aed2ec177c9dfe0c5cd98dbb4297f702aeb8aae",
+      "attestation": "launch_only_no_runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-pre-bos.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen3-1.7B",
+      "process_index": 0,
+      "arm": "default",
+      "worker_source_sha256": "6465f289db0e4603dc679b6c5aed2ec177c9dfe0c5cd98dbb4297f702aeb8aae",
+      "attestation": "launch_only_no_runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-pre-bos.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen3-1.7B",
+      "process_index": 1,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "6465f289db0e4603dc679b6c5aed2ec177c9dfe0c5cd98dbb4297f702aeb8aae",
+      "attestation": "launch_only_no_runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-pre-bos.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen3-1.7B",
+      "process_index": 2,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen3-1.7B",
+      "process_index": 3,
+      "arm": "default",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen3-1.7B",
+      "process_index": 4,
+      "arm": "default",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen3-1.7B",
+      "process_index": 5,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "meta-llama/Llama-3.2-3B-Instruct",
+      "process_index": 0,
+      "arm": "default",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "meta-llama/Llama-3.2-3B-Instruct",
+      "process_index": 1,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "meta-llama/Llama-3.2-3B-Instruct",
+      "process_index": 2,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "meta-llama/Llama-3.2-3B-Instruct",
+      "process_index": 3,
+      "arm": "default",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "meta-llama/Llama-3.2-3B-Instruct",
+      "process_index": 4,
+      "arm": "default",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "meta-llama/Llama-3.2-3B-Instruct",
+      "process_index": 5,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Salesforce/xLAM-2-3b-fc-r",
+      "process_index": 0,
+      "arm": "default",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Salesforce/xLAM-2-3b-fc-r",
+      "process_index": 1,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Salesforce/xLAM-2-3b-fc-r",
+      "process_index": 2,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Salesforce/xLAM-2-3b-fc-r",
+      "process_index": 3,
+      "arm": "default",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Salesforce/xLAM-2-3b-fc-r",
+      "process_index": 4,
+      "arm": "default",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Salesforce/xLAM-2-3b-fc-r",
+      "process_index": 5,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "process_index": 0,
+      "arm": "default",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "process_index": 1,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "process_index": 2,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "process_index": 3,
+      "arm": "default",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "process_index": 4,
+      "arm": "default",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/study-20261028T065939Z",
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "process_index": 5,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "e4f9393c96acbc3665a0314c1578aba514d07e1478fbceffeaa5f677ec9c2d69",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/a10/worker-bos-fixed.py"
+    },
+    {
+      "session": "results/l4-continuation-20261028T224638Z",
+      "model": "meta-llama/Llama-3.2-3B-Instruct",
+      "process_index": 0,
+      "arm": "default",
+      "worker_source_sha256": "4342292d7b16c92c9df78b20b81ce048d9c8915f1c69ebef38cbfde7e3bca007",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/l4-initial/gpu_worker.py"
+    },
+    {
+      "session": "results/l4-continuation-20261028T224638Z",
+      "model": "meta-llama/Llama-3.2-3B-Instruct",
+      "process_index": 1,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "4342292d7b16c92c9df78b20b81ce048d9c8915f1c69ebef38cbfde7e3bca007",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/l4-initial/gpu_worker.py"
+    },
+    {
+      "session": "results/l4-continuation-20261028T224638Z",
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "process_index": 0,
+      "arm": "default",
+      "worker_source_sha256": "4342292d7b16c92c9df78b20b81ce048d9c8915f1c69ebef38cbfde7e3bca007",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/l4-initial/gpu_worker.py"
+    },
+    {
+      "session": "results/l4-continuation-20261028T224638Z",
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "process_index": 1,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "4342292d7b16c92c9df78b20b81ce048d9c8915f1c69ebef38cbfde7e3bca007",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/l4-initial/gpu_worker.py"
+    },
+    {
+      "session": "results/l4-continuation-20261028T224638Z",
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "process_index": 0,
+      "arm": "default",
+      "worker_source_sha256": "4342292d7b16c92c9df78b20b81ce048d9c8915f1c69ebef38cbfde7e3bca007",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/l4-initial/gpu_worker.py"
+    },
+    {
+      "session": "results/l4-continuation-20261028T224638Z",
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "process_index": 1,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "4342292d7b16c92c9df78b20b81ce048d9c8915f1c69ebef38cbfde7e3bca007",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/l4-initial/gpu_worker.py"
+    },
+    {
+      "session": "results/l4-continuation-20261028T224638Z",
+      "model": "Qwen/Qwen3-1.7B",
+      "process_index": 0,
+      "arm": "default",
+      "worker_source_sha256": "4342292d7b16c92c9df78b20b81ce048d9c8915f1c69ebef38cbfde7e3bca007",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/l4-initial/gpu_worker.py"
+    },
+    {
+      "session": "results/l4-continuation-20261028T224638Z",
+      "model": "Qwen/Qwen3-1.7B",
+      "process_index": 1,
+      "arm": "batch_invariant",
+      "worker_source_sha256": "4342292d7b16c92c9df78b20b81ce048d9c8915f1c69ebef38cbfde7e3bca007",
+      "attestation": "runtime_self_hash",
+      "matching_shipped_source": "provenance/l4-initial/gpu_worker.py"
+    }
+  ],
+  "note": "Source snapshots are not independent full-environment attestations. Early A10 processes lack runtime worker hashes.",
+  "new_inference": false
+}
