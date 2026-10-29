@@ -1,0 +1,46 @@
+{
+  "gpu": "NVIDIA A10",
+  "models": [
+    "Qwen/Qwen2.5-0.5B-Instruct",
+    "Qwen/Qwen2.5-1.5B-Instruct"
+  ],
+  "changes": {
+    "Qwen/Qwen2.5-0.5B-Instruct:default": 0.11,
+    "Qwen/Qwen2.5-0.5B-Instruct:batch_invariant": 0.0,
+    "Qwen/Qwen2.5-1.5B-Instruct:default": 0.03,
+    "Qwen/Qwen2.5-1.5B-Instruct:batch_invariant": 0.0
+  },
+  "throughput_ratios": [
+    {
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "configuration": "serial",
+      "fix_over_default": 0.7202349367649559
+    },
+    {
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "configuration": "batch8",
+      "fix_over_default": 0.7475254129099826
+    },
+    {
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "configuration": "batch32",
+      "fix_over_default": 0.7380072237998615
+    },
+    {
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "configuration": "serial",
+      "fix_over_default": 0.5710685090745983
+    },
+    {
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "configuration": "batch8",
+      "fix_over_default": 0.6140158383936538
+    },
+    {
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "configuration": "batch32",
+      "fix_over_default": 0.683144030345306
+    }
+  ],
+  "job_result_sha256": "b64800379e2e289cfcc3caa801b09624cdf6f288757aec68e2480e0c718950ac"
+}

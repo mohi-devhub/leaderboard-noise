@@ -1,0 +1,4 @@
+=> Step 1: RUN python /opt/compiler_smoke.py --output /opt/compiler-preflight.json
+cc (Debian 14.2.0-19) 14.2.0
+C compiler and Python headers preflight passed
+No known vulnerabilities found, 3 ignored

@@ -1,0 +1,16 @@
+{
+  "status": "failed_before_smoke_and_benchmark",
+  "root_cause": "Triton host C compiler missing",
+  "queue_and_provisioning_seconds": 847.451046,
+  "execution_seconds": 58.486404,
+  "container_startup_seconds": 6.232109,
+  "completed_smoke_requests": 0,
+  "completed_benchmark_predictions": 0,
+  "resource_rate_ceiling_usd_per_hour": "1.1172",
+  "timed_resource_estimate_usd": "0.02070497853433333333333333333",
+  "estimate_scope": "execution + observed container startup + 2s configured scaledown at resource ceilings; excludes image build, egress, metering differences",
+  "account_metered_change_usd": "0.01012450",
+  "project_invoice_actual_usd": null,
+  "concurrent_unrelated_activity": true,
+  "retry_authorized": false
+}

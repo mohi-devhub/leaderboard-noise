@@ -1,0 +1,8 @@
+{
+  "sources_sha256": {
+    "results/l4-followup-20261028T190732Z/pairwise-gpu-comparison.json": "589df181b20f81b52b169c9221876839f59658c7f3e3ccc8e201395b6533b744",
+    "results/l4-followup-20261028T190732Z/greedy-summary.json": "5f8551f0736c27782579d6ee3026f645e8b0449e65a85691afe82f4666e03aa9",
+    "results/study-20261028T065939Z/greedy-summary.json": "557202638c1a2b0886970f8d62cc6817dc7d850df5c5058bd9763dfeeb45f831"
+  },
+  "script_sha256": "149103d6a037a7d73e0daa518a778cb2e2c9815cf83d3ec84af54ce99a3969f3"
+}

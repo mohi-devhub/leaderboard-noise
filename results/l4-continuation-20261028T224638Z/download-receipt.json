@@ -1,0 +1,19 @@
+{
+  "verified": [
+    {
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "file": "Qwen2.5-3B-Instruct.json",
+      "sha256": "e5ec7db1027c4154524f49b1bde9c7a4db9db6aeb902cdad3937f6257e792ea9",
+      "status": "complete",
+      "remote_seconds": 2530.3054071009997
+    },
+    {
+      "model": "Qwen/Qwen3-1.7B",
+      "file": "Qwen3-1.7B.json",
+      "sha256": "bdf2c036ab54a4f507951d371d516caf200d7af0fcb1c0fa53c6d96d874d7b80",
+      "status": "complete",
+      "remote_seconds": 2167.387377128
+    }
+  ],
+  "at": "2026-10-29T00:33:54.923468+00:00"
+}

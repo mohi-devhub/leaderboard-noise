@@ -1,0 +1,54 @@
+{
+  "arms": {
+    "default": {
+      "comparison": "exact decoded output text across all runs",
+      "models": {
+        "Qwen/Qwen2.5-0.5B-Instruct": {
+          "n_items": 100,
+          "n_runs": 3,
+          "changed_items": 11,
+          "changed_fraction": 0.11,
+          "score_changed_fraction": 0.03
+        },
+        "Qwen/Qwen2.5-1.5B-Instruct": {
+          "n_items": 100,
+          "n_runs": 3,
+          "changed_items": 3,
+          "changed_fraction": 0.03,
+          "score_changed_fraction": 0.0
+        }
+      }
+    },
+    "batch_invariant": {
+      "comparison": "exact decoded output text across all runs",
+      "models": {
+        "Qwen/Qwen2.5-0.5B-Instruct": {
+          "n_items": 100,
+          "n_runs": 3,
+          "changed_items": 0,
+          "changed_fraction": 0.0,
+          "score_changed_fraction": 0.0
+        },
+        "Qwen/Qwen2.5-1.5B-Instruct": {
+          "n_items": 100,
+          "n_runs": 3,
+          "changed_items": 0,
+          "changed_fraction": 0.0,
+          "score_changed_fraction": 0.0
+        }
+      }
+    }
+  },
+  "observed_orders": {
+    "default": [
+      -1,
+      -1,
+      -1
+    ],
+    "batch_invariant": [
+      -1,
+      -1,
+      -1
+    ]
+  }
+}

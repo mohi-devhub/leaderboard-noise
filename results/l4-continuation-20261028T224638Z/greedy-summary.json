@@ -1,0 +1,118 @@
+{
+  "default": {
+    "meta-llama/Llama-3.2-3B-Instruct": {
+      "changed_text": 12,
+      "changed_text_fraction": 0.024,
+      "changed_text_ci95": [
+        0.013781314655496988,
+        0.04147705746390075
+      ],
+      "changed_correctness": 2,
+      "scores": {
+        "serial": 0.916,
+        "batch8": 0.914,
+        "batch32": 0.916
+      }
+    },
+    "Qwen/Qwen3-4B-Instruct-2507": {
+      "changed_text": 12,
+      "changed_text_fraction": 0.024,
+      "changed_text_ci95": [
+        0.013781314655496988,
+        0.04147705746390075
+      ],
+      "changed_correctness": 5,
+      "scores": {
+        "serial": 0.914,
+        "batch8": 0.914,
+        "batch32": 0.918
+      }
+    },
+    "Qwen/Qwen2.5-3B-Instruct": {
+      "changed_text": 23,
+      "changed_text_fraction": 0.046,
+      "changed_text_ci95": [
+        0.03084510837081621,
+        0.06807779276827323
+      ],
+      "changed_correctness": 8,
+      "scores": {
+        "serial": 0.854,
+        "batch8": 0.856,
+        "batch32": 0.856
+      }
+    },
+    "Qwen/Qwen3-1.7B": {
+      "changed_text": 12,
+      "changed_text_fraction": 0.024,
+      "changed_text_ci95": [
+        0.013781314655496988,
+        0.04147705746390075
+      ],
+      "changed_correctness": 4,
+      "scores": {
+        "serial": 0.864,
+        "batch8": 0.866,
+        "batch32": 0.868
+      }
+    }
+  },
+  "batch_invariant": {
+    "meta-llama/Llama-3.2-3B-Instruct": {
+      "changed_text": 0,
+      "changed_text_fraction": 0.0,
+      "changed_text_ci95": [
+        0.0,
+        0.007624340461552236
+      ],
+      "changed_correctness": 0,
+      "scores": {
+        "serial": 0.916,
+        "batch8": 0.916,
+        "batch32": 0.916
+      }
+    },
+    "Qwen/Qwen3-4B-Instruct-2507": {
+      "changed_text": 0,
+      "changed_text_fraction": 0.0,
+      "changed_text_ci95": [
+        0.0,
+        0.007624340461552236
+      ],
+      "changed_correctness": 0,
+      "scores": {
+        "serial": 0.914,
+        "batch8": 0.914,
+        "batch32": 0.914
+      }
+    },
+    "Qwen/Qwen2.5-3B-Instruct": {
+      "changed_text": 0,
+      "changed_text_fraction": 0.0,
+      "changed_text_ci95": [
+        0.0,
+        0.007624340461552236
+      ],
+      "changed_correctness": 0,
+      "scores": {
+        "serial": 0.846,
+        "batch8": 0.846,
+        "batch32": 0.846
+      }
+    },
+    "Qwen/Qwen3-1.7B": {
+      "changed_text": 0,
+      "changed_text_fraction": 0.0,
+      "changed_text_ci95": [
+        0.0,
+        0.007624340461552236
+      ],
+      "changed_correctness": 0,
+      "scores": {
+        "serial": 0.866,
+        "batch8": 0.866,
+        "batch32": 0.866
+      }
+    }
+  }
+}

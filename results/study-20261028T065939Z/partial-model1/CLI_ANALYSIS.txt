@@ -1,0 +1,31 @@
+500 paired items; 5000 resamples; seed=20261101
+
+pass@1 — items uncertainty (95% CI)
+  Qwen/Qwen2.5-1.5B-Instruct: 0.7936 [0.7636, 0.8230]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+
+pass@1 — sampling uncertainty (95% CI)
+  Qwen/Qwen2.5-1.5B-Instruct: 0.7936 [0.7876, 0.7994]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+
+pass@5 — items uncertainty (95% CI)
+  Qwen/Qwen2.5-1.5B-Instruct: 0.8876 [0.8616, 0.9130]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+
+pass@5 — sampling uncertainty (empirical resampling range; diagnostic)
+  Qwen/Qwen2.5-1.5B-Instruct: 0.8876 [0.8711, 0.8854]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+
+pass@10 — items uncertainty (95% CI)
+  Qwen/Qwen2.5-1.5B-Instruct: 0.9100 [0.8840, 0.9340]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+
+pass@10 — sampling uncertainty (empirical resampling range; diagnostic)
+  Qwen/Qwen2.5-1.5B-Instruct: 0.9100 [0.8880, 0.9040]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+Note: Bootstrap win fractions are resampling stability, not posterior probabilities or p-values.
+Note: Item intervals resample whole observed item vectors and include finite-repeat noise; do not add their variance to sampling intervals.
+Note: Sampling intervals condition on these items and empirical generation probabilities; pass@k resampling can be biased for k>1.
+Note: Percentile bootstrap can collapse at boundaries or with no observed variation; a point interval does not prove certainty.
+Note: Pairwise intervals are unadjusted for multiple comparisons; no familywise significance claim is made.
+Note: Planning assumes independent items and independent iid generations across models; extrapolations require validation.

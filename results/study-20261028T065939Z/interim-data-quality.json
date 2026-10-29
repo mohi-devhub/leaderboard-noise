@@ -1,0 +1,85 @@
+[
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "predictions": 9800,
+    "empty_outputs": 0,
+    "finish_reasons": {
+      "stop": 9800
+    },
+    "min_tokens": 9,
+    "max_tokens": 278,
+    "gpu": "NVIDIA A10",
+    "gpu_uuid": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+    "smoke_requests": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ]
+  },
+  {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "predictions": 9800,
+    "empty_outputs": 0,
+    "finish_reasons": {
+      "stop": 9799,
+      "length": 1
+    },
+    "min_tokens": 7,
+    "max_tokens": 512,
+    "gpu": "NVIDIA A10",
+    "gpu_uuid": "GPU-df755a7a-4f7b-ab01-e69f-d911ae000a49",
+    "smoke_requests": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ]
+  },
+  {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "predictions": 9800,
+    "empty_outputs": 0,
+    "finish_reasons": {
+      "stop": 9799,
+      "length": 1
+    },
+    "min_tokens": 9,
+    "max_tokens": 512,
+    "gpu": "NVIDIA A10",
+    "gpu_uuid": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+    "smoke_requests": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "predictions": 9800,
+    "empty_outputs": 0,
+    "finish_reasons": {
+      "stop": 9799,
+      "length": 1
+    },
+    "min_tokens": 8,
+    "max_tokens": 512,
+    "gpu": "NVIDIA A10",
+    "gpu_uuid": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+    "smoke_requests": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ]
+  }
+]

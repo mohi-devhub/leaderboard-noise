@@ -1,0 +1,254 @@
+[
+  {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "arm": "default",
+    "configuration": "serial",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "arm": "default",
+    "configuration": "batch8",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "arm": "default",
+    "configuration": "batch32",
+    "items": 100,
+    "changed_text_across_repetitions": 5
+  },
+  {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "arm": "batch_invariant",
+    "configuration": "serial",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "arm": "batch_invariant",
+    "configuration": "batch8",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "arm": "batch_invariant",
+    "configuration": "batch32",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "arm": "default",
+    "configuration": "serial",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "arm": "default",
+    "configuration": "batch8",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "arm": "default",
+    "configuration": "batch32",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "arm": "batch_invariant",
+    "configuration": "serial",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "arm": "batch_invariant",
+    "configuration": "batch8",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "arm": "batch_invariant",
+    "configuration": "batch32",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "arm": "default",
+    "configuration": "serial",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "arm": "default",
+    "configuration": "batch8",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "arm": "default",
+    "configuration": "batch32",
+    "items": 100,
+    "changed_text_across_repetitions": 2
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "arm": "batch_invariant",
+    "configuration": "serial",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "arm": "batch_invariant",
+    "configuration": "batch8",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "arm": "batch_invariant",
+    "configuration": "batch32",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "arm": "default",
+    "configuration": "serial",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "arm": "default",
+    "configuration": "batch8",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "arm": "default",
+    "configuration": "batch32",
+    "items": 100,
+    "changed_text_across_repetitions": 1
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "arm": "batch_invariant",
+    "configuration": "serial",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "arm": "batch_invariant",
+    "configuration": "batch8",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "arm": "batch_invariant",
+    "configuration": "batch32",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Salesforce/xLAM-2-3b-fc-r",
+    "arm": "default",
+    "configuration": "serial",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Salesforce/xLAM-2-3b-fc-r",
+    "arm": "default",
+    "configuration": "batch8",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Salesforce/xLAM-2-3b-fc-r",
+    "arm": "default",
+    "configuration": "batch32",
+    "items": 100,
+    "changed_text_across_repetitions": 2
+  },
+  {
+    "model": "Salesforce/xLAM-2-3b-fc-r",
+    "arm": "batch_invariant",
+    "configuration": "serial",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Salesforce/xLAM-2-3b-fc-r",
+    "arm": "batch_invariant",
+    "configuration": "batch8",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Salesforce/xLAM-2-3b-fc-r",
+    "arm": "batch_invariant",
+    "configuration": "batch32",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "arm": "default",
+    "configuration": "serial",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "arm": "default",
+    "configuration": "batch8",
+    "items": 100,
+    "changed_text_across_repetitions": 1
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "arm": "default",
+    "configuration": "batch32",
+    "items": 100,
+    "changed_text_across_repetitions": 1
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "arm": "batch_invariant",
+    "configuration": "serial",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "arm": "batch_invariant",
+    "configuration": "batch8",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "arm": "batch_invariant",
+    "configuration": "batch32",
+    "items": 100,
+    "changed_text_across_repetitions": 0
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "object_id": "fu-CDdjnxxplwHDPjVFNIDfPt",
+  "all_variants": false,
+  "variant_count": 0,
+  "since": "2026-10-28T04:13:27.570455+00:00",
+  "until": "2026-10-28T05:13:27.570455+00:00",
+  "input_success_count": 1,
+  "input_failure_count": 0,
+  "input_timeout_count": 0,
+  "input_running_at_end_count": 0,
+  "input_percentile_stats": {
+    "End-to-end latency (s)": {
+      "unit": "seconds",
+      "percentiles": {
+        "p50": 601.965319,
+        "p90": 601.965319,
+        "p99": 601.965319
+      }
+    },
+    "Execution time (s)": {
+      "unit": "seconds",
+      "percentiles": {
+        "p50": 591.572542,
+        "p90": 591.572542,
+        "p99": 591.572542
+      }
+    }
+  },
+  "container_total_count": 1,
+  "container_started_count": 1,
+  "container_error_count": 0,
+  "container_creating_at_end_count": 0,
+  "container_percentile_stats": {
+    "CPU Usage (cores)": {
+      "unit": "cores",
+      "percentiles": {
+        "p50": 1.0119693588098742,
+        "p90": 1.0756506039511344,
+        "p99": 3.671380715154865
+      }
+    },
+    "Memory Usage (GiB)": {
+      "unit": "GiB",
+      "percentiles": {
+        "p50": 2.4295806884765625,
+        "p90": 2.9636184692382814,
+        "p99": 2.9868232727050783
+      }
+    },
+    "GPU Utilization (%)": {
+      "unit": "percent",
+      "percentiles": {
+        "p50": 58.5,
+        "p90": 100.0,
+        "p99": 100.0
+      }
+    },
+    "Startup time (s)": {
+      "unit": "seconds",
+      "percentiles": {
+        "p50": 10.020822,
+        "p90": 10.020822,
+        "p99": 10.020822
+      }
+    }
+  }
+}

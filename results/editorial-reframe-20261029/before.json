@@ -1,0 +1,30 @@
+{
+  "README.md": {
+    "snapshot": "results/editorial-reframe-20261029/README.md.snapshot",
+    "sha256": "1d9bceda4622edb03d2212283d913e37a309270b3ad0c5b8fc35f37f4874b516"
+  },
+  "blog/STUDY.md": {
+    "snapshot": "results/editorial-reframe-20261029/blog--STUDY.md.snapshot",
+    "sha256": "143aa56e1f4056c1e1bb4894e4aadfb97a72548af9e4e73f65f0b796c300080a"
+  },
+  "blog/POST.md": {
+    "snapshot": "results/editorial-reframe-20261029/blog--POST.md.snapshot",
+    "sha256": "edda18a753439c1c08797a868cab933a371721ff5ac9527b347d84c9071c0ea8"
+  },
+  "results/REPORT.md": {
+    "snapshot": "results/editorial-reframe-20261029/results--REPORT.md.snapshot",
+    "sha256": "dc57bb9d97cc7139b4c84f7e3471ddd236c069eeecc267b3d969cfd1affd2745"
+  },
+  "scripts/write_study_article.py": {
+    "snapshot": "results/editorial-reframe-20261029/scripts--write_study_article.py.snapshot",
+    "sha256": "c8ce2e4e059b1b72411a46492f6199dcb9c0ec8d9f6d62a89fd0e3cf3606bce6"
+  },
+  "results/combined-sources.json": {
+    "snapshot": "results/editorial-reframe-20261029/results--combined-sources.json.snapshot",
+    "sha256": "7875dff133fc7f00f8c78db42f4af5f8b7784819a3dcc89458a73e9b15722e8c"
+  },
+  "results/metadata/verification.json": {
+    "snapshot": "results/editorial-reframe-20261029/results--metadata--verification.json.snapshot",
+    "sha256": "0fae401ffdd7ddcdad4924ea5406d1526b57aa15663801664a2fa09c0297432c"
+  }
+}

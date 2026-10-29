@@ -1,0 +1,8 @@
+{
+  "captured_at": "2026-10-28T14:06:37.904304+00:00",
+  "function_ast_sha256": {
+    "gpu_job": "7a62567a091c087c0ec4567e3c7193323514f903436976862fb7f7737ee04258",
+    "server_controller": "8d59b6db4d25d114a3c6401ec72bcff0416d1d11d12907561ba4ebe261d9b2ad"
+  },
+  "note": "Server function bodies unchanged since submission; later host cleanup refactoring does not alter these bodies."
+}

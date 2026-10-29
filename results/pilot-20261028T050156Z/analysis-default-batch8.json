@@ -1,0 +1,341 @@
+{
+  "schema_version": 1,
+  "n_items": 100,
+  "models": [
+    "Qwen/Qwen2.5-0.5B-Instruct",
+    "Qwen/Qwen2.5-1.5B-Instruct"
+  ],
+  "minimum_samples": 1,
+  "samples_per_model": {
+    "Qwen/Qwen2.5-0.5B-Instruct": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Qwen/Qwen2.5-1.5B-Instruct": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "config": {
+    "ks": [
+      1
+    ],
+    "resamples": 5000,
+    "seed": 20261101,
+    "confidence": 0.95,
+    "gap": 0.05,
+    "alpha": 0.05,
+    "power": 0.8,
+    "sample_grid": [
+      1,
+      3,
+      5,
+      10,
+      20
+    ]
+  },
+  "metrics": {
+    "pass@1": {
+      "items": {
+        "models": {
+          "Qwen/Qwen2.5-0.5B-Instruct": {
+            "estimate": 0.6,
+            "ci": [
+              0.5,
+              0.7
+            ],
+            "bootstrap_se": 0.048131345558638364,
+            "rank_probabilities": {
+              "1": 0.0,
+              "2": 1.0
+            }
+          },
+          "Qwen/Qwen2.5-1.5B-Instruct": {
+            "estimate": 0.85,
+            "ci": [
+              0.78,
+              0.92
+            ],
+            "bootstrap_se": 0.03599859435810171,
+            "rank_probabilities": {
+              "1": 1.0,
+              "2": 0.0
+            }
+          }
+        },
+        "pairwise": [
+          {
+            "a": "Qwen/Qwen2.5-0.5B-Instruct",
+            "b": "Qwen/Qwen2.5-1.5B-Instruct",
+            "difference": -0.25,
+            "ci": [
+              -0.35,
+              -0.15000000000000002
+            ],
+            "p_a_beats_b": 0.0,
+            "p_tie": 0.0,
+            "p_b_beats_a": 1.0,
+            "rank_flip_frequency": 0.0,
+            "planning": {
+              "status": "need_at_least_two_samples_per_item",
+              "observed_difference_variance": 0.2702020202020202
+            }
+          }
+        ]
+      },
+      "sampling": {
+        "models": {
+          "Qwen/Qwen2.5-0.5B-Instruct": {
+            "estimate": 0.6,
+            "ci": [
+              0.6,
+              0.6
+            ],
+            "bootstrap_se": 0.0,
+            "rank_probabilities": {
+              "1": 0.0,
+              "2": 1.0
+            }
+          },
+          "Qwen/Qwen2.5-1.5B-Instruct": {
+            "estimate": 0.85,
+            "ci": [
+              0.85,
+              0.85
+            ],
+            "bootstrap_se": 1.1103340635837404e-16,
+            "rank_probabilities": {
+              "1": 1.0,
+              "2": 0.0
+            }
+          }
+        },
+        "pairwise": [
+          {
+            "a": "Qwen/Qwen2.5-0.5B-Instruct",
+            "b": "Qwen/Qwen2.5-1.5B-Instruct",
+            "difference": -0.25,
+            "ci": [
+              -0.25,
+              -0.25
+            ],
+            "p_a_beats_b": 0.0,
+            "p_tie": 0.0,
+            "p_b_beats_a": 1.0,
+            "rank_flip_frequency": 0.0
+          }
+        ]
+      }
+    }
+  },
+  "warnings": [
+    "Bootstrap win fractions are resampling stability, not posterior probabilities or p-values.",
+    "Item intervals resample whole observed item vectors and include finite-repeat noise; do not add their variance to sampling intervals.",
+    "Sampling intervals condition on these items and empirical generation probabilities; pass@k resampling can be biased for k>1.",
+    "Percentile bootstrap can collapse at boundaries or with no observed variation; a point interval does not prove certainty.",
+    "Pairwise intervals are unadjusted for multiple comparisons; no familywise significance claim is made.",
+    "Planning assumes independent items and independent iid generations across models; extrapolations require validation.",
+    "One sample per item cannot identify within-item sampling uncertainty."
+  ],
+  "provenance": {
+    "input_sha256": "3aec9833fe9ce330c8f052a233f72117992026def7c2e7ea27e5e6827f617ac9",
+    "condition": "default:batch8",
+    "config_sha256": "d85489424908c3c001d974f21bd09c5b25d6939b6c5eb286189a91310aad04a0"
+  }
+}

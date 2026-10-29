@@ -1,0 +1,2216 @@
+[
+  {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "configuration": "serial",
+    "baseline": [
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 55.576095104000046,
+        "warmup_seconds": 0.20977483799993024,
+        "completions": 100,
+        "generated_tokens": 3842,
+        "completions_per_second": 1.7993347645758324,
+        "generated_tokens_per_second": 69.13044165500348
+      },
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 55.44864589099984,
+        "warmup_seconds": 0.22620463800012658,
+        "completions": 100,
+        "generated_tokens": 3842,
+        "completions_per_second": 1.8034705517710672,
+        "generated_tokens_per_second": 69.2893385990444
+      },
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 56.965870547999884,
+        "warmup_seconds": 0.22737864400005492,
+        "completions": 100,
+        "generated_tokens": 3842,
+        "completions_per_second": 1.7554370544682403,
+        "generated_tokens_per_second": 67.44389163266979
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 100.36571160799986,
+        "warmup_seconds": 0.38828399099998023,
+        "completions": 100,
+        "generated_tokens": 3837,
+        "completions_per_second": 0.9963562096841576,
+        "generated_tokens_per_second": 38.23018776558113
+      },
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 98.61775839200004,
+        "warmup_seconds": 0.3578957800000353,
+        "completions": 100,
+        "generated_tokens": 3837,
+        "completions_per_second": 1.0140161531811098,
+        "generated_tokens_per_second": 38.907799797559186
+      },
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 98.13218722600004,
+        "warmup_seconds": 0.35643834999996216,
+        "completions": 100,
+        "generated_tokens": 3837,
+        "completions_per_second": 1.0190336405087799,
+        "generated_tokens_per_second": 39.10032078632188
+      }
+    ],
+    "token_rate_ratios": [
+      0.5530152397458917,
+      0.5615265000970262,
+      0.57974591678784
+    ],
+    "token_rate_ratio_median": 0.5615265000970262,
+    "token_rate_ratio_range": [
+      0.5530152397458917,
+      0.57974591678784
+    ],
+    "completion_rate_ratios": [
+      0.5537358746686776,
+      0.5622582260549321,
+      0.5805013844928021
+    ],
+    "completion_rate_ratio_median": 0.5622582260549321,
+    "completion_rate_ratio_range": [
+      0.5537358746686776,
+      0.5805013844928021
+    ],
+    "elapsed_time_ratios": [
+      1.8059151406766631,
+      1.778542231416461,
+      1.722648776925354
+    ]
+  },
+  {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "configuration": "batch8",
+    "baseline": [
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 13.743959593999989,
+        "warmup_seconds": 0.5761462250000022,
+        "completions": 100,
+        "generated_tokens": 3839,
+        "completions_per_second": 7.2759236023697,
+        "generated_tokens_per_second": 279.32270709497277
+      },
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 13.717358112000056,
+        "warmup_seconds": 0.5735418619999564,
+        "completions": 100,
+        "generated_tokens": 3839,
+        "completions_per_second": 7.290033487754409,
+        "generated_tokens_per_second": 279.86438559489176
+      },
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 14.275470725999867,
+        "warmup_seconds": 0.5938743310000518,
+        "completions": 100,
+        "generated_tokens": 3839,
+        "completions_per_second": 7.005022945959347,
+        "generated_tokens_per_second": 268.9228308953793
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 23.144327972999918,
+        "warmup_seconds": 0.9482410800001162,
+        "completions": 100,
+        "generated_tokens": 3837,
+        "completions_per_second": 4.320713054043289,
+        "generated_tokens_per_second": 165.785759883641
+      },
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 22.927806502000067,
+        "warmup_seconds": 0.9323557530001381,
+        "completions": 100,
+        "generated_tokens": 3837,
+        "completions_per_second": 4.361516222290025,
+        "generated_tokens_per_second": 167.35137744926826
+      },
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 22.872474573999853,
+        "warmup_seconds": 0.9348569109999971,
+        "completions": 100,
+        "generated_tokens": 3837,
+        "completions_per_second": 4.37206738066175,
+        "generated_tokens_per_second": 167.75622539599132
+      }
+    ],
+    "token_rate_ratios": [
+      0.5935276856216062,
+      0.5979731114894772,
+      0.6238080449973195
+    ],
+    "token_rate_ratio_median": 0.5979731114894772,
+    "token_rate_ratio_range": [
+      0.5935276856216062,
+      0.6238080449973195
+    ],
+    "completion_rate_ratios": [
+      0.5938370563203926,
+      0.5982847993244991,
+      0.6241331990473572
+    ],
+    "completion_rate_ratio_median": 0.5982847993244991,
+    "completion_rate_ratio_range": [
+      0.5938370563203926,
+      0.6241331990473572
+    ],
+    "elapsed_time_ratios": [
+      1.6839636215973537,
+      1.6714447720033376,
+      1.602222092217407
+    ]
+  },
+  {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "configuration": "batch32",
+    "baseline": [
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 6.951217672999974,
+        "warmup_seconds": 1.0584382060000053,
+        "completions": 100,
+        "generated_tokens": 3762,
+        "completions_per_second": 14.38596871860617,
+        "generated_tokens_per_second": 541.2001431939641
+      },
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 6.942675680000093,
+        "warmup_seconds": 1.0445178329998726,
+        "completions": 100,
+        "generated_tokens": 3750,
+        "completions_per_second": 14.403668644363156,
+        "generated_tokens_per_second": 540.1375741636184
+      },
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 7.089429424000173,
+        "warmup_seconds": 1.058235405000005,
+        "completions": 100,
+        "generated_tokens": 3844,
+        "completions_per_second": 14.105507512560234,
+        "generated_tokens_per_second": 542.2157087828153
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 10.55790325099997,
+        "warmup_seconds": 1.4500057879999986,
+        "completions": 100,
+        "generated_tokens": 3837,
+        "completions_per_second": 9.471577606143407,
+        "generated_tokens_per_second": 363.42443274772256
+      },
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 10.483216774000084,
+        "warmup_seconds": 1.4371558759999061,
+        "completions": 100,
+        "generated_tokens": 3837,
+        "completions_per_second": 9.539056775780375,
+        "generated_tokens_per_second": 366.01360848669304
+      },
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 10.4437255549999,
+        "warmup_seconds": 1.437664052999935,
+        "completions": 100,
+        "generated_tokens": 3837,
+        "completions_per_second": 9.575127139579545,
+        "generated_tokens_per_second": 367.39762834566716
+      }
+    ],
+    "token_rate_ratios": [
+      0.6715157734492184,
+      0.6776303408505705,
+      0.6775857327527712
+    ],
+    "token_rate_ratio_median": 0.6775857327527712,
+    "token_rate_ratio_range": [
+      0.6715157734492184,
+      0.6776303408505705
+    ],
+    "completion_rate_ratios": [
+      0.6583899764701484,
+      0.6622657748735051,
+      0.6788218808187783
+    ],
+    "completion_rate_ratio_median": 0.6622657748735051,
+    "completion_rate_ratio_range": [
+      0.6583899764701484,
+      0.6788218808187783
+    ],
+    "elapsed_time_ratios": [
+      1.5188566590295598,
+      1.509967807397269,
+      1.4731404927516838
+    ]
+  },
+  {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "configuration": "serial",
+    "baseline": [
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 72.54921187599996,
+        "warmup_seconds": 0.2797710369999322,
+        "completions": 100,
+        "generated_tokens": 3803,
+        "completions_per_second": 1.378374725433524,
+        "generated_tokens_per_second": 52.41959080823692
+      },
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 72.27855222800008,
+        "warmup_seconds": 0.29414319999978034,
+        "completions": 100,
+        "generated_tokens": 3803,
+        "completions_per_second": 1.3835362900539792,
+        "generated_tokens_per_second": 52.61588511075283
+      },
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 73.69532643899993,
+        "warmup_seconds": 0.2963309759998083,
+        "completions": 100,
+        "generated_tokens": 3803,
+        "completions_per_second": 1.3569381510613612,
+        "generated_tokens_per_second": 51.60435788486356
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 173.124542433,
+        "warmup_seconds": 0.6775005130002683,
+        "completions": 100,
+        "generated_tokens": 3818,
+        "completions_per_second": 0.5776188551585658,
+        "generated_tokens_per_second": 22.05348788995404
+      },
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 171.25579611000012,
+        "warmup_seconds": 0.615755498999988,
+        "completions": 100,
+        "generated_tokens": 3818,
+        "completions_per_second": 0.5839218424804059,
+        "generated_tokens_per_second": 22.294135945901896
+      },
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 170.93796695899982,
+        "warmup_seconds": 0.6157664469997144,
+        "completions": 100,
+        "generated_tokens": 3818,
+        "completions_per_second": 0.5850075426718128,
+        "generated_tokens_per_second": 22.33558797920981
+      }
+    ],
+    "token_rate_ratios": [
+      0.42071079819434,
+      0.4237149275161725,
+      0.4328236779739336
+    ],
+    "token_rate_ratio_median": 0.4237149275161725,
+    "token_rate_ratio_range": [
+      0.42071079819434,
+      0.4328236779739336
+    ],
+    "completion_rate_ratios": [
+      0.41905792706471323,
+      0.4220502538879005,
+      0.4311232182647642
+    ],
+    "completion_rate_ratio_median": 0.4220502538879005,
+    "completion_rate_ratio_range": [
+      0.41905792706471323,
+      0.4311232182647642
+    ],
+    "elapsed_time_ratios": [
+      2.386304936418908,
+      2.3693860880027025,
+      2.3195224883153327
+    ]
+  },
+  {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "configuration": "batch8",
+    "baseline": [
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 19.71911386499994,
+        "warmup_seconds": 0.8708552499999769,
+        "completions": 100,
+        "generated_tokens": 3842,
+        "completions_per_second": 5.071221794478963,
+        "generated_tokens_per_second": 194.83634134388177
+      },
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 19.614543654000045,
+        "warmup_seconds": 0.852091972999915,
+        "completions": 100,
+        "generated_tokens": 3842,
+        "completions_per_second": 5.098257790953334,
+        "generated_tokens_per_second": 195.87506432842707
+      },
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 19.704445238999597,
+        "warmup_seconds": 0.8779811640001753,
+        "completions": 100,
+        "generated_tokens": 3842,
+        "completions_per_second": 5.074996975914712,
+        "generated_tokens_per_second": 194.98138381464324
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 40.0065589159999,
+        "warmup_seconds": 1.6563116080001237,
+        "completions": 100,
+        "generated_tokens": 3818,
+        "completions_per_second": 2.4995901349567657,
+        "generated_tokens_per_second": 95.43435135264932
+      },
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 39.924824876,
+        "warmup_seconds": 1.6552334759999212,
+        "completions": 100,
+        "generated_tokens": 3818,
+        "completions_per_second": 2.5047072920315543,
+        "generated_tokens_per_second": 95.62972440976475
+      },
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 39.972728943999755,
+        "warmup_seconds": 1.6532851550000487,
+        "completions": 100,
+        "generated_tokens": 3818,
+        "completions_per_second": 2.5017056038404615,
+        "generated_tokens_per_second": 95.51511995462882
+      }
+    ],
+    "token_rate_ratios": [
+      0.48981802211226,
+      0.48821796045167215,
+      0.4898678944930924
+    ],
+    "token_rate_ratio_median": 0.48981802211226,
+    "token_rate_ratio_range": [
+      0.48821796045167215,
+      0.4898678944930924
+    ],
+    "completion_rate_ratios": [
+      0.4928970248704303,
+      0.49128690520045154,
+      0.4929472107497279
+    ],
+    "completion_rate_ratio_median": 0.4928970248704303,
+    "completion_rate_ratio_range": [
+      0.49128690520045154,
+      0.4929472107497279
+    ],
+    "elapsed_time_ratios": [
+      2.028821334969254,
+      2.035470494765145,
+      2.0286147850985725
+    ]
+  },
+  {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "configuration": "batch32",
+    "baseline": [
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 10.959761335999929,
+        "warmup_seconds": 1.8030888240000422,
+        "completions": 100,
+        "generated_tokens": 3859,
+        "completions_per_second": 9.124286280899781,
+        "generated_tokens_per_second": 352.1062075799225
+      },
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 10.876079940000182,
+        "warmup_seconds": 1.8119845969999915,
+        "completions": 100,
+        "generated_tokens": 3859,
+        "completions_per_second": 9.194489241681532,
+        "generated_tokens_per_second": 354.81533983649035
+      },
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 10.924135617000047,
+        "warmup_seconds": 1.7979772769999727,
+        "completions": 100,
+        "generated_tokens": 3859,
+        "completions_per_second": 9.154042343119656,
+        "generated_tokens_per_second": 353.2544940209875
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 19.0272324890002,
+        "warmup_seconds": 2.677799485000378,
+        "completions": 100,
+        "generated_tokens": 3818,
+        "completions_per_second": 5.2556250656952255,
+        "generated_tokens_per_second": 200.6597650082437
+      },
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 19.004650341999877,
+        "warmup_seconds": 2.6824774540000362,
+        "completions": 100,
+        "generated_tokens": 3818,
+        "completions_per_second": 5.261870026569345,
+        "generated_tokens_per_second": 200.89819761441757
+      },
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 19.03630988199984,
+        "warmup_seconds": 2.6741395819999525,
+        "completions": 100,
+        "generated_tokens": 3818,
+        "completions_per_second": 5.253118940586115,
+        "generated_tokens_per_second": 200.56408115157788
+      }
+    ],
+    "token_rate_ratios": [
+      0.5698842016657634,
+      0.5662049383405958,
+      0.567760876496201
+    ],
+    "token_rate_ratio_median": 0.567760876496201,
+    "token_rate_ratio_range": [
+      0.5662049383405958,
+      0.5698842016657634
+    ],
+    "completion_rate_ratios": [
+      0.5760039639151862,
+      0.5722851904285908,
+      0.5738578371919434
+    ],
+    "completion_rate_ratio_median": 0.5738578371919434,
+    "completion_rate_ratio_range": [
+      0.5722851904285908,
+      0.5760039639151862
+    ],
+    "elapsed_time_ratios": [
+      1.736099163628751,
+      1.7473805311143713,
+      1.7425918671657368
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "configuration": "serial",
+    "baseline": [
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 64.01341565700022,
+        "warmup_seconds": 0.2583339299999352,
+        "completions": 100,
+        "generated_tokens": 3782,
+        "completions_per_second": 1.5621725379539944,
+        "generated_tokens_per_second": 59.08136538542007
+      },
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 64.71458567900027,
+        "warmup_seconds": 0.27799940400018386,
+        "completions": 100,
+        "generated_tokens": 3782,
+        "completions_per_second": 1.5452467005819026,
+        "generated_tokens_per_second": 58.441230216007554
+      },
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 63.29392082100003,
+        "warmup_seconds": 0.2647240229998715,
+        "completions": 100,
+        "generated_tokens": 3782,
+        "completions_per_second": 1.5799305636762102,
+        "generated_tokens_per_second": 59.752973918234275
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 110.41048897600012,
+        "warmup_seconds": 0.43080272099996364,
+        "completions": 100,
+        "generated_tokens": 3810,
+        "completions_per_second": 0.9057110508924289,
+        "generated_tokens_per_second": 34.50759103900154
+      },
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 108.7166498610004,
+        "warmup_seconds": 0.3904105770006936,
+        "completions": 100,
+        "generated_tokens": 3810,
+        "completions_per_second": 0.9198223099024384,
+        "generated_tokens_per_second": 35.0452300072829
+      },
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 108.20232417999978,
+        "warmup_seconds": 0.39215334199980134,
+        "completions": 100,
+        "generated_tokens": 3810,
+        "completions_per_second": 0.9241945656698204,
+        "generated_tokens_per_second": 35.21181295202016
+      }
+    ],
+    "token_rate_ratios": [
+      0.5840689498946011,
+      0.599666192476621,
+      0.5892897146877386
+    ],
+    "token_rate_ratio_median": 0.5892897146877386,
+    "token_rate_ratio_range": [
+      0.5840689498946011,
+      0.599666192476621
+    ],
+    "completion_rate_ratios": [
+      0.5797765796591553,
+      0.5952591968363729,
+      0.5849589766270413
+    ],
+    "completion_rate_ratio_median": 0.5849589766270413,
+    "completion_rate_ratio_range": [
+      0.5797765796591553,
+      0.5952591968363729
+    ],
+    "elapsed_time_ratios": [
+      1.7248023378037964,
+      1.6799404449602884,
+      1.709521590327831
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "configuration": "batch8",
+    "baseline": [
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 15.188972438000292,
+        "warmup_seconds": 0.6628832690003037,
+        "completions": 100,
+        "generated_tokens": 3779,
+        "completions_per_second": 6.583723843610156,
+        "generated_tokens_per_second": 248.79892405002778
+      },
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 15.142541485000038,
+        "warmup_seconds": 0.6502269650000017,
+        "completions": 100,
+        "generated_tokens": 3779,
+        "completions_per_second": 6.6039112456160955,
+        "generated_tokens_per_second": 249.56180597183226
+      },
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 14.883990055999675,
+        "warmup_seconds": 0.642882830000417,
+        "completions": 100,
+        "generated_tokens": 3779,
+        "completions_per_second": 6.718628514515193,
+        "generated_tokens_per_second": 253.89697156352915
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 24.75284067800021,
+        "warmup_seconds": 1.0467035520005084,
+        "completions": 100,
+        "generated_tokens": 3810,
+        "completions_per_second": 4.039940356780054,
+        "generated_tokens_per_second": 153.92172759332004
+      },
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 24.6165187280003,
+        "warmup_seconds": 1.0403959129998839,
+        "completions": 100,
+        "generated_tokens": 3810,
+        "completions_per_second": 4.062312835740418,
+        "generated_tokens_per_second": 154.77411904170992
+      },
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 24.554466425999635,
+        "warmup_seconds": 1.0369813889992656,
+        "completions": 100,
+        "generated_tokens": 3810,
+        "completions_per_second": 4.072578823953366,
+        "generated_tokens_per_second": 155.16525319262323
+      }
+    ],
+    "token_rate_ratios": [
+      0.618659136815117,
+      0.620183519024458,
+      0.6111347143571516
+    ],
+    "token_rate_ratio_median": 0.618659136815117,
+    "token_rate_ratio_range": [
+      0.6111347143571516,
+      0.620183519024458
+    ],
+    "completion_rate_ratios": [
+      0.6136254273029731,
+      0.6151374064024742,
+      0.6061622271799675
+    ],
+    "completion_rate_ratio_median": 0.6136254273029731,
+    "completion_rate_ratio_range": [
+      0.6061622271799675,
+      0.6151374064024742
+    ],
+    "elapsed_time_ratios": [
+      1.6296586736883336,
+      1.6256530485576042,
+      1.649723382884271
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "configuration": "batch32",
+    "baseline": [
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 7.886702274000527,
+        "warmup_seconds": 1.1728923259997828,
+        "completions": 100,
+        "generated_tokens": 3782,
+        "completions_per_second": 12.679570817534492,
+        "generated_tokens_per_second": 479.5413683191545
+      },
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 7.774778537000202,
+        "warmup_seconds": 1.1584356670000489,
+        "completions": 100,
+        "generated_tokens": 3810,
+        "completions_per_second": 12.862102698372642,
+        "generated_tokens_per_second": 490.04611280799764
+      },
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 7.723836039000162,
+        "warmup_seconds": 1.1514244519994463,
+        "completions": 100,
+        "generated_tokens": 3779,
+        "completions_per_second": 12.94693459248325,
+        "generated_tokens_per_second": 489.26465824994204
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 12.009679957999651,
+        "warmup_seconds": 1.6534436550000464,
+        "completions": 100,
+        "generated_tokens": 3810,
+        "completions_per_second": 8.326616558452914,
+        "generated_tokens_per_second": 317.24409087705607
+      },
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 11.965399428999262,
+        "warmup_seconds": 1.6485420600001817,
+        "completions": 100,
+        "generated_tokens": 3810,
+        "completions_per_second": 8.35743099036382,
+        "generated_tokens_per_second": 318.41812073286155
+      },
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 11.941366947999995,
+        "warmup_seconds": 1.6476900950001436,
+        "completions": 100,
+        "generated_tokens": 3810,
+        "completions_per_second": 8.374250656182083,
+        "generated_tokens_per_second": 319.0589500005374
+      }
+    ],
+    "token_rate_ratios": [
+      0.6615572958575642,
+      0.6497717508834098,
+      0.6521193481290556
+    ],
+    "token_rate_ratio_median": 0.6521193481290556,
+    "token_rate_ratio_range": [
+      0.6497717508834098,
+      0.6615572958575642
+    ],
+    "completion_rate_ratios": [
+      0.6566954574628104,
+      0.6497717508834098,
+      0.6468133901783992
+    ],
+    "completion_rate_ratio_median": 0.6497717508834098,
+    "completion_rate_ratio_range": [
+      0.6468133901783992,
+      0.6566954574628104
+    ],
+    "elapsed_time_ratios": [
+      1.5227758752338125,
+      1.5390019628283789,
+      1.5460409682059728
+    ]
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "configuration": "serial",
+    "baseline": [
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 64.7169603350003,
+        "warmup_seconds": 0.2766721529997085,
+        "completions": 100,
+        "generated_tokens": 3654,
+        "completions_per_second": 1.5451900009265098,
+        "generated_tokens_per_second": 56.46124263385467
+      },
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 64.13717036000162,
+        "warmup_seconds": 0.2680226690008567,
+        "completions": 100,
+        "generated_tokens": 3654,
+        "completions_per_second": 1.5591582765298266,
+        "generated_tokens_per_second": 56.971643424399865
+      },
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 64.10316455800057,
+        "warmup_seconds": 0.27505296299932525,
+        "completions": 100,
+        "generated_tokens": 3654,
+        "completions_per_second": 1.5599853874533753,
+        "generated_tokens_per_second": 57.00186605754634
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 160.05007867600034,
+        "warmup_seconds": 0.6567149120000977,
+        "completions": 100,
+        "generated_tokens": 3654,
+        "completions_per_second": 0.6248044413801035,
+        "generated_tokens_per_second": 22.830354288028982
+      },
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 157.9948077250001,
+        "warmup_seconds": 0.5981404580006711,
+        "completions": 100,
+        "generated_tokens": 3654,
+        "completions_per_second": 0.632932192139227,
+        "generated_tokens_per_second": 23.127342300767356
+      },
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 157.75411346200053,
+        "warmup_seconds": 0.5908132389995444,
+        "completions": 100,
+        "generated_tokens": 3654,
+        "completions_per_second": 0.6338978921401487,
+        "generated_tokens_per_second": 23.162628978801035
+      }
+    ],
+    "token_rate_ratios": [
+      0.40435444249928176,
+      0.4059447983356288,
+      0.4063486089282965
+    ],
+    "token_rate_ratio_median": 0.4059447983356288,
+    "token_rate_ratio_range": [
+      0.40435444249928176,
+      0.4063486089282965
+    ],
+    "completion_rate_ratios": [
+      0.4043544424992817,
+      0.4059447983356288,
+      0.4063486089282965
+    ],
+    "completion_rate_ratio_median": 0.4059447983356288,
+    "completion_rate_ratio_range": [
+      0.4043544424992817,
+      0.4063486089282965
+    ],
+    "elapsed_time_ratios": [
+      2.473077812176569,
+      2.463389121131725,
+      2.4609411181138263
+    ]
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "configuration": "batch8",
+    "baseline": [
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 17.463186007999866,
+        "warmup_seconds": 0.8821337159997711,
+        "completions": 100,
+        "generated_tokens": 3658,
+        "completions_per_second": 5.726331950778633,
+        "generated_tokens_per_second": 209.4692227594824
+      },
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 17.329542185998434,
+        "warmup_seconds": 0.8738592600002448,
+        "completions": 100,
+        "generated_tokens": 3658,
+        "completions_per_second": 5.770492891658496,
+        "generated_tokens_per_second": 211.08462997686777
+      },
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 17.334536616999685,
+        "warmup_seconds": 0.8737932660005754,
+        "completions": 100,
+        "generated_tokens": 3658,
+        "completions_per_second": 5.7688302958114095,
+        "generated_tokens_per_second": 211.02381222078137
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 36.30869188299948,
+        "warmup_seconds": 1.778209135999532,
+        "completions": 100,
+        "generated_tokens": 3654,
+        "completions_per_second": 2.7541614642091297,
+        "generated_tokens_per_second": 100.6370599022016
+      },
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 36.23570432100041,
+        "warmup_seconds": 1.7706234180004685,
+        "completions": 100,
+        "generated_tokens": 3654,
+        "completions_per_second": 2.759709018324365,
+        "generated_tokens_per_second": 100.8397675295723
+      },
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 36.201325590000124,
+        "warmup_seconds": 1.769556483000997,
+        "completions": 100,
+        "generated_tokens": 3654,
+        "completions_per_second": 2.7623297868303185,
+        "generated_tokens_per_second": 100.93553041077985
+      }
+    ],
+    "token_rate_ratios": [
+      0.4804384079744044,
+      0.47772198070803673,
+      0.4783134630568476
+    ],
+    "token_rate_ratio_median": 0.4783134630568476,
+    "token_rate_ratio_range": [
+      0.47772198070803673,
+      0.4804384079744044
+    ],
+    "completion_rate_ratios": [
+      0.480964339455493,
+      0.4782449385413241,
+      0.47883706838039086
+    ],
+    "completion_rate_ratio_median": 0.47883706838039086,
+    "completion_rate_ratio_range": [
+      0.4782449385413241,
+      0.480964339455493
+    ],
+    "elapsed_time_ratios": [
+      2.0791562242059674,
+      2.0909787420857193,
+      2.0883930381212554
+    ]
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "configuration": "batch32",
+    "baseline": [
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 10.488889637999819,
+        "warmup_seconds": 1.8857772669998667,
+        "completions": 100,
+        "generated_tokens": 3664,
+        "completions_per_second": 9.53389762417879,
+        "generated_tokens_per_second": 349.32200894991087
+      },
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 10.439535176999925,
+        "warmup_seconds": 1.8759090519997699,
+        "completions": 100,
+        "generated_tokens": 3664,
+        "completions_per_second": 9.578970548450954,
+        "generated_tokens_per_second": 350.973480895243
+      },
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 10.414931268000146,
+        "warmup_seconds": 1.8754248960012774,
+        "completions": 100,
+        "generated_tokens": 3664,
+        "completions_per_second": 9.601599609903312,
+        "generated_tokens_per_second": 351.8026097068573
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 17.77666735599996,
+        "warmup_seconds": 2.846378411000842,
+        "completions": 100,
+        "generated_tokens": 3654,
+        "completions_per_second": 5.625351366337409,
+        "generated_tokens_per_second": 205.55033892596893
+      },
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 17.78877319700041,
+        "warmup_seconds": 2.83717313499983,
+        "completions": 100,
+        "generated_tokens": 3654,
+        "completions_per_second": 5.62152313105337,
+        "generated_tokens_per_second": 205.4104552086901
+      },
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 17.735174707000624,
+        "warmup_seconds": 2.8402139109985,
+        "completions": 100,
+        "generated_tokens": 3654,
+        "completions_per_second": 5.638512258947576,
+        "generated_tokens_per_second": 206.03123794194443
+      }
+    ],
+    "token_rate_ratios": [
+      0.5884265338558805,
+      0.5852591901950567,
+      0.5856444274635194
+    ],
+    "token_rate_ratio_median": 0.5856444274635194,
+    "token_rate_ratio_range": [
+      0.5852591901950567,
+      0.5884265338558805
+    ],
+    "completion_rate_ratios": [
+      0.5900368965648457,
+      0.5868608847495042,
+      0.5872471763071524
+    ],
+    "completion_rate_ratio_median": 0.5872471763071524,
+    "completion_rate_ratio_range": [
+      0.5868608847495042,
+      0.5900368965648457
+    ],
+    "elapsed_time_ratios": [
+      1.6948092667118468,
+      1.7039813454714063,
+      1.7028604654830426
+    ]
+  },
+  {
+    "model": "Salesforce/xLAM-2-3b-fc-r",
+    "configuration": "serial",
+    "baseline": [
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 65.0608593779998,
+        "warmup_seconds": 0.27651145000163524,
+        "completions": 100,
+        "generated_tokens": 3376,
+        "completions_per_second": 1.537022427247784,
+        "generated_tokens_per_second": 51.88987714388518
+      },
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 64.78646941899933,
+        "warmup_seconds": 0.2944923850009218,
+        "completions": 100,
+        "generated_tokens": 3376,
+        "completions_per_second": 1.5435321741837953,
+        "generated_tokens_per_second": 52.10964620044493
+      },
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 64.81440214400027,
+        "warmup_seconds": 0.2928272859990102,
+        "completions": 100,
+        "generated_tokens": 3376,
+        "completions_per_second": 1.542866966169444,
+        "generated_tokens_per_second": 52.08718877788043
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 153.36787527100023,
+        "warmup_seconds": 0.6746691000007559,
+        "completions": 100,
+        "generated_tokens": 3362,
+        "completions_per_second": 0.6520270286283912,
+        "generated_tokens_per_second": 21.921148702486512
+      },
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 151.60078320799948,
+        "warmup_seconds": 0.6136163970004418,
+        "completions": 100,
+        "generated_tokens": 3362,
+        "completions_per_second": 0.6596271990415635,
+        "generated_tokens_per_second": 22.176666431777367
+      },
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 151.1752280969995,
+        "warmup_seconds": 0.6086714800003392,
+        "completions": 100,
+        "generated_tokens": 3362,
+        "completions_per_second": 0.6614840358357944,
+        "generated_tokens_per_second": 22.239093284799406
+      }
+    ],
+    "token_rate_ratios": [
+      0.42245520531300296,
+      0.4255769909945774,
+      0.42695898562764356
+    ],
+    "token_rate_ratio_median": 0.4255769909945774,
+    "token_rate_ratio_range": [
+      0.42245520531300296,
+      0.42695898562764356
+    ],
+    "completion_rate_ratios": [
+      0.42421438820246815,
+      0.4273491735864644,
+      0.42873692310497463
+    ],
+    "completion_rate_ratio_median": 0.4273491735864644,
+    "completion_rate_ratio_range": [
+      0.42421438820246815,
+      0.42873692310497463
+    ],
+    "elapsed_time_ratios": [
+      2.357298639108681,
+      2.3400068651300963,
+      2.332432655339913
+    ]
+  },
+  {
+    "model": "Salesforce/xLAM-2-3b-fc-r",
+    "configuration": "batch8",
+    "baseline": [
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 18.542101991999516,
+        "warmup_seconds": 0.8638281589992403,
+        "completions": 100,
+        "generated_tokens": 3362,
+        "completions_per_second": 5.393131805830195,
+        "generated_tokens_per_second": 181.31709131201114
+      },
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 18.493460604000575,
+        "warmup_seconds": 0.8707569489997695,
+        "completions": 100,
+        "generated_tokens": 3362,
+        "completions_per_second": 5.407316788420206,
+        "generated_tokens_per_second": 181.79399042668734
+      },
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 18.27500277299987,
+        "warmup_seconds": 0.8612347920006869,
+        "completions": 100,
+        "generated_tokens": 3362,
+        "completions_per_second": 5.471955394050255,
+        "generated_tokens_per_second": 183.96714034796958
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 37.1039522939991,
+        "warmup_seconds": 1.6609471190004115,
+        "completions": 100,
+        "generated_tokens": 3362,
+        "completions_per_second": 2.695130675234649,
+        "generated_tokens_per_second": 90.61029330138891
+      },
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 37.03610725099861,
+        "warmup_seconds": 1.6552120720007224,
+        "completions": 100,
+        "generated_tokens": 3362,
+        "completions_per_second": 2.7000677831038433,
+        "generated_tokens_per_second": 90.77627886795122
+      },
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 36.9840481629999,
+        "warmup_seconds": 1.6560192279994226,
+        "completions": 100,
+        "generated_tokens": 3362,
+        "completions_per_second": 2.703868423469214,
+        "generated_tokens_per_second": 90.90405639703496
+      }
+    ],
+    "token_rate_ratios": [
+      0.4997338786196739,
+      0.49933597174962097,
+      0.49413202936726663
+    ],
+    "token_rate_ratio_median": 0.49933597174962097,
+    "token_rate_ratio_range": [
+      0.49413202936726663,
+      0.4997338786196739
+    ],
+    "completion_rate_ratios": [
+      0.49973387861967383,
+      0.49933597174962097,
+      0.4941320293672667
+    ],
+    "completion_rate_ratio_median": 0.49933597174962097,
+    "completion_rate_ratio_range": [
+      0.4941320293672667,
+      0.49973387861967383
+    ],
+    "elapsed_time_ratios": [
+      2.0010650523877276,
+      2.0026596451605614,
+      2.023750618393417
+    ]
+  },
+  {
+    "model": "Salesforce/xLAM-2-3b-fc-r",
+    "configuration": "batch32",
+    "baseline": [
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 10.675589080999998,
+        "warmup_seconds": 1.8116312320016732,
+        "completions": 100,
+        "generated_tokens": 3374,
+        "completions_per_second": 9.36716458841378,
+        "generated_tokens_per_second": 316.048133213081
+      },
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 10.612324341998828,
+        "warmup_seconds": 1.7817321509992325,
+        "completions": 100,
+        "generated_tokens": 3337,
+        "completions_per_second": 9.423006381763585,
+        "generated_tokens_per_second": 314.44572295945085
+      },
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 10.608500274000107,
+        "warmup_seconds": 1.7770211130009557,
+        "completions": 100,
+        "generated_tokens": 3337,
+        "completions_per_second": 9.426403112331105,
+        "generated_tokens_per_second": 314.559071858489
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 18.50917878600012,
+        "warmup_seconds": 2.6968807650009694,
+        "completions": 100,
+        "generated_tokens": 3362,
+        "completions_per_second": 5.402724840263443,
+        "generated_tokens_per_second": 181.63960912965695
+      },
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 18.508449245999145,
+        "warmup_seconds": 2.67360542699862,
+        "completions": 100,
+        "generated_tokens": 3362,
+        "completions_per_second": 5.402937797266639,
+        "generated_tokens_per_second": 181.64676874410438
+      },
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 18.499431393000123,
+        "warmup_seconds": 2.6757040730008157,
+        "completions": 100,
+        "generated_tokens": 3362,
+        "completions_per_second": 5.405571548422745,
+        "generated_tokens_per_second": 181.73531545797266
+      }
+    ],
+    "token_rate_ratios": [
+      0.5747213479258071,
+      0.5776728875002969,
+      0.5777462223048843
+    ],
+    "token_rate_ratio_median": 0.5776728875002969,
+    "token_rate_ratio_range": [
+      0.5747213479258071,
+      0.5777462223048843
+    ],
+    "completion_rate_ratios": [
+      0.5767727031236387,
+      0.5733772830423829,
+      0.5734500725256988
+    ],
+    "completion_rate_ratio_median": 0.5734500725256988,
+    "completion_rate_ratio_range": [
+      0.5733772830423829,
+      0.5767727031236387
+    ],
+    "elapsed_time_ratios": [
+      1.733785240848399,
+      1.7440523536159735,
+      1.743830976593321
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "configuration": "serial",
+    "baseline": [
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 85.18419705500128,
+        "warmup_seconds": 0.3559009109994804,
+        "completions": 100,
+        "generated_tokens": 3788,
+        "completions_per_second": 1.173926660779963,
+        "generated_tokens_per_second": 44.468341910344996
+      },
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 84.15063390999967,
+        "warmup_seconds": 0.36299493000115035,
+        "completions": 100,
+        "generated_tokens": 3788,
+        "completions_per_second": 1.1883451776127016,
+        "generated_tokens_per_second": 45.01451532796914
+      },
+      {
+        "run_id": "serial",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 85.25951737799915,
+        "warmup_seconds": 0.3664555340001243,
+        "completions": 100,
+        "generated_tokens": 3788,
+        "completions_per_second": 1.1728895855303607,
+        "generated_tokens_per_second": 44.429057499890064
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 213.47702226600086,
+        "warmup_seconds": 0.8495275669993134,
+        "completions": 100,
+        "generated_tokens": 3797,
+        "completions_per_second": 0.46843448975691643,
+        "generated_tokens_per_second": 17.786457576070116
+      },
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 211.1594368189999,
+        "warmup_seconds": 0.769006354999874,
+        "completions": 100,
+        "generated_tokens": 3797,
+        "completions_per_second": 0.47357580369811875,
+        "generated_tokens_per_second": 17.98167326641757
+      },
+      {
+        "run_id": "serial",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 1,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 210.93689548800103,
+        "warmup_seconds": 0.7646968459994241,
+        "completions": 100,
+        "generated_tokens": 3797,
+        "completions_per_second": 0.47407543269588137,
+        "generated_tokens_per_second": 18.00064417946262
+      }
+    ],
+    "token_rate_ratios": [
+      0.3999802288992548,
+      0.39946388704633917,
+      0.40515476114943827
+    ],
+    "token_rate_ratio_median": 0.3999802288992548,
+    "token_rate_ratio_range": [
+      0.39946388704633917,
+      0.40515476114943827
+    ],
+    "completion_rate_ratios": [
+      0.39903215882812143,
+      0.3985170408563426,
+      0.4041944259241696
+    ],
+    "completion_rate_ratio_median": 0.39903215882812143,
+    "completion_rate_ratio_range": [
+      0.3985170408563426,
+      0.4041944259241696
+    ],
+    "elapsed_time_ratios": [
+      2.506063679019762,
+      2.509302984512725,
+      2.4740568792198254
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "configuration": "batch8",
+    "baseline": [
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 23.392197577000843,
+        "warmup_seconds": 1.209917257001507,
+        "completions": 100,
+        "generated_tokens": 3793,
+        "completions_per_second": 4.274929692724543,
+        "generated_tokens_per_second": 162.1480832450419
+      },
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 23.561758755000483,
+        "warmup_seconds": 1.2700950229991577,
+        "completions": 100,
+        "generated_tokens": 3793,
+        "completions_per_second": 4.2441653460515605,
+        "generated_tokens_per_second": 160.98119157573566
+      },
+      {
+        "run_id": "batch8",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 23.2740390580002,
+        "warmup_seconds": 1.195145797000805,
+        "completions": 100,
+        "generated_tokens": 3793,
+        "completions_per_second": 4.296632816968058,
+        "generated_tokens_per_second": 162.97128274759845
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 49.2661653819996,
+        "warmup_seconds": 2.519763062000493,
+        "completions": 100,
+        "generated_tokens": 3797,
+        "completions_per_second": 2.029790612373031,
+        "generated_tokens_per_second": 77.071149551804
+      },
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 49.16346803699889,
+        "warmup_seconds": 2.5136249610004597,
+        "completions": 100,
+        "generated_tokens": 3797,
+        "completions_per_second": 2.0340306327605515,
+        "generated_tokens_per_second": 77.23214312591814
+      },
+      {
+        "run_id": "batch8",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 8,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 49.1712830689994,
+        "warmup_seconds": 2.52057966600114,
+        "completions": 100,
+        "generated_tokens": 3797,
+        "completions_per_second": 2.0337073543449216,
+        "generated_tokens_per_second": 77.21986824447667
+      }
+    ],
+    "token_rate_ratios": [
+      0.4753133556030527,
+      0.47975879896244455,
+      0.4738250012063219
+    ],
+    "token_rate_ratio_median": 0.4753133556030527,
+    "token_rate_ratio_range": [
+      0.4738250012063219,
+      0.47975879896244455
+    ],
+    "completion_rate_ratios": [
+      0.4748126304457147,
+      0.4792533906938509,
+      0.4733258439756595
+    ],
+    "completion_rate_ratio_median": 0.4748126304457147,
+    "completion_rate_ratio_range": [
+      0.4733258439756595,
+      0.4792533906938509
+    ],
+    "elapsed_time_ratios": [
+      2.10609393238188,
+      2.0865788733434423,
+      2.112709484866887
+    ]
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "configuration": "batch32",
+    "baseline": [
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 14.089812449999954,
+        "warmup_seconds": 2.5067252349999762,
+        "completions": 100,
+        "generated_tokens": 3793,
+        "completions_per_second": 7.097326551000353,
+        "generated_tokens_per_second": 269.2015960794434
+      },
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 14.052859954999803,
+        "warmup_seconds": 2.5006037000002834,
+        "completions": 100,
+        "generated_tokens": 3793,
+        "completions_per_second": 7.115989223561675,
+        "generated_tokens_per_second": 269.9094712496943
+      },
+      {
+        "run_id": "batch32",
+        "arm": "default",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 14.008509965000485,
+        "warmup_seconds": 2.4785439379993477,
+        "completions": 100,
+        "generated_tokens": 3793,
+        "completions_per_second": 7.138517961570836,
+        "generated_tokens_per_second": 270.7639862823818
+      }
+    ],
+    "invariant": [
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 0,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 24.634787091999897,
+        "warmup_seconds": 3.863663423999242,
+        "completions": 100,
+        "generated_tokens": 3797,
+        "completions_per_second": 4.059300355490989,
+        "generated_tokens_per_second": 154.13163449799285
+      },
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 1,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 24.643991415998244,
+        "warmup_seconds": 3.8623507419997622,
+        "completions": 100,
+        "generated_tokens": 3797,
+        "completions_per_second": 4.0577842408710865,
+        "generated_tokens_per_second": 154.07406762587516
+      },
+      {
+        "run_id": "batch32",
+        "arm": "batch_invariant",
+        "phase": "timing",
+        "repeat_index": 2,
+        "items": 100,
+        "request_batch_size": 32,
+        "max_num_seqs": 64,
+        "elapsed_seconds": 24.648537197999758,
+        "warmup_seconds": 3.87713929200072,
+        "completions": 100,
+        "generated_tokens": 3797,
+        "completions_per_second": 4.057035888041058,
+        "generated_tokens_per_second": 154.04565266891896
+      }
+    ],
+    "token_rate_ratios": [
+      0.5725509682806913,
+      0.5708360914958062,
+      0.5689296231156222
+    ],
+    "token_rate_ratio_median": 0.5708360914958062,
+    "token_rate_ratio_range": [
+      0.5689296231156222,
+      0.5725509682806913
+    ],
+    "completion_rate_ratios": [
+      0.5719478068708618,
+      0.5702347366456657,
+      0.5683302766598776
+    ],
+    "completion_rate_ratio_median": 0.5702347366456657,
+    "completion_rate_ratio_range": [
+      0.5683302766598776,
+      0.5719478068708618
+    ],
+    "elapsed_time_ratios": [
+      1.7484112850629163,
+      1.753663773417899,
+      1.7595402551436814
+    ]
+  }
+]

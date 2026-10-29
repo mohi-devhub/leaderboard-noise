@@ -1,0 +1,184 @@
+# Does batching change the winner? A six-model BFCL replication on A10
+
+Inference completed October 28, 2026. Analysis finalized October 29 in Asia/Kolkata. A practical measurement and mitigation replication, with reusable per-item analysis.
+
+<!-- results:start -->
+We completed all six models and scored 58,800 predictions on NVIDIA A10, including 48,000 primary predictions and 10,800 separate timing outputs. Default greedy text-change rates ranged from 2.00% to 4.00% across models. The invariant arm changed text on 0 of the 3,000 model-item observations. The same 500 questions recur across models, so those observations must not be treated as 3,000 independent questions.
+
+On the full 500-item set, opposite strict orders across batch sizes occurred for **1/15 default pairs and 0/15 invariant pairs**. Bootstrap flip fractions below measure sensitivity to resampling questions and can be positive even without a full-set flip. Turning the mitigation on itself strictly reversed the order of 1 model pair at one or more fixed batch sizes. That is a different effect from batching sensitivity within either arm.
+
+At batch sizes 1, 8, and 32, respectively, Llama-3.2-3B-Instruct passed 457, 457, 457 of 500 items. Qwen3-4B-Instruct-2507 passed 458, 457, 456 of 500 items. The one-call differences matter because these models are near a tie. The observed reversal does not establish a statistically separated population winner.
+
+![Observed strict ranking flip, zoomed y-axis](../figures/study-20261028T065939Z/observed-rank-flip-1.png)
+
+## Sampling accuracy on the frozen subset
+
+Each model has 500 items and ten sampled answers per item. The displayed 95% intervals resample whole items. Pass@5 and pass@10 are unbiased point estimates; their item intervals are retained in the analysis JSON.
+
+| Model | pass@1 | Item-bootstrap 95% interval | pass@5 | pass@10 |
+|---|---:|---|---:|---:|
+| Qwen2.5-1.5B-Instruct | 79.36% | [76.36%, 82.30%] | 88.76% | 91.00% |
+| Qwen2.5-3B-Instruct | 83.58% | [80.56%, 86.48%] | 89.33% | 91.00% |
+| Qwen3-1.7B | 86.48% | [83.72%, 89.16%] | 89.55% | 90.00% |
+| Llama-3.2-3B-Instruct | 89.12% | [86.78%, 91.32%] | 94.08% | 95.20% |
+| xLAM-2-3b-fc-r | 74.50% | [71.32%, 77.70%] | 84.32% | 87.40% |
+| Qwen3-4B-Instruct-2507 | 91.30% | [88.94%, 93.50%] | 94.03% | 95.20% |
+
+![Sampling accuracy with item-bootstrap intervals](../figures/study-20261028T065939Z/pass-1-items.png)
+
+## Close pairs and rank flips
+
+There were 2 observed default-serial gaps within three points, including 2 on the same physical A10. The three preselected pairs remain in the table even when they separate on our subset. Additional observed-close pairs are exploratory choices on these data.
+
+The published-score proxy did not preserve closeness for the three preselected comparisons: their measured default-serial gaps were 4.60 points, 11.40 points, 16.00 points. The two close pairs found on this subset therefore provide exploratory evidence rather than confirmation of the preselected cluster.
+
+Each entry gives the batch-flip fraction and its exploratory outer-bootstrap 95% interval. Ties do not count as flips. A collapsed interval is not proof of no population flips. These intervals are unadjusted for multiple comparisons.
+
+| Pair | Selection | Default serial gap, A minus B | Default flip fraction [interval] | Invariant flip fraction [interval] |
+|---|---|---:|---|---|
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | observed close | -1.60 points | 13.18% [0.60%, 35.80%] | 0.00% [0.00%, 0.00%] |
+| Qwen3-1.7B vs Llama-3.2-3B-Instruct | preselected | -4.60 points | 0.14% [0.00%, 7.30%] | 0.00% [0.00%, 0.00%] |
+| Qwen3-1.7B vs xLAM-2-3b-fc-r | preselected | +11.40 points | 0.00% [0.00%, 0.00%] | 0.00% [0.00%, 0.00%] |
+| Llama-3.2-3B-Instruct vs xLAM-2-3b-fc-r | preselected | +16.00 points | 0.00% [0.00%, 0.00%] | 0.00% [0.00%, 0.00%] |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | observed close | -0.20 points | 8.94% [0.50%, 23.66%] | 0.00% [0.00%, 0.00%] |
+
+![Close-pair bootstrap flip fractions](../figures/study-20261028T065939Z/close-pair-flips.png)
+
+The [complete pair table](../results/study-20261028T065939Z/pairwise-flips.json) preserves all 15 comparisons, score-difference intervals at every batch setting, observed full-set flips, ties, stochastic order reversals, and separate Monte Carlo precision intervals. A stable rank does not establish equal model quality or absence of output variation.
+
+## Text changes and correctness changes
+
+Text-change rates compare batch sizes 1, 8, and 32 on 500 items per model. Intervals are Wilson 95% intervals. The correctness column counts items whose pass/fail result changes across those batch settings.
+
+| Model | Default text changes, rate [interval] | Invariant text changes, rate [interval] | Correctness changes, default / invariant |
+|---|---|---|---:|
+| Qwen2.5-1.5B-Instruct | 13/500, 2.60% [1.53%, 4.40%] | 0/500, 0.00% [0.00%, 0.76%] | 4 / 0 |
+| Qwen2.5-3B-Instruct | 18/500, 3.60% [2.29%, 5.62%] | 0/500, 0.00% [0.00%, 0.76%] | 6 / 0 |
+| Qwen3-1.7B | 13/500, 2.60% [1.53%, 4.40%] | 0/500, 0.00% [0.00%, 0.76%] | 6 / 0 |
+| Llama-3.2-3B-Instruct | 10/500, 2.00% [1.09%, 3.64%] | 0/500, 0.00% [0.00%, 0.76%] | 0 / 0 |
+| xLAM-2-3b-fc-r | 20/500, 4.00% [2.60%, 6.10%] | 0/500, 0.00% [0.00%, 0.76%] | 4 / 0 |
+| Qwen3-4B-Instruct-2507 | 11/500, 2.20% [1.23%, 3.90%] | 0/500, 0.00% [0.00%, 0.76%] | 5 / 0 |
+
+![Greedy text changes and Wilson intervals](../figures/study-20261028T065939Z/greedy-text-changes.png)
+
+## Throughput cost across three repetitions
+
+Ratios are invariant throughput divided by default throughput. A ratio of 0.60 means 40% lower throughput for that condition. This is not a 40% increase in elapsed time. Ranges contain the three observed paired ratios and are not confidence intervals.
+
+| Model | Batch | Token-rate ratio, median [range] | Completion-rate ratio, median [range] |
+|---|---:|---|---|
+| Qwen2.5-1.5B-Instruct | serial | 0.562 [0.553, 0.580] | 0.562 [0.554, 0.581] |
+| Qwen2.5-1.5B-Instruct | batch8 | 0.598 [0.594, 0.624] | 0.598 [0.594, 0.624] |
+| Qwen2.5-1.5B-Instruct | batch32 | 0.678 [0.672, 0.678] | 0.662 [0.658, 0.679] |
+| Qwen2.5-3B-Instruct | serial | 0.424 [0.421, 0.433] | 0.422 [0.419, 0.431] |
+| Qwen2.5-3B-Instruct | batch8 | 0.490 [0.488, 0.490] | 0.493 [0.491, 0.493] |
+| Qwen2.5-3B-Instruct | batch32 | 0.568 [0.566, 0.570] | 0.574 [0.572, 0.576] |
+| Qwen3-1.7B | serial | 0.589 [0.584, 0.600] | 0.585 [0.580, 0.595] |
+| Qwen3-1.7B | batch8 | 0.619 [0.611, 0.620] | 0.614 [0.606, 0.615] |
+| Qwen3-1.7B | batch32 | 0.652 [0.650, 0.662] | 0.650 [0.647, 0.657] |
+| Llama-3.2-3B-Instruct | serial | 0.406 [0.404, 0.406] | 0.406 [0.404, 0.406] |
+| Llama-3.2-3B-Instruct | batch8 | 0.478 [0.478, 0.480] | 0.479 [0.478, 0.481] |
+| Llama-3.2-3B-Instruct | batch32 | 0.586 [0.585, 0.588] | 0.587 [0.587, 0.590] |
+| xLAM-2-3b-fc-r | serial | 0.426 [0.422, 0.427] | 0.427 [0.424, 0.429] |
+| xLAM-2-3b-fc-r | batch8 | 0.499 [0.494, 0.500] | 0.499 [0.494, 0.500] |
+| xLAM-2-3b-fc-r | batch32 | 0.578 [0.575, 0.578] | 0.573 [0.573, 0.577] |
+| Qwen3-4B-Instruct-2507 | serial | 0.400 [0.399, 0.405] | 0.399 [0.399, 0.404] |
+| Qwen3-4B-Instruct-2507 | batch8 | 0.475 [0.474, 0.480] | 0.475 [0.473, 0.479] |
+| Qwen3-4B-Instruct-2507 | batch32 | 0.571 [0.569, 0.573] | 0.570 [0.568, 0.572] |
+
+![Throughput ratios with three repetitions](../figures/study-20261028T065939Z/throughput-ranges.png)
+
+Token counts and completion rates are both retained because the mitigation can change output lengths. Incorrect outputs and length-truncated outputs remain in the accuracy denominator. The report also checks output agreement across repeated timing runs. These results apply to the recorded GPU, software, and submission settings.
+
+## How much evaluation would a three-point gap need?
+
+These stochastic pass@1 projections assume a two-sided 5% test and 80% power. They use finite-repeat-corrected variance estimates from this study. A model pair with a small observed gap can still require more items than this budget covers.
+
+| Pair | Approximate MDD at 500 items and ten samples, percentage points | Items projected for a three-point gap at ten samples/model |
+|---|---:|---:|
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | 4.45 | 1100 |
+| Qwen3-1.7B vs Llama-3.2-3B-Instruct | 3.94 | 863 |
+| Qwen3-1.7B vs xLAM-2-3b-fc-r | 4.84 | 1300 |
+| Llama-3.2-3B-Instruct vs xLAM-2-3b-fc-r | 4.76 | 1257 |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | 3.87 | 834 |
+
+## Cost, completion, and scope of the result
+
+The approved remaining-five forecast was $6.5151. Modal reports **$5.6008** in app-specific gross metering for that job. Its conservative resource estimate is $6.3636. Across the entire project, including setup failures and the pilot, the conservative recorded estimate is **$7.5638 of the $12 cap**. App metering is provisional; a settled invoice actual is unavailable. Unrelated qunti-check usage and credit offsets are excluded from app-specific gross figures.
+
+The six models' measured execution total was 4.957 hours, including initialization and all processes. The receipt verifies 5 server-side continuation budget gates. Every model checkpoint was hash-verified before the temporary volume was deleted. All evalnoise study apps are stopped, there are zero running study containers, and all reservations are released. qunti-check was not modified.
+
+All 58,800 planned predictions were scored, including 17 length-truncated outputs and 913 AST syntax/format failures. The common-prompting subset, independence assumptions, exploratory comparison selection, nonregular flip intervals, two-device recovery, and unprofiled throughput limiter bound the interpretation. The [full numerical report](../results/study-20261028T065939Z/REPORT.md) and [receipt](../results/study-20261028T065939Z/receipt.json) retain the evidence behind each table.
+<!-- results:end -->
+
+## Why a greedy leaderboard needs a measurement protocol
+
+A greedy decoder chooses the next token with the largest computed score. Temperature zero removes deliberate random token sampling. It does not make every computation independent of the other requests in a batch.
+
+Batch shape can change how an inference engine performs floating-point calculations. Small numerical differences can change a near-tied token choice, after which the generated answers diverge. Thinking Machines Lab explains this mechanism and batch-invariant computation in [Defeating Nondeterminism in LLM Inference](https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/). The pinned [vLLM 0.32.0 implementation](https://docs.vllm.ai/en/v0.32.0/features/batch_invariance/) provides `VLLM_BATCH_INVARIANT=1` as a mitigation.
+
+An answer can change while remaining correct. Correctness can change while the better model remains ahead. Our question concerns the last step in that sequence: do batch-sensitive greedy outputs change the order of small models on the same tool-calling questions, and does the mitigation remove those changes at a measurable throughput cost?
+
+The statistical foundations are established work. [Madaan et al.](https://arxiv.org/html/2406.10229v1) study benchmark variance, including variation across training runs and checkpoints. [Evan Miller](https://arxiv.org/html/2411.00640v1) develops paired evaluation uncertainty and power analysis. [Sida Wang](https://arxiv.org/html/2512.21326v1) separates prediction and data noise and compares model pairs. Our contribution is a practical replication with frozen small open-weight checkpoints, official BFCL scoring, an explicit compute budget, and a reusable analysis CLI. We claim no new variance decomposition or determinism mechanism. The [related-work review](../docs/RELATED_WORK.md) gives the wider context and distinguishes inference variation from training-seed variation.
+
+## Choosing comparisons before observing flips
+
+The initial two-model pilot used Qwen2.5-0.5B and Qwen2.5-1.5B on 100 questions. Their sampling pass@1 gap was 32 percentage points. That established a working pipeline, but such a large separation is a poor test of ranking sensitivity.
+
+With approval to choose a more useful roster, we retained Qwen2.5-1.5B as the measured anchor and added Qwen2.5-3B, Qwen3-1.7B, Llama-3.2-3B, xLAM-2-3B, and Qwen3-4B-Instruct-2507. The [official BFCL CSV](https://gorilla.cs.berkeley.edu/data_overall.csv), archived before full-study inference, reported non-live AST scores of 82.92%, 82.67%, and 82.96% for Qwen3-1.7B, Llama3B, and xLAM3B. Those numbers preselected their three pairwise comparisons.
+
+These published scores are selection proxies. They include FC configurations, other languages, and different weighting. Our experiment gives every model the same official prompting instructions on a Python subset. Published gaps cannot guarantee equally close scores here. We report all 15 model pairs, retain the preselected pairs even if they separate, and label additional pairs within three points of default serial greedy accuracy as exploratory. We do not replace models or questions after seeing full-study results.
+
+The [frozen selection plan](../docs/FULL_STUDY_PLAN.md) records checkpoint revisions, seed indices, configuration choices, and license evidence. Qwen3-1.7B uses its documented non-thinking switch. The research and noncommercial licenses on Qwen2.5-3B and xLAM restrict use; Llama has its community license and acceptable-use policy. The artifacts do not redistribute weights.
+
+## What the experiment holds fixed
+
+We use 500 frozen BFCL Python single-turn items and the official AST checker from `bfcl-eval==2026.3.23`. These are subset scores, not the official overall BFCL leaderboard. The same messages, checkpoints, output limits, and checker apply to both arms. No generated code is executed.
+
+Each model produces ten completions per item at temperature 0.7, using vLLM's `n` parameter. These 5,000 outcomes estimate sampling pass@1 and unbiased pass@5 and pass@10. Distinct request seed blocks avoid sharing a seed stream across unrelated prompts.
+
+Greedy evaluation then produces one completion per item at request batch sizes 1, 8, and 32, in both the default and batch-invariant arms. The engine limit remains 64 sequences. All processes use pinned vLLM 0.32.0, bfloat16, eager execution, and disabled prefix caching. This is controlled offline submission rather than a production HTTP concurrency test.
+
+There are 48,000 primary predictions across six models. Throughput uses three additional repetitions of the same 100-item timing subset for each model, arm, and batch size. Those 10,800 outputs are scored to detect fast failures, but never count as additional independent accuracy observations. Warmup precedes each timed condition. The timed region includes generation, synchronization, and output collection. Startup, model loading, smoke checks, and warmup remain part of cost.
+
+Fresh processes alternate arm order across the three timing repetitions. We retain generated-token rate, completion rate, elapsed time, token counts, and every output. Ratios describe this recorded configuration. We did not profile the throughput limiter or tune a production deployment, so these timings do not establish a general performance recommendation.
+
+All inference uses the A10 tier. An infrastructure interruption released the first model's A10 after its results were complete. The approved continuation preserves that model and runs the remaining five on a second A10. Every model's two arms and timing repetitions stay on its assigned physical GPU. The three preselected comparisons share the second GPU. Cross-device anchor comparisons retain that limitation.
+
+Before Llama started, a CPU preflight found that its rendered chat already includes the beginning-of-sequence token. The completion entry point otherwise adds a second copy. We disabled that extra insertion for Llama before its first generation. Token IDs for the other models were unchanged on all 500 prompts. Source snapshots, hashes, and the installation receipt preserve this correction without rerunning completed models.
+
+## Three changes that need separate counts
+
+Exact text change means an item's decoded output differs across the three batch settings. Token-ID change is recorded separately because distinct token sequences can decode to the same text. Correctness change means the official checker gives different pass/fail outcomes for that item.
+
+A full-set ranking flip requires opposite strict orders at different batch sizes on all 500 items. A tie does not count as a flip. A paired-bootstrap flip fraction asks a different question: after drawing 500 item IDs with replacement and carrying both models' outputs at all batch sizes together, how often do two batch settings give opposite strict orders?
+
+We use 5,000 paired item resamples. Pairing retains the relationship between models on each question and between batch settings on the same question. We also report stochastic order reversals relative to the observed sampling order. These fractions describe stability under the stated resampling procedure. They are not posterior probabilities that one model is intrinsically better.
+
+Flip-rate intervals need care. A narrow Monte Carlo interval means the computed bootstrap fraction is precise conditional on the observed data. It does not account for another set of benchmark questions. We separately use 500 outer paired item resamples, with 1,000 inner resamples each, to obtain exploratory percentile intervals for the flip fraction. This order-based statistic is discontinuous at ties and boundaries. Intervals can collapse when relevant patterns are absent from the observations, and inner Monte Carlo noise contributes to their width. We show paired score-difference intervals alongside them and make no simultaneous or guaranteed-coverage claim.
+
+Text-change intervals use Wilson's method under an independent-item approximation. Shared function templates can violate that assumption. The item-bootstrap intervals also require a defensible question population and independence assumptions. The full per-item artifacts permit a future clustered analysis without regenerating model answers.
+
+## Using the CLI on another evaluation
+
+`evalnoise` accepts binary outcomes already graded by an evaluator. It does not infer correctness from arbitrary text or execute supplied code. The [schema reference](../docs/SCHEMA.md) documents sample rows, aggregate success arrays, nested score fields, and explicit field mappings.
+
+```sh
+.venv/bin/evalnoise analyze results.jsonl --k 1 5 10 --output analysis.json
+```
+
+Use only values of k supported by the number of generations available on every item. The [unbiased pass@k estimator](https://arxiv.org/abs/2107.03374) averages the chance that at least one of k candidates succeeds. It assumes iid generations and a way to recognize correctness. Pass@10 does not imply that a user can identify the correct answer unaided.
+
+The default item bootstrap keeps all observed answers for each selected question together. A separate within-item resampling diagnostic conditions on the same question set. Adding their variances would count some uncertainty twice. Conditional resampling for pass@k with k greater than one is labeled diagnostic because finite-repeat bias can be substantial.
+
+The CLI also reports paired win and tie fractions, rank distributions, and approximate minimum detectable differences. Its item/sample planning subtracts finite-repeat sampling variance from the observed variance of item means. More samples can reduce prediction uncertainty, but cannot remove variation between questions. These normal-approximation projections depend on the pilot pair and evaluation design; they are not guarantees of a future significant result.
+
+## Reproducing the analysis
+
+The [study report](../results/study-20261028T065939Z/REPORT.md) and condition-specific JSON files are the numerical record. Figures come from scripts and recorded summaries. The [README](../README.md) documents installation and the CLI, while [LEARNING.md](../LEARNING.md) gives a two-minute explanation and interview questions.
+
+The detached continuation uses one server-side GPU call with per-model resource gates and volume checkpoints. The local observer reads saved handles and cannot submit a GPU job. A temporary storage error interrupted that observer once; reconnecting it recovered progress while the original GPU call continued. Hashes are verified before deleting the temporary results volume.
+
+Dependencies come from official PyPI with hash-locked versions in a uv environment. The image also installs pinned official Debian compiler packages and passes a CPU compile preflight before GPU allocation. Audits permit only the documented user-approved setuptools advisories whose affected installation paths are absent from this Linux wheel-only setup. See [SECURITY.md](../SECURITY.md), [BUDGET.md](../BUDGET.md), and [DECISIONS.md](../DECISIONS.md) for evidence and accounting.
+
+The experiment does not measure training-seed sensitivity, other GPU families, native tool-calling APIs, longitudinal provider drift, or executed code benchmarks. Optional HumanEval+/MBPP+ infrastructure remains outside this BFCL launch. A null result on rankings is still a result; output variation alone cannot establish a changed winner.

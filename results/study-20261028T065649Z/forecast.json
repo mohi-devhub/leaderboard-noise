@@ -1,0 +1,60 @@
+{
+  "created_at": "2026-10-28T06:56:49.760877+00:00",
+  "gpu": "NVIDIA A10",
+  "resource_ceiling_hourly_usd": 1.4172000000000002,
+  "prior_project_estimate_usd": 0.30354134853433334,
+  "non_gpu_and_egress_allowance_usd": 0.15,
+  "models": [
+    {
+      "forecast_seconds": 2072.6802868449995,
+      "execution_limit_seconds": 2711,
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "extrapolation_factor": 1.0,
+      "forecast_usd": 0.8159451395879816,
+      "reservation_usd": 1.1444703333333335
+    },
+    {
+      "forecast_seconds": 3196.2884589519995,
+      "execution_limit_seconds": 4116,
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "extrapolation_factor": 1.6,
+      "forecast_usd": 1.2582722233407708,
+      "reservation_usd": 1.6975720000000003
+    },
+    {
+      "forecast_seconds": 2447.2163442139995,
+      "execution_limit_seconds": 3180,
+      "model": "Qwen/Qwen3-1.7B",
+      "extrapolation_factor": 1.2,
+      "forecast_usd": 0.9633875008389112,
+      "reservation_usd": 1.3291000000000004
+    },
+    {
+      "forecast_seconds": 3196.2884589519995,
+      "execution_limit_seconds": 4116,
+      "model": "meta-llama/Llama-3.2-3B-Instruct",
+      "extrapolation_factor": 1.6,
+      "forecast_usd": 1.2582722233407708,
+      "reservation_usd": 1.6975720000000003
+    },
+    {
+      "forecast_seconds": 3196.2884589519995,
+      "execution_limit_seconds": 4116,
+      "model": "Salesforce/xLAM-2-3b-fc-r",
+      "extrapolation_factor": 1.6,
+      "forecast_usd": 1.2582722233407708,
+      "reservation_usd": 1.6975720000000003
+    },
+    {
+      "forecast_seconds": 4132.6286023745,
+      "execution_limit_seconds": 5286,
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "extrapolation_factor": 2.1,
+      "forecast_usd": 1.626878126468095,
+      "reservation_usd": 2.158162
+    }
+  ],
+  "forecast_study_usd": 7.3310274369173,
+  "conservative_study_usd": 9.874448333333335,
+  "basis": "Qwen1.5B A10 pilot decode times scaled by workload and explicit model factors; forecasts are not measured costs"
+}

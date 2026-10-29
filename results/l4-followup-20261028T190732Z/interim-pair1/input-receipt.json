@@ -1,0 +1,21 @@
+{
+  "scope": "two completed models; remaining pair still running",
+  "verified_checkpoints": [
+    {
+      "model": "meta-llama/Llama-3.2-3B-Instruct",
+      "file": "Llama-3.2-3B-Instruct.json",
+      "sha256": "0aa214350d940fca2357b0a938943aaf8c4bb69371a95f52cffd6120f5bac6ba",
+      "status": "complete",
+      "remote_seconds": 1960.838078496
+    },
+    {
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "file": "Qwen3-4B-Instruct-2507.json",
+      "sha256": "9fb1d7ca408a9f99e6c7cbf8b716b1640ca2b6273288e5591b838258e2cb588b",
+      "status": "complete",
+      "remote_seconds": 2850.187973429
+    }
+  ],
+  "predictions": 6000,
+  "raw_sha256": "59509d131456c6bfce125c85a1fc27a419e2275e725fd9fa73e9bffbeb831998"
+}

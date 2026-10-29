@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "model": {
+    "id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "license": "apache-2.0",
+    "gated": false,
+    "source": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct"
+  },
+  "arm": "default",
+  "requests": 5,
+  "startup_seconds": 27.233681210999997,
+  "smoke_seconds": 0.779147370000004,
+  "outputs": [
+    {
+      "text": " I'm a 16 year old",
+      "token_ids": [
+        358,
+        2776,
+        264,
+        220,
+        16,
+        21,
+        1042,
+        2310
+      ]
+    },
+    {
+      "text": " I'm a 16 year old",
+      "token_ids": [
+        358,
+        2776,
+        264,
+        220,
+        16,
+        21,
+        1042,
+        2310
+      ]
+    },
+    {
+      "text": " I'm a 16 year old",
+      "token_ids": [
+        358,
+        2776,
+        264,
+        220,
+        16,
+        21,
+        1042,
+        2310
+      ]
+    },
+    {
+      "text": " I'm a 16 year old",
+      "token_ids": [
+        358,
+        2776,
+        264,
+        220,
+        16,
+        21,
+        1042,
+        2310
+      ]
+    },
+    {
+      "text": " I'm a 16 year old",
+      "token_ids": [
+        358,
+        2776,
+        264,
+        220,
+        16,
+        21,
+        1042,
+        2310
+      ]
+    }
+  ],
+  "gpu": "NVIDIA A10",
+  "vllm": "0.32.0"
+}

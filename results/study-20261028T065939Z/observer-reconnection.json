@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-28T16:20:12.189764+00:00",
+  "reason": "Modal Volume.read_file temporary ServiceError in local observer",
+  "existing_gpu_call_id": "fc-01M61AVBMARQVAC22J2WKMKWTM",
+  "existing_call_verified_running": true,
+  "gpu_job_resubmitted": false,
+  "connection_recovery_attempt": 1,
+  "status": "reconnected_existing_job",
+  "verified_at": "2026-10-28T16:20:34.582405+00:00",
+  "verified_continuation_checkpoints": 3
+}

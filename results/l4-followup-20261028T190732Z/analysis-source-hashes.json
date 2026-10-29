@@ -1,0 +1,9 @@
+{
+  "scripts/run_l4_followup.py": "8bef1adaa482a114eab6117e97605d76eb07b24f2d37494971a54ee91925b257",
+  "scripts/report_l4_followup.py": "64d3f1a68bb418349e133ef0621e49e048d871ef6f783b7a84a62bc159594291",
+  "scripts/l4_receipt.py": "f56330d2376c3d04f2c9a0391ada8e7fe04d3acf3915677a6b8f92cf9dfebe7e",
+  "scripts/finish_l4_followup.py": "474677ef598df9ba2686db9590290002709c3441b66687439442e20925ceb6c6",
+  "scripts/l4_figures.py": "149103d6a037a7d73e0daa518a778cb2e2c9815cf83d3ec84af54ce99a3969f3",
+  "tests/test_l4_followup.py": "f44f283bd807fadcbcd48f79f68798ca18ea1ed25220826e44fafff71b4daab2",
+  "tests/test_study_worker.py": "1566f77bcdca10a85ae9faa0f8e810ccd6b6602179b0a549137f2ea1a50fe448"
+}

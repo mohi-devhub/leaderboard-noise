@@ -1,0 +1,61 @@
+CHECKPOINTS_VERIFIED ["Qwen/Qwen2.5-3B-Instruct"]
+CHECKPOINTS_VERIFIED ["Qwen/Qwen2.5-3B-Instruct", "Qwen/Qwen3-1.7B"]
+CHECKPOINTS_VERIFIED ["Qwen/Qwen2.5-3B-Instruct", "Qwen/Qwen3-1.7B", "meta-llama/Llama-3.2-3B-Instruct"]
+Traceback (most recent call last):
+  File "/Users/mohith/Research/noise-check/.venv/lib/python3.12/site-packages/modal/volume.py", line 1001, in read_file
+    response = await self.client._stub.VolumeGetFile2(req)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+modal.exception.NotFoundError: path "/manifest.json" does not exist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mohith/Research/noise-check/scripts/complete_remaining.py", line 35, in main
+    try:
+         
+  File "/Users/mohith/Research/noise-check/.venv/lib/python3.12/site-packages/modal/_object.py", line 61, in wrapped
+    async for item in stream:
+  File "/Users/mohith/Research/noise-check/.venv/lib/python3.12/site-packages/modal/volume.py", line 1003, in read_file
+    raise FileNotFoundError(exc.args[0])
+FileNotFoundError: path "/manifest.json" does not exist
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mohith/Research/noise-check/scripts/complete_remaining.py", line 136, in <module>
+    
+  File "/Users/mohith/Research/noise-check/scripts/complete_remaining.py", line 38, in main
+    try:
+         
+  File "/Users/mohith/Research/noise-check/.venv/lib/python3.12/site-packages/modal/_object.py", line 61, in wrapped
+    async for item in stream:
+  File "/Users/mohith/Research/noise-check/.venv/lib/python3.12/site-packages/modal/volume.py", line 1025, in read_file
+    async for value in stream:
+  File "/Users/mohith/Research/noise-check/.venv/lib/python3.12/site-packages/modal/_utils/async_utils.py", line 1243, in async_map_ordered
+    async for output_idx, output_item in stream:
+  File "/Users/mohith/Research/noise-check/.venv/lib/python3.12/site-packages/modal/_utils/async_utils.py", line 1219, in async_map
+    async for item in stream:
+  File "/Users/mohith/Research/noise-check/.venv/lib/python3.12/site-packages/modal/_utils/async_utils.py", line 1114, in async_merge
+    raise item.value
+  File "/Users/mohith/Research/noise-check/.venv/lib/python3.12/site-packages/modal/_utils/async_utils.py", line 1093, in producer
+    async for item in stream:
+  File "/Users/mohith/Research/noise-check/.venv/lib/python3.12/site-packages/modal/_utils/async_utils.py", line 1208, in worker
+    res = await prevent_cancellation_abortion(async_mapper_func(item.value))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohith/Research/noise-check/.venv/lib/python3.12/site-packages/modal/_utils/async_utils.py", line 1173, in prevent_cancellation_abortion
+    return await asyncio.shield(t)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohith/Research/noise-check/.venv/lib/python3.12/site-packages/modal/_utils/async_utils.py", line 1232, in mapper_func_wrapper
+    return (tup[0], await async_mapper_func(tup[1]))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohith/Research/noise-check/.venv/lib/python3.12/site-packages/modal/_utils/async_utils.py", line 422, in f_wrapped
+    return await asyncio.wait_for(fn(*args, **kwargs), timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mohith/.local/share/uv/python/cpython-3.12.12-macos-aarch64-none/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/Users/mohith/Research/noise-check/.venv/lib/python3.12/site-packages/modal/volume.py", line 1010, in read_block
+    await _raise_on_block_response_error(get_response)
+  File "/Users/mohith/Research/noise-check/.venv/lib/python3.12/site-packages/modal/volume.py", line 126, in _raise_on_block_response_error
+    raise ServiceError(f"Service temporarily unavailable: {body}")
+modal.exception.ServiceError: Service temporarily unavailable: <unavailable>

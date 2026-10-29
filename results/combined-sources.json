@@ -1,0 +1,144 @@
+{
+  "sources_sha256": {
+    "results/study-20261028T065939Z/summary.json": "87823f25ea3ba3b1511227604af722ae7163683636296685ef5302d5c5b48839",
+    "results/study-20261028T065939Z/receipt.json": "da862ded10375e7cf1b2847c126124c41570a697cd92cd3bb521c22fbf7c38d1",
+    "results/study-20261028T065939Z/analysis-sampling.json": "111ff6a8c6bca54cbf726b31d9c0e4f6ff24d0c3f2676df12378ee0a4dc36a56",
+    "results/study-20261028T065939Z/greedy-summary.json": "557202638c1a2b0886970f8d62cc6817dc7d850df5c5058bd9763dfeeb45f831",
+    "results/study-20261028T065939Z/pairwise-flips.json": "b74262d58fdc7f25392cf2a3cd25ac988bbf285a5caa04ee5ae32e58366c93ab",
+    "results/study-20261028T065939Z/throughput-summary.json": "e94159aa5f45aa16302c5368a921e9cce7b2dc1c81cf1c224b17914fef0b3aeb",
+    "results/l4-continuation-20261028T224638Z/summary.json": "5f5a7a4655800398d29fffedf71326029cebd0020c005d5175ad8828af8299a8",
+    "results/l4-continuation-20261028T224638Z/receipt.json": "311b2c8baad25420b546e5df5a91eb52dc488e555e31cfe778e216c651dadaa4",
+    "results/l4-continuation-20261028T224638Z/greedy-summary.json": "1aef564f8a3279b786451c0e14f23fdc3eb2f5c0d9e70adabe843fb2da7c50a5",
+    "results/l4-continuation-20261028T224638Z/pairwise-gpu-comparison.json": "3ee1fdb2cac9c619ce06472cb7abe529470a9bf22c2d71ffe9eeb343824ab800",
+    "results/l4-continuation-20261028T224638Z/cross-gpu-agreement.json": "604a8bcf84b899ffd70c538d454090555bd36a9451c2ab982aaeb9b65b819de7"
+  },
+  "script_sha256": "57ac55f7a72e44649fed7c3f0b49f31a44b80e9f7049dc1e1be7a370cb252a17",
+  "outputs_sha256": {
+    "blog/STUDY.md": "06ba053d68103685a0e93cc4b1cc2aa705a52d0285ff922fdd72fb000982ad7c",
+    "results/REPORT.md": "1f83a80ba54477369023f683c9d486df6663f8b28ca9adf25f94f0541ad9a804"
+  },
+  "interval_status": "All confidence intervals in the article and report are exploratory.",
+  "new_model_runs": 0,
+  "default_winners": [
+    {
+      "pair": "Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507",
+      "gpu": "A10",
+      "batch": 1,
+      "a": "meta-llama/Llama-3.2-3B-Instruct",
+      "b": "Qwen/Qwen3-4B-Instruct-2507",
+      "a_correct": 457,
+      "b_correct": 458,
+      "higher_rank": "Qwen3-4B-Instruct-2507"
+    },
+    {
+      "pair": "Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507",
+      "gpu": "A10",
+      "batch": 8,
+      "a": "meta-llama/Llama-3.2-3B-Instruct",
+      "b": "Qwen/Qwen3-4B-Instruct-2507",
+      "a_correct": 457,
+      "b_correct": 457,
+      "higher_rank": "Tie"
+    },
+    {
+      "pair": "Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507",
+      "gpu": "A10",
+      "batch": 32,
+      "a": "meta-llama/Llama-3.2-3B-Instruct",
+      "b": "Qwen/Qwen3-4B-Instruct-2507",
+      "a_correct": 457,
+      "b_correct": 456,
+      "higher_rank": "Llama-3.2-3B-Instruct"
+    },
+    {
+      "pair": "Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507",
+      "gpu": "L4",
+      "batch": 1,
+      "a": "meta-llama/Llama-3.2-3B-Instruct",
+      "b": "Qwen/Qwen3-4B-Instruct-2507",
+      "a_correct": 458,
+      "b_correct": 457,
+      "higher_rank": "Llama-3.2-3B-Instruct"
+    },
+    {
+      "pair": "Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507",
+      "gpu": "L4",
+      "batch": 8,
+      "a": "meta-llama/Llama-3.2-3B-Instruct",
+      "b": "Qwen/Qwen3-4B-Instruct-2507",
+      "a_correct": 457,
+      "b_correct": 457,
+      "higher_rank": "Tie"
+    },
+    {
+      "pair": "Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507",
+      "gpu": "L4",
+      "batch": 32,
+      "a": "meta-llama/Llama-3.2-3B-Instruct",
+      "b": "Qwen/Qwen3-4B-Instruct-2507",
+      "a_correct": 458,
+      "b_correct": 459,
+      "higher_rank": "Qwen3-4B-Instruct-2507"
+    },
+    {
+      "pair": "Qwen2.5-3B-Instruct vs Qwen3-1.7B",
+      "gpu": "A10",
+      "batch": 1,
+      "a": "Qwen/Qwen2.5-3B-Instruct",
+      "b": "Qwen/Qwen3-1.7B",
+      "a_correct": 426,
+      "b_correct": 434,
+      "higher_rank": "Qwen3-1.7B"
+    },
+    {
+      "pair": "Qwen2.5-3B-Instruct vs Qwen3-1.7B",
+      "gpu": "A10",
+      "batch": 8,
+      "a": "Qwen/Qwen2.5-3B-Instruct",
+      "b": "Qwen/Qwen3-1.7B",
+      "a_correct": 428,
+      "b_correct": 432,
+      "higher_rank": "Qwen3-1.7B"
+    },
+    {
+      "pair": "Qwen2.5-3B-Instruct vs Qwen3-1.7B",
+      "gpu": "A10",
+      "batch": 32,
+      "a": "Qwen/Qwen2.5-3B-Instruct",
+      "b": "Qwen/Qwen3-1.7B",
+      "a_correct": 428,
+      "b_correct": 434,
+      "higher_rank": "Qwen3-1.7B"
+    },
+    {
+      "pair": "Qwen2.5-3B-Instruct vs Qwen3-1.7B",
+      "gpu": "L4",
+      "batch": 1,
+      "a": "Qwen/Qwen2.5-3B-Instruct",
+      "b": "Qwen/Qwen3-1.7B",
+      "a_correct": 427,
+      "b_correct": 432,
+      "higher_rank": "Qwen3-1.7B"
+    },
+    {
+      "pair": "Qwen2.5-3B-Instruct vs Qwen3-1.7B",
+      "gpu": "L4",
+      "batch": 8,
+      "a": "Qwen/Qwen2.5-3B-Instruct",
+      "b": "Qwen/Qwen3-1.7B",
+      "a_correct": 428,
+      "b_correct": 433,
+      "higher_rank": "Qwen3-1.7B"
+    },
+    {
+      "pair": "Qwen2.5-3B-Instruct vs Qwen3-1.7B",
+      "gpu": "L4",
+      "batch": 32,
+      "a": "Qwen/Qwen2.5-3B-Instruct",
+      "b": "Qwen/Qwen3-1.7B",
+      "a_correct": 428,
+      "b_correct": 434,
+      "higher_rank": "Qwen3-1.7B"
+    }
+  ]
+}

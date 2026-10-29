@@ -1,0 +1,2 @@
+# Optional CPU execution environment; never combine with BFCL's tree-sitter pin.
+evalplus==0.3.1

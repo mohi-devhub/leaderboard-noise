@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-29T00:34:02.376532+00:00",
+  "forecast_usd": 1.7891041790325515,
+  "conservative_bound_usd": 2.7001528472222227,
+  "estimated_spend_usd": 1.656880180930799,
+  "app_specific_gross_metered_usage_usd": 1.29050189,
+  "project_estimate_usd": 10.856298334852848,
+  "active_reservations_usd": 0,
+  "actual_invoice_usd": null,
+  "metering_provisional": true,
+  "own_apps_stopped": true,
+  "own_running_containers": 0,
+  "other_project_modified": false
+}

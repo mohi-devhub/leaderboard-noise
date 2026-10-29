@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-10-29T00:35:22.585674+00:00",
+  "forecast_usd": 1.7891041790325515,
+  "conservative_bound_usd": 2.7001528472222227,
+  "estimated_spend_usd": 1.521880180930799,
+  "app_specific_gross_metered_usage_usd": 1.300871,
+  "project_estimate_usd": 10.721298334852849,
+  "active_reservations_usd": 0,
+  "actual_invoice_usd": null,
+  "metering_provisional": true,
+  "own_apps_stopped": true,
+  "own_running_containers": 0,
+  "other_project_modified": false,
+  "timed_resource_estimate_usd": 1.521880180930799,
+  "gpu_residency_seconds_including_startup_estimate": 5017.184948,
+  "controller_residency_seconds_including_startup_estimate": 6196.847257,
+  "startup_fallback_used": true,
+  "gpu_runtime_cutoff_utc": "2026-10-29T06:03:36+05:30",
+  "setup_egress_margin_usd": 0.015,
+  "followup_root": "results/l4-followup-20261028T190732Z",
+  "total_followup_estimate_usd": 3.157526899600515,
+  "total_followup_metered_usage_usd": 2.7296407900000004,
+  "followup_app_ids": [
+    "ap-C4FfuuJt0ioG1hkR9KcCAm",
+    "ap-Cofk8Ky1vJx7KI49oEl3Pm"
+  ],
+  "original_followup_forecast_usd": 3.608939509281157,
+  "metering_refreshed_at": "2026-10-29T00:35:22.278915+00:00"
+}

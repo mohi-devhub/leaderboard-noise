@@ -1,0 +1,17 @@
+{
+  "started_at": "2026-10-28T06:57:47.891304+00:00",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "status": "failed",
+  "arms": [],
+  "host_load_average": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "host_cpu_count": 4,
+  "gpu": "NVIDIA A10G",
+  "error_type": "RuntimeError",
+  "error": "unexpected GPU; no cross-GPU fallback is authorized",
+  "remote_seconds": 4.273027859000001,
+  "ended_at": "2026-10-28T06:57:52.164332+00:00"
+}

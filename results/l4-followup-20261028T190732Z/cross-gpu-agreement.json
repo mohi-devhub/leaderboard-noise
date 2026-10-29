@@ -1,0 +1,86 @@
+[
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "condition": "default:serial",
+    "cross_gpu_text_changes": 10,
+    "cross_gpu_correctness_changes": 1,
+    "items": 500
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "condition": "default:batch8",
+    "cross_gpu_text_changes": 9,
+    "cross_gpu_correctness_changes": 0,
+    "items": 500
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "condition": "default:batch32",
+    "cross_gpu_text_changes": 4,
+    "cross_gpu_correctness_changes": 1,
+    "items": 500
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "condition": "batch_invariant:serial",
+    "cross_gpu_text_changes": 0,
+    "cross_gpu_correctness_changes": 0,
+    "items": 500
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "condition": "batch_invariant:batch8",
+    "cross_gpu_text_changes": 0,
+    "cross_gpu_correctness_changes": 0,
+    "items": 500
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "condition": "batch_invariant:batch32",
+    "cross_gpu_text_changes": 0,
+    "cross_gpu_correctness_changes": 0,
+    "items": 500
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "condition": "default:serial",
+    "cross_gpu_text_changes": 12,
+    "cross_gpu_correctness_changes": 5,
+    "items": 500
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "condition": "default:batch8",
+    "cross_gpu_text_changes": 5,
+    "cross_gpu_correctness_changes": 0,
+    "items": 500
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "condition": "default:batch32",
+    "cross_gpu_text_changes": 7,
+    "cross_gpu_correctness_changes": 3,
+    "items": 500
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "condition": "batch_invariant:serial",
+    "cross_gpu_text_changes": 0,
+    "cross_gpu_correctness_changes": 0,
+    "items": 500
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "condition": "batch_invariant:batch8",
+    "cross_gpu_text_changes": 0,
+    "cross_gpu_correctness_changes": 0,
+    "items": 500
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "condition": "batch_invariant:batch32",
+    "cross_gpu_text_changes": 0,
+    "cross_gpu_correctness_changes": 0,
+    "items": 500
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-28T19:34:53.254803+00:00",
+  "gpu_function_id": "fu-9BTlgXdBCvthGQxqS1A6k4",
+  "existing_gpu_call_id": "fc-01M61YX3CNX0C514MAGKH0KPNY",
+  "settings": {
+    "min_containers": 0,
+    "max_containers": 1,
+    "scaledown_window": 2,
+    "buffer_containers": null
+  },
+  "job_resubmitted": false,
+  "reason": "Refresh unchanged zero-minimum, one-maximum allocation settings during confirmed L4 capacity wait."
+}

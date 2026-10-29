@@ -1,0 +1,58 @@
+{
+  "seed": 20261101,
+  "temperature": 0,
+  "n": 1,
+  "top_p": 1.0,
+  "max_tokens": 512,
+  "max_model_len": 8192,
+  "greedy_repeats": [
+    {
+      "run_id": "serial",
+      "request_batch_size": 1,
+      "max_num_seqs": 64
+    },
+    {
+      "run_id": "batch8",
+      "request_batch_size": 8,
+      "max_num_seqs": 64
+    },
+    {
+      "run_id": "batch32",
+      "request_batch_size": 32,
+      "max_num_seqs": 64
+    }
+  ],
+  "finish_before_utc": "2026-10-30T18:30:00+00:00",
+  "stage": "greedy_hardware_followup",
+  "gpu": "L4",
+  "items": 500,
+  "timing_items": 100,
+  "timing_repetitions": 1,
+  "queue_limit_seconds": 1800,
+  "max_containers": 1,
+  "cached_image_id": "im-lrHUA0egLqd897fDW0kqQ9",
+  "non_gpu_allowance_usd": 0.15,
+  "launch_status": "submitted_no_job_retries",
+  "arms": [
+    "default",
+    "batch_invariant"
+  ],
+  "sampling_arm": "default",
+  "cleanup_scope": "evalnoise_only",
+  "close_gap": 0.03,
+  "hardware_name_policy": "Modal A10 allocation may report NVIDIA A10 or NVIDIA A10G; require one exact UUID for full study",
+  "include_sampling": false,
+  "collect_timing": false,
+  "cpu_max": 2,
+  "memory_max_mib": 16384,
+  "preselected_pairs": [
+    [
+      "meta-llama/Llama-3.2-3B-Instruct",
+      "Qwen/Qwen3-4B-Instruct-2507"
+    ],
+    [
+      "Qwen/Qwen2.5-3B-Instruct",
+      "Qwen/Qwen3-1.7B"
+    ]
+  ]
+}

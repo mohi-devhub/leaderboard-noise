@@ -1,0 +1,29 @@
+{
+  "status": "running",
+  "started_at": "2026-10-28T23:14:48.365907+00:00",
+  "models": [
+    {
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "file": "Qwen2.5-3B-Instruct.json",
+      "sha256": "e5ec7db1027c4154524f49b1bde9c7a4db9db6aeb902cdad3937f6257e792ea9",
+      "status": "complete",
+      "remote_seconds": 2530.3054071009997
+    }
+  ],
+  "budget_checks": [
+    {
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "projected_followup_bound_after_next_model_usd": 1.8906475039791644,
+      "followup_effective_cap_usd": 2.80058184607795
+    },
+    {
+      "model": "Qwen/Qwen3-1.7B",
+      "projected_followup_bound_after_next_model_usd": 2.3383061930112756,
+      "followup_effective_cap_usd": 2.80058184607795
+    }
+  ],
+  "gpu": "NVIDIA L4",
+  "gpu_uuid": "GPU-5d989e6c-850c-c1fc-e0ae-0db25e1b7567",
+  "cloud": "CLOUD_PROVIDER_GCP",
+  "region": "eu-west"
+}

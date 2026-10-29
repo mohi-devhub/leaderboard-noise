@@ -1,0 +1,18 @@
+{
+  "tests": "43 passed in 0.56s",
+  "ruff_check": "passed",
+  "ruff_format": "42 files formatted",
+  "cpu_compile_preflight": "passed",
+  "gpu_image_audit": "zero unaccepted findings, three approved aliases ignored",
+  "local_audit": "zero findings",
+  "bfcl_audit": "zero findings",
+  "launcher_exited": true,
+  "detached_app_id": "ap-C4FfuuJt0ioG1hkR9KcCAm",
+  "gpu_call_id": "fc-01M61YX3CNX0C514MAGKH0KPNY",
+  "model_count": 4,
+  "planned_greedy_outputs": 12000,
+  "l4_results_not_yet_available": true,
+  "l4_allocated": true,
+  "l4_gpu_uuid": "GPU-839082a9-63d0-c378-9a25-614e4de41356",
+  "first_five_request_smoke_passed": true
+}

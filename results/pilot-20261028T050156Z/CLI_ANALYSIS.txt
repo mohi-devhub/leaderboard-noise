@@ -1,0 +1,50 @@
+100 paired items; 5000 resamples; seed=20261101
+
+pass@1 — items uncertainty (95% CI)
+  Qwen/Qwen2.5-0.5B-Instruct: 0.5190 [0.4410, 0.5960]
+  Qwen/Qwen2.5-1.5B-Instruct: 0.8390 [0.7800, 0.8940]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+  Qwen/Qwen2.5-0.5B-Instruct vs Qwen/Qwen2.5-1.5B-Instruct | 0.000 | 0.000 | 0.000 | [-0.39499999999999996, -0.2450000000000001]
+    planning: approximate_pilot_projection
+    MDD=0.1083; minimum samples/item at N=100: None
+    m=1: N=917 for gap=0.05
+    m=3: N=586 for gap=0.05
+    m=5: N=520 for gap=0.05
+    m=10: N=470 for gap=0.05
+    m=20: N=445 for gap=0.05
+
+pass@1 — sampling uncertainty (95% CI)
+  Qwen/Qwen2.5-0.5B-Instruct: 0.5190 [0.5000, 0.5370]
+  Qwen/Qwen2.5-1.5B-Instruct: 0.8390 [0.8240, 0.8530]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+  Qwen/Qwen2.5-0.5B-Instruct vs Qwen/Qwen2.5-1.5B-Instruct | 0.000 | 0.000 | 0.000 | [-0.3430000000000001, -0.2969999999999996]
+
+pass@5 — items uncertainty (95% CI)
+  Qwen/Qwen2.5-0.5B-Instruct: 0.7090 [0.6217, 0.7915]
+  Qwen/Qwen2.5-1.5B-Instruct: 0.9303 [0.8791, 0.9735]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+  Qwen/Qwen2.5-0.5B-Instruct vs Qwen/Qwen2.5-1.5B-Instruct | 0.000 | 0.000 | 0.000 | [-0.30826091269841294, -0.14107043650793635]
+
+pass@5 — sampling uncertainty (empirical resampling range; diagnostic)
+  Qwen/Qwen2.5-0.5B-Instruct: 0.7090 [0.6717, 0.7103]
+  Qwen/Qwen2.5-1.5B-Instruct: 0.9303 [0.9109, 0.9337]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+  Qwen/Qwen2.5-0.5B-Instruct vs Qwen/Qwen2.5-1.5B-Instruct | 0.000 | 0.000 | 0.000 | [-0.2540476190476191, -0.20880853174603195]
+
+pass@10 — items uncertainty (95% CI)
+  Qwen/Qwen2.5-0.5B-Instruct: 0.7400 [0.6500, 0.8200]
+  Qwen/Qwen2.5-1.5B-Instruct: 0.9400 [0.8900, 0.9800]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+  Qwen/Qwen2.5-0.5B-Instruct vs Qwen/Qwen2.5-1.5B-Instruct | 0.000 | 0.000 | 0.000 | [-0.2899999999999999, -0.12]
+
+pass@10 — sampling uncertainty (empirical resampling range; diagnostic)
+  Qwen/Qwen2.5-0.5B-Instruct: 0.7400 [0.7000, 0.7400]
+  Qwen/Qwen2.5-1.5B-Instruct: 0.9400 [0.9200, 0.9400]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+  Qwen/Qwen2.5-0.5B-Instruct vs Qwen/Qwen2.5-1.5B-Instruct | 0.000 | 0.000 | 0.000 | [-0.24, -0.19000000000000006]
+Note: Bootstrap win fractions are resampling stability, not posterior probabilities or p-values.
+Note: Item intervals resample whole observed item vectors and include finite-repeat noise; do not add their variance to sampling intervals.
+Note: Sampling intervals condition on these items and empirical generation probabilities; pass@k resampling can be biased for k>1.
+Note: Percentile bootstrap can collapse at boundaries or with no observed variation; a point interval does not prove certainty.
+Note: Pairwise intervals are unadjusted for multiple comparisons; no familywise significance claim is made.
+Note: Planning assumes independent items and independent iid generations across models; extrapolations require validation.

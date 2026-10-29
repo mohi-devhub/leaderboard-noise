@@ -1,0 +1,82 @@
+# evalnoise
+
+Does a small score difference survive another set of evaluation questions or model completions? `evalnoise` analyzes binary per-item outcomes and reports uncertainty, paired win fractions, rank flips, and approximate minimum detectable differences.
+
+**Six-model A10 study completed:** 58,800 predictions were scored with the official BFCL harness on 500 frozen items. Llama3B versus Qwen3-4B reversed order across greedy batch settings. Batch invariance removed observed batch-induced flips and text changes on this workload. Default text-change rates were 2–4%; median invariant token throughput was 32–60% lower across the measured configurations, with three repetitions each. Findings apply to the recorded A10 setup.
+
+Read the [article](blog/STUDY.md), [full report](results/study-20261028T065939Z/REPORT.md), [figures](figures/study-20261028T065939Z), and [selection rationale](docs/FULL_STUDY_PLAN.md). Two pairs were close on this subset; the three preselected published-score comparisons separated more than expected, so the observed-close analysis is exploratory. The preserved first model used an earlier A10; the remaining five, including both observed-close pairs, shared a second A10.
+
+The remaining-five job reports $5.6008 in provisional app-specific gross usage against a $6.5151 forecast. At the end of the A10 phase, the conservative whole-project estimate was $7.5638/$12; settled invoice actuals are unknown. All study apps are stopped, reservations released, and the temporary volume deleted after SHA256 verification. qunti-check was untouched. See the [receipt](results/study-20261028T065939Z/receipt.json) and [budget](BUDGET.md).
+
+This is a practical replication with a reusable CLI, rather than a new statistical method. See [related work](docs/RELATED_WORK.md), [methods](docs/METHODS.md), [learning notes](LEARNING.md), [security record](SECURITY.md), and [decisions](DECISIONS.md). The [two-model pilot](results/pilot-20261028T050156Z/REPORT.md) and its [article](blog/POST.md) remain historical artifacts. Optional code execution was not run in this BFCL study.
+
+The [L4 replication](blog/L4_FOLLOWUP.md) is complete: all four models, both arms, and 12,000 scored outcomes. Llama3B/Qwen3-4B flipped again, in the opposite direction to A10. The Qwen pair did not flip on the full set. Invariant outputs were stable across batches and matched A10 exactly for all four models. After preemption, the primary pair was preserved and only the unfinished pair resumed; each pair shares one L4. Follow-up gross metering is $2.7296; conservative estimate $3.1575/$5; whole project $10.7213/$12. All owned apps are stopped, holds released, and temporary volumes deleted. See the [comparison report](results/l4-continuation-20261028T224638Z/REPORT.md), [figures](figures/l4-continuation-20261028T224638Z), and [receipt](results/l4-continuation-20261028T224638Z/receipt.json).
+
+## Install and analyze
+
+Python >=3.12 and uv. All dependencies resolve from official PyPI; `uv.lock` includes artifact hashes.
+
+```sh
+UV_CACHE_DIR=.uv-cache UV_HTTP_TIMEOUT=120 uv sync --frozen --group modal
+.venv/bin/evalnoise analyze results.jsonl --k 1 5 10 --output analysis.json
+.venv/bin/evalnoise analyze results.jsonl --gap 0.03 --power 0.8 --format json
+.venv/bin/python scripts/figures.py analysis.json --out figures/my-eval
+.venv/bin/pytest -q
+```
+
+Default `--k 1` works with one prediction/item. Pass@5/10 require at least 5/10 predictions for every item. The CLI never executes supplied code or calls a model. It handles binary outcomes from any evaluator after explicit schema mapping; it does not infer correctness from arbitrary text. See [schema and adapters](docs/SCHEMA.md).
+
+Two example aggregate rows (add at least two aligned items per model):
+
+```json
+{"model":"A","item_id":"q1","successes":[true,false,true]}
+{"model":"B","item_id":"q1","successes":[false,false,true]}
+```
+
+For sample rows with different field names:
+
+```sh
+.venv/bin/evalnoise analyze input.jsonl --model-key model_name --item-key task_id --sample-key attempt --score-key grading.passed
+```
+
+Default: 5,000 resamples, fixed seed 20261101, 95% percentile CIs. The `items` report resamples matched item vectors. The `sampling` report resamples outcomes conditional on the same fixed items. Do not add their variances. Pairwise probabilities are strict bootstrap win fractions, with ties separate; they are not posterior probabilities. Planning is a pilot-based normal approximation for pass@1, default two-sided alpha=.05 and power=.8. See methods for assumptions, finite-repeat correction, dependence limitations, and boundary behavior.
+
+## Reanalyze the six-model study
+
+The [study article](blog/STUDY.md) explains the experiment and its limits. The [frozen plan](docs/FULL_STUDY_PLAN.md) records selection before inference. All six result files and their metadata are retained under `results/study-20261028T065939Z`.
+
+These commands regenerate analysis and figures from the saved outputs. They do not submit GPU work. BFCL scoring requires the separate CPU environment described below.
+
+```sh
+.venv/bin/python scripts/report_study.py results/study-20261028T065939Z
+MPLCONFIGDIR=.uv-cache/matplotlib .venv/bin/python scripts/figures.py results/study-20261028T065939Z/analysis-sampling.json --out figures/study-20261028T065939Z
+MPLCONFIGDIR=.uv-cache/matplotlib .venv/bin/python scripts/study_figures.py results/study-20261028T065939Z --out figures/study-20261028T065939Z
+.venv/bin/python scripts/write_study_article.py results/study-20261028T065939Z
+```
+
+The article generator inserts measured tables into the written explanation and requires a completed shutdown receipt. `scripts/study_receipt.py` refreshes app-specific Modal metering and app state when authenticated; it does not launch inference. Regenerating the report replaces its appended receipt text, while the separate `receipt.json` remains available. The original pilot commands below describe its historical protocol and approval gates.
+
+## Prepare and run the pilot
+
+Separate CPU BFCL and GPU environments avoid upstream numpy/tree-sitter conflicts. `experiments/models.json` pins all six candidate checkpoints. The GPU lock targets Linux x86_64, Python 3.12; the CPU BFCL lock targets macOS arm64 Python 3.12 in this workspace.
+
+```sh
+UV_CACHE_DIR=.uv-cache UV_HTTP_TIMEOUT=120 uv venv .venv-bfcl --python 3.12
+UV_CACHE_DIR=.uv-cache UV_HTTP_TIMEOUT=120 uv pip sync --python .venv-bfcl/bin/python --require-hashes experiments/bfcl.lock
+.venv-bfcl/bin/python scripts/bfcl_smoke.py
+.venv-bfcl/bin/python scripts/prepare_bfcl.py
+.venv/bin/python scripts/run_pilot.py
+.venv/bin/python scripts/run_pilot.py --execute
+.venv/bin/python scripts/report_pilot.py results/pilot-TIMESTAMP
+.venv/bin/python scripts/figures.py results/pilot-TIMESTAMP/analysis-sampling.json --out figures/pilot
+```
+
+Run the audit commands in SECURITY.md before launch. The GPU image installs only hash-verified wheels from PyPI and audits its actual Python packages before GPU work. Two setuptools build/install advisories have explicit user-approved applicability exceptions; no unaccepted findings are permitted. Model inference disables remote model code. Five smoke requests precede benchmark generation in each model/arm process. Raw outputs, token IDs, frozen prompt hashes, immutable model revisions, timing and installed-package metadata are retained.
+
+The corrected image adds Debian `build-essential=12.12` and passes a CPU compiler/headers preflight. Each authorized attempt is guarded by `experiments/pilot.json`. Cleanup always targets only this evalnoise app ID; unrelated projects are preserved. App tags identify `project=evalnoise` and the session for billing reports; they do not retroactively attribute earlier untagged attempts.
+
+`run_pilot.py` reserves $4.50 against the $12 cap and does not launch the six-model experiment. The October 28 authorization uses one detached, 90-minute-bounded job with ordered L4/A10 allocation, one five-request smoke gate, and all model/arm stages in the same container. The saved call ID permits one fresh-connection reattachment; it is never resubmitted. Worker failures stop the run. Cleanup in `finally` stops only this app. After scoring, read the pilot report and BUDGET.md and obtain the user's OK before any full run. No automatic scheduled run is installed.
+
+The baseline collects 10 samples at temperature .7, then three greedy request batch sizes (1/8/32). The fix arm repeats those three greedy configurations with `VLLM_BATCH_INVARIANT=1`. Both use the same max engine concurrency (64), same eager execution and no prefix cache. This tests batch sensitivity with controlled offline inference submission, not a production HTTP load generator. The official BFCL prompting-mode instructions and AST checker define correctness. Scores are for a selected Python single-turn subset, not the complete leaderboard.
+
+Generated model code for optional EvalPlus must execute on isolated CPU infrastructure, with no secrets or writable host mounts. `experiments/evalplus.in` is the optional dependency entry point; no code benchmark is launched by the pilot. The full model/benchmark plan stays in scope and needs a measured budget estimate after pilot review.

@@ -1,0 +1,61 @@
+# Does a one-question leaderboard flip survive a change of GPU?
+
+The Llama3B/Qwen3-4B full-set ranking flip **reproduced on L4**. The default-decoding order across batch sizes did not match A10: the observed lead changed in the opposite direction. Batch invariance kept Llama at 458 and Qwen at 457 correct calls on both GPUs and all three batch settings. A one-answer lead on 500 questions is 0.2 percentage points; the paired difference intervals include zero.
+
+This follows our [six-model A10 study](STUDY.md). We selected its two observed-close pairs before seeing L4 results: Llama3.2-3B versus Qwen3-4B-Instruct-2507, and Qwen2.5-3B versus Qwen3-1.7B. We retained the same 500 frozen BFCL items, checkpoint revisions, prompts, seeds, maximum lengths, inference versions, and official AST scoring. Each model contributes one greedy answer per item at batch sizes 1, 8, and 32, under default and batch-invariant decoding: 12,000 scored outcomes in total.
+
+## What changed when batching changed?
+
+Score cells give correct calls out of 500 at batch sizes 1 / 8 / 32. A strict flip requires opposite strict orders at two batch settings; ties are separate. Bootstrap fractions use 5,000 paired item draws, with exploratory outer 95% intervals from 500 outer and 1,000 inner draws. Collapsed intervals do not prove population certainty. Monte Carlo precision and paired score-difference intervals are retained in JSON. Intervals are unadjusted for multiple comparisons.
+
+| Pair | GPU | Arm | Model A correct | Model B correct | Full-set strict flip | Bootstrap fraction [exploratory 95% interval] |
+|---|---|---|---|---|---|---|
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | A10 | default | 457 / 457 / 457 | 458 / 457 / 456 | True | 8.94% [0.50%, 23.66%] |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | A10 | batch_invariant | 458 / 458 / 458 | 457 / 457 / 457 | False | 0.00% [0.00%, 0.00%] |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | L4 | default | 458 / 457 / 458 | 457 / 457 / 459 | True | 10.28% [1.10%, 27.81%] |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | L4 | batch_invariant | 458 / 458 / 458 | 457 / 457 / 457 | False | 0.00% [0.00%, 0.00%] |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | A10 | default | 426 / 428 / 428 | 434 / 432 / 434 | False | 13.18% [0.60%, 35.80%] |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | A10 | batch_invariant | 423 / 423 / 423 | 433 / 433 / 433 | False | 0.00% [0.00%, 0.00%] |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | L4 | default | 427 / 428 / 428 | 432 / 433 / 434 | False | 8.48% [0.70%, 28.45%] |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | L4 | batch_invariant | 423 / 423 / 423 | 433 / 433 / 433 | False | 0.00% [0.00%, 0.00%] |
+
+![Observed Llama/Qwen scores on A10 and L4](../figures/l4-continuation-20261028T224638Z/rank-order-pair1.png)
+
+![Observed Qwen pair scores on A10 and L4](../figures/l4-continuation-20261028T224638Z/rank-order-pair2.png)
+
+The plots zoom the vertical axis so the one-answer changes are visible. A full-set flip means opposite strict orders at two batch sizes on the actual 500 questions. A tie alone is not a flip. A bootstrap fraction measures how often a flip appears after paired resampling of those questions; it is a different quantity.
+
+The outer intervals are exploratory, unadjusted for multiple comparisons, and based on a finite empirical item distribution. A collapsed zero interval cannot rule out question patterns absent from that distribution. These measurements do not establish a reliable population winner.
+
+On L4, default text changed across batches on 2.40%–4.60% of items, depending on the model. The invariant arms had 0 observed text changes across the four models; the per-model Wilson upper bound for zero of 500 is about 0.76% under the independent-item approximation. [Per-model intervals, correctness changes, and cross-GPU agreement](../results/l4-continuation-20261028T224638Z/REPORT.md) keep text stability separate from score stability. In these recordings, invariant text and correctness also matched A10 exactly for every model and batch setting.
+
+## What this replication can establish
+
+Each requested pair and both of each model's arms shared one physical L4. The first allocation was preempted after the Llama/Qwen pair finished. We verified and preserved those checkpoints, then ran only the unfinished Qwen pair on a second L4. Unretained partial work from the interruption is charged as compute but is not scored or imputed.
+
+The validation checks every item against its A10 revision, prompt hashes, seed, and inference package versions. It also checks Llama's corrected special-token handling and the five-request smoke gates. Incorrect outputs and truncations remain in the denominator; the L4 set has 0 length truncations.
+
+The comparison still includes generation-history, host, and driver differences. The L4 workers have a two-core CPU cap, versus A10's four-core cap. A10 default generation sampled before the greedy conditions; L4 begins the focused greedy conditions after smoke and the same warmup protocol. Thus the result replicates batch sensitivity on these recorded setups. It does not isolate GPU architecture as the cause of every cross-GPU difference or show that every L4 will behave identically.
+
+This follow-up adds no stochastic samples or repeated throughput experiment. The original A10 study's three-repetition configuration timings remain the evidence for its reported throughput cost. L4 generation durations support cost accounting only.
+
+## Cost and recovery
+
+The original whole-follow-up forecast was $3.6089. Across both allocations, provisional app-specific gross metering is $2.7296, and the conservative recorded follow-up estimate is $3.1575/$5. The whole-project estimate is $10.7213/$12. Settled invoice actuals remain unknown. Failed partial execution is included; post-preemption GPU queue waiting is excluded from resource time.
+
+The job ran detached and committed a hash-identified checkpoint after each model. After the preemption, a persistent execution claim prevented platform replay from regenerating outputs; the controller restored saved call IDs and enforced an absolute deadline. Modal documents [automatic input restarts after preemption](https://modal.com/docs/guide/preemption). Only the CPU controller can use the non-preemptible setting, and its higher resource rate is included in the budget.
+
+Both owned follow-up apps are stopped, reservations are released, and temporary volumes were deleted after verified downloads. qunti-check was untouched. The [receipt](../results/l4-continuation-20261028T224638Z/receipt.json), [budget](../BUDGET.md), and [decision record](../DECISIONS.md) retain the operational evidence.
+
+## Reproduce the analysis
+
+These commands use saved outputs and do not submit GPU work. BFCL scoring uses the separately locked CPU environment.
+
+```sh
+.venv/bin/python scripts/report_l4_followup.py results/l4-continuation-20261028T224638Z
+MPLCONFIGDIR=.uv-cache/matplotlib .venv/bin/python scripts/l4_figures.py results/l4-continuation-20261028T224638Z --out figures/l4-continuation-20261028T224638Z
+.venv/bin/evalnoise analyze results/l4-continuation-20261028T224638Z/scored.jsonl --condition default:serial --output results/l4-continuation-20261028T224638Z/cli-analysis.json
+.venv/bin/python scripts/write_l4_article.py results/l4-continuation-20261028T224638Z
+```
+
+The reusable CLI and its [schema](../docs/SCHEMA.md) also work on other evaluators' binary per-item outcomes. [Related work](../docs/RELATED_WORK.md) explains why our contribution is a small-model replication and an auditable tool, rather than a new uncertainty estimator.

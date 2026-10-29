@@ -1,0 +1,119 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "completed_models": 1,
+  "planned_models": 6,
+  "gpu": "NVIDIA A10",
+  "gpu_uuid": "GPU-df755a7a-4f7b-ab01-e69f-d911ae000a49",
+  "scored_predictions": 9800,
+  "primary_predictions": 8000,
+  "timing_predictions": 1800,
+  "truncations": 1,
+  "greedy": {
+    "default": {
+      "n_items": 500,
+      "n_runs": 3,
+      "changed_items": 13,
+      "changed_fraction": 0.026,
+      "score_changed_fraction": 0.008,
+      "text_change_ci95": [
+        0.01525638392332725,
+        0.043971490834224275
+      ],
+      "token_changed_items": 15,
+      "scores": {
+        "serial": 0.812,
+        "batch8": 0.812,
+        "batch32": 0.814
+      }
+    },
+    "batch_invariant": {
+      "n_items": 500,
+      "n_runs": 3,
+      "changed_items": 0,
+      "changed_fraction": 0.0,
+      "score_changed_fraction": 0.0,
+      "text_change_ci95": [
+        0.0,
+        0.007624340461552236
+      ],
+      "token_changed_items": 0,
+      "scores": {
+        "serial": 0.808,
+        "batch8": 0.808,
+        "batch32": 0.808
+      }
+    }
+  },
+  "throughput": [
+    {
+      "configuration": "serial",
+      "token_rate_ratios": [
+        0.5530152397458917,
+        0.5615265000970262,
+        0.57974591678784
+      ],
+      "token_rate_median": 0.5615265000970262,
+      "token_rate_range": [
+        0.5530152397458917,
+        0.57974591678784
+      ],
+      "completion_rate_ratios": [
+        0.5537358746686776,
+        0.5622582260549321,
+        0.5805013844928021
+      ],
+      "completion_rate_median": 0.5622582260549321,
+      "completion_rate_range": [
+        0.5537358746686776,
+        0.5805013844928021
+      ]
+    },
+    {
+      "configuration": "batch8",
+      "token_rate_ratios": [
+        0.5935276856216062,
+        0.5979731114894772,
+        0.6238080449973195
+      ],
+      "token_rate_median": 0.5979731114894772,
+      "token_rate_range": [
+        0.5935276856216062,
+        0.6238080449973195
+      ],
+      "completion_rate_ratios": [
+        0.5938370563203926,
+        0.5982847993244991,
+        0.6241331990473572
+      ],
+      "completion_rate_median": 0.5982847993244991,
+      "completion_rate_range": [
+        0.5938370563203926,
+        0.6241331990473572
+      ]
+    },
+    {
+      "configuration": "batch32",
+      "token_rate_ratios": [
+        0.6715157734492184,
+        0.6776303408505705,
+        0.6775857327527712
+      ],
+      "token_rate_median": 0.6775857327527712,
+      "token_rate_range": [
+        0.6715157734492184,
+        0.6776303408505705
+      ],
+      "completion_rate_ratios": [
+        0.6583899764701484,
+        0.6622657748735051,
+        0.6788218808187783
+      ],
+      "completion_rate_median": 0.6622657748735051,
+      "completion_rate_range": [
+        0.6583899764701484,
+        0.6788218808187783
+      ]
+    }
+  ],
+  "remote_seconds": 2053.814452731
+}

@@ -1,0 +1,406 @@
+CHECKPOINTS_VERIFIED ["Qwen/Qwen2.5-3B-Instruct", "Qwen/Qwen3-1.7B", "meta-llama/Llama-3.2-3B-Instruct"]
+CHECKPOINTS_VERIFIED ["Qwen/Qwen2.5-3B-Instruct", "Qwen/Qwen3-1.7B", "meta-llama/Llama-3.2-3B-Instruct", "Salesforce/xLAM-2-3b-fc-r"]
+Unclosed connection: Channel('api.modal2.com', 443, ..., path=None)
+ANALYSIS /Users/mohith/Research/noise-check/.venv/bin/python scripts/report_study.py results/study-20261028T065939Z
+Scored 58800 predictions with official BFCL harness
+{
+  "gpu": "NVIDIA A10",
+  "gpu_uuids": [
+    "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+    "GPU-df755a7a-4f7b-ab01-e69f-d911ae000a49"
+  ],
+  "gpu_names": [
+    "NVIDIA A10"
+  ],
+  "gpu_name_by_model": {
+    "Qwen/Qwen2.5-1.5B-Instruct": "NVIDIA A10",
+    "Qwen/Qwen2.5-3B-Instruct": "NVIDIA A10",
+    "Qwen/Qwen3-1.7B": "NVIDIA A10",
+    "meta-llama/Llama-3.2-3B-Instruct": "NVIDIA A10",
+    "Salesforce/xLAM-2-3b-fc-r": "NVIDIA A10",
+    "Qwen/Qwen3-4B-Instruct-2507": "NVIDIA A10"
+  },
+  "gpu_uuid_by_model": {
+    "Qwen/Qwen2.5-1.5B-Instruct": "GPU-df755a7a-4f7b-ab01-e69f-d911ae000a49",
+    "Qwen/Qwen2.5-3B-Instruct": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+    "Qwen/Qwen3-1.7B": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+    "meta-llama/Llama-3.2-3B-Instruct": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+    "Salesforce/xLAM-2-3b-fc-r": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+    "Qwen/Qwen3-4B-Instruct-2507": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e"
+  },
+  "models": [
+    "Qwen/Qwen2.5-1.5B-Instruct",
+    "Qwen/Qwen2.5-3B-Instruct",
+    "Qwen/Qwen3-1.7B",
+    "meta-llama/Llama-3.2-3B-Instruct",
+    "Salesforce/xLAM-2-3b-fc-r",
+    "Qwen/Qwen3-4B-Instruct-2507"
+  ],
+  "primary_predictions": 48000,
+  "timing_predictions": 10800,
+  "total_predictions": 58800,
+  "truncated": 17,
+  "syntax_failures": 913,
+  "observed_close_pairs": 2,
+  "preselected_close_pairs": 3,
+  "observed_close_pairs_same_gpu": 2,
+  "pairs_with_mitigation_order_change": 1
+}
+ANALYSIS /Users/mohith/Research/noise-check/.venv/bin/python scripts/study_receipt.py results/study-20261028T065939Z
+{
+  "checked_at": "2026-10-28T18:54:54.284119+00:00",
+  "gpu": "NVIDIA A10",
+  "gpu_names": [
+    "NVIDIA A10"
+  ],
+  "gpu_uuids": [
+    "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+    "GPU-df755a7a-4f7b-ab01-e69f-d911ae000a49"
+  ],
+  "gpu_jobs": 2,
+  "gpu_containers": 2,
+  "cpu_controller_function_id": "fu-DGI0ppG3ABeybQzSP9U0RM",
+  "owned_app_ids": [
+    "ap-EAQ6rjdrbFLjsUHZG1kU2d",
+    "ap-J4jZSsk5Nc9qnNQfgyhcqB",
+    "ap-vxekFhHsmfgaja7uwRVu48"
+  ],
+  "primary_predictions": 48000,
+  "timing_predictions": 10800,
+  "total_predictions": 58800,
+  "measured_model_execution_seconds": "17845.2863662049989",
+  "forecast_full_study_usd": 7.3310274369173,
+  "forecast_remaining_job_usd": 6.515082297329319,
+  "conservative_remaining_job_usd": 9.51875025,
+  "app_specific_gross_metered_study_usage_usd": "6.35595139",
+  "app_specific_gross_metered_remaining_usage_usd": "5.60078037",
+  "estimated_remaining_spend_usd": 6.363635297603,
+  "estimated_study_spend_usd": "7.240230086718",
+  "estimated_project_total_usd": "7.56377143525233333",
+  "within_project_cap": true,
+  "verified_remote_pre_model_budget_gates": 5,
+  "actual_invoice_usd": null,
+  "metering_provisional": true,
+  "active_reservations_usd": 0,
+  "own_apps_stopped": true,
+  "own_running_containers": 0,
+  "other_project_modified": false,
+  "temporary_volume_deleted_after_verified_downloads": true,
+  "models": [
+    {
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "gpu": "NVIDIA A10",
+      "gpu_uuid": "GPU-df755a7a-4f7b-ab01-e69f-d911ae000a49",
+      "forecast_seconds": 2072.6802868449995,
+      "measured_seconds": 2053.814452731,
+      "forecast_usd": 0.8159451395879816,
+      "timed_execution_resource_ceiling_usd": "0.8085182895584371141008029294"
+    },
+    {
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "gpu": "NVIDIA A10",
+      "gpu_uuid": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+      "forecast_seconds": 3196.2884589519995,
+      "measured_seconds": 3282.434361911,
+      "forecast_usd": 1.2582722233407708,
+      "timed_execution_resource_ceiling_usd": "1.292184993805630515690797884"
+    },
+    {
+      "model": "Qwen/Qwen3-1.7B",
+      "gpu": "NVIDIA A10",
+      "gpu_uuid": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+      "forecast_seconds": 2447.2163442139995,
+      "measured_seconds": 2322.7345209809996,
+      "forecast_usd": 0.9633875008389112,
+      "timed_execution_resource_ceiling_usd": "0.9143831564261869715741400544"
+    },
+    {
+      "model": "meta-llama/Llama-3.2-3B-Instruct",
+      "gpu": "NVIDIA A10",
+      "gpu_uuid": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+      "forecast_seconds": 3196.2884589519995,
+      "measured_seconds": 3052.7025596580006,
+      "forecast_usd": 1.2582722233407708,
+      "timed_execution_resource_ceiling_usd": "1.201747240985366405794586648"
+    },
+    {
+      "model": "Salesforce/xLAM-2-3b-fc-r",
+      "gpu": "NVIDIA A10",
+      "gpu_uuid": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+      "forecast_seconds": 3196.2884589519995,
+      "measured_seconds": 3098.5127330739997,
+      "forecast_usd": 1.2582722233407708,
+      "timed_execution_resource_ceiling_usd": "1.219781179253464720706262949"
+    },
+    {
+      "model": "Qwen/Qwen3-4B-Instruct-2507",
+      "gpu": "NVIDIA A10",
+      "gpu_uuid": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+      "forecast_seconds": 4132.6286023745,
+      "measured_seconds": 4035.087737849999,
+      "forecast_usd": 1.626878126468095,
+      "timed_execution_resource_ceiling_usd": "1.588479539466949830504874325"
+    }
+  ],
+  "cost_note": "Gross app-specific metering excludes qunti-check and credit offsets. It can lag and is not a settled invoice. Resource ceilings use bounded CPU/RAM and stop timestamps; post-stop client waiting is excluded. Model one was preserved rather than rerun."
+}
+ANALYSIS /Users/mohith/Research/noise-check/.venv/bin/python scripts/figures.py results/study-20261028T065939Z/analysis-sampling.json --out figures/study-20261028T065939Z
+ANALYSIS /Users/mohith/Research/noise-check/.venv/bin/python scripts/study_figures.py results/study-20261028T065939Z --out figures/study-20261028T065939Z
+ANALYSIS .venv/bin/evalnoise analyze results/study-20261028T065939Z/evaluation.jsonl --condition sampling --k 1 5 10 --output results/study-20261028T065939Z/cli-analysis.json
+500 paired items; 5000 resamples; seed=20261101
+
+pass@1 — items uncertainty (95% CI)
+  Qwen/Qwen2.5-1.5B-Instruct: 0.7936 [0.7636, 0.8230]
+  Qwen/Qwen2.5-3B-Instruct: 0.8358 [0.8056, 0.8648]
+  Qwen/Qwen3-1.7B: 0.8648 [0.8372, 0.8916]
+  Qwen/Qwen3-4B-Instruct-2507: 0.9130 [0.8894, 0.9350]
+  Salesforce/xLAM-2-3b-fc-r: 0.7450 [0.7132, 0.7770]
+  meta-llama/Llama-3.2-3B-Instruct: 0.8912 [0.8678, 0.9132]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen2.5-3B-Instruct | 0.004 | 0.000 | 0.004 | [-0.07200500000000025, -0.011799999999999913]
+    planning: approximate_pilot_projection
+    MDD=0.0430; minimum samples/item at N=500: 2
+    m=1: N=601 for gap=0.05
+    m=3: N=430 for gap=0.05
+    m=5: N=396 for gap=0.05
+    m=10: N=370 for gap=0.05
+    m=20: N=357 for gap=0.05
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen3-1.7B | 0.000 | 0.000 | 0.000 | [-0.09940000000000004, -0.042600000000000415]
+    planning: approximate_pilot_projection
+    MDD=0.0420; minimum samples/item at N=500: 2
+    m=1: N=549 for gap=0.05
+    m=3: N=403 for gap=0.05
+    m=5: N=374 for gap=0.05
+    m=10: N=353 for gap=0.05
+    m=20: N=342 for gap=0.05
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.000 | 0.000 | [-0.15419999999999945, -0.08540000000000046]
+    planning: approximate_pilot_projection
+    MDD=0.0486; minimum samples/item at N=500: 5
+    m=1: N=655 for gap=0.05
+    m=3: N=520 for gap=0.05
+    m=5: N=494 for gap=0.05
+    m=10: N=473 for gap=0.05
+    m=20: N=463 for gap=0.05
+  Qwen/Qwen2.5-1.5B-Instruct vs Salesforce/xLAM-2-3b-fc-r | 0.997 | 0.000 | 0.003 | [0.015200000000000321, 0.08339999999999925]
+    planning: approximate_pilot_projection
+    MDD=0.0485; minimum samples/item at N=500: 6
+    m=1: N=758 for gap=0.05
+    m=3: N=546 for gap=0.05
+    m=5: N=504 for gap=0.05
+    m=10: N=472 for gap=0.05
+    m=20: N=456 for gap=0.05
+  Qwen/Qwen2.5-1.5B-Instruct vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.12539999999999973, -0.06979999999999975]
+    planning: approximate_pilot_projection
+    MDD=0.0398; minimum samples/item at N=500: 2
+    m=1: N=546 for gap=0.05
+    m=3: N=377 for gap=0.05
+    m=5: N=343 for gap=0.05
+    m=10: N=318 for gap=0.05
+    m=20: N=305 for gap=0.05
+  Qwen/Qwen2.5-3B-Instruct vs Qwen/Qwen3-1.7B | 0.029 | 0.001 | 0.029 | [-0.06000500000000002, 0.0011999999999999789]
+    planning: approximate_pilot_projection
+    MDD=0.0445; minimum samples/item at N=500: 2
+    m=1: N=536 for gap=0.05
+    m=3: N=432 for gap=0.05
+    m=5: N=412 for gap=0.05
+    m=10: N=396 for gap=0.05
+    m=20: N=388 for gap=0.05
+  Qwen/Qwen2.5-3B-Instruct vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.000 | 0.000 | [-0.10900500000000041, -0.04539499999999997]
+    planning: approximate_pilot_projection
+    MDD=0.0451; minimum samples/item at N=500: 2
+    m=1: N=532 for gap=0.05
+    m=3: N=439 for gap=0.05
+    m=5: N=421 for gap=0.05
+    m=10: N=407 for gap=0.05
+    m=20: N=400 for gap=0.05
+  Qwen/Qwen2.5-3B-Instruct vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.058399999999999674, 0.12380500000000026]
+    planning: approximate_pilot_projection
+    MDD=0.0471; minimum samples/item at N=500: 4
+    m=1: N=675 for gap=0.05
+    m=3: N=504 for gap=0.05
+    m=5: N=470 for gap=0.05
+    m=10: N=445 for gap=0.05
+    m=20: N=432 for gap=0.05
+  Qwen/Qwen2.5-3B-Instruct vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.08400500000000014, -0.027800000000000474]
+    planning: approximate_pilot_projection
+    MDD=0.0401; minimum samples/item at N=500: 1
+    m=1: N=495 for gap=0.05
+    m=3: N=367 for gap=0.05
+    m=5: N=342 for gap=0.05
+    m=10: N=322 for gap=0.05
+    m=20: N=313 for gap=0.05
+  Qwen/Qwen3-1.7B vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.000 | 0.000 | [-0.07860500000000008, -0.018600000000000505]
+    planning: approximate_pilot_projection
+    MDD=0.0437; minimum samples/item at N=500: 1
+    m=1: N=472 for gap=0.05
+    m=3: N=406 for gap=0.05
+    m=5: N=392 for gap=0.05
+    m=10: N=383 for gap=0.05
+    m=20: N=378 for gap=0.05
+  Qwen/Qwen3-1.7B vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.0868000000000001, 0.15320499999999992]
+    planning: approximate_pilot_projection
+    MDD=0.0484; minimum samples/item at N=500: 5
+    m=1: N=662 for gap=0.05
+    m=3: N=519 for gap=0.05
+    m=5: N=490 for gap=0.05
+    m=10: N=468 for gap=0.05
+    m=20: N=457 for gap=0.05
+  Qwen/Qwen3-1.7B vs meta-llama/Llama-3.2-3B-Instruct | 0.027 | 0.002 | 0.027 | [-0.05359999999999988, 0.0009999999999996735]
+    planning: approximate_pilot_projection
+    MDD=0.0394; minimum samples/item at N=500: 1
+    m=1: N=448 for gap=0.05
+    m=3: N=346 for gap=0.05
+    m=5: N=326 for gap=0.05
+    m=10: N=311 for gap=0.05
+    m=20: N=303 for gap=0.05
+  Qwen/Qwen3-4B-Instruct-2507 vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.13160000000000038, 0.20440500000000017]
+    planning: approximate_pilot_projection
+    MDD=0.0529; minimum samples/item at N=500: None
+    m=1: N=740 for gap=0.05
+    m=3: N=607 for gap=0.05
+    m=5: N=581 for gap=0.05
+    m=10: N=561 for gap=0.05
+    m=20: N=551 for gap=0.05
+  Qwen/Qwen3-4B-Instruct-2507 vs meta-llama/Llama-3.2-3B-Instruct | 0.947 | 0.001 | 0.052 | [-0.0047999999999993655, 0.04840500000000058]
+    planning: approximate_pilot_projection
+    MDD=0.0387; minimum samples/item at N=500: 1
+    m=1: N=423 for gap=0.05
+    m=3: N=332 for gap=0.05
+    m=5: N=314 for gap=0.05
+    m=10: N=301 for gap=0.05
+    m=20: N=294 for gap=0.05
+  Salesforce/xLAM-2-3b-fc-r vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.17919999999999892, -0.11379499999999987]
+    planning: approximate_pilot_projection
+    MDD=0.0476; minimum samples/item at N=500: 4
+    m=1: N=680 for gap=0.05
+    m=3: N=512 for gap=0.05
+    m=5: N=478 for gap=0.05
+    m=10: N=453 for gap=0.05
+    m=20: N=440 for gap=0.05
+
+pass@1 — sampling uncertainty (95% CI)
+  Qwen/Qwen2.5-1.5B-Instruct: 0.7936 [0.7876, 0.7994]
+  Qwen/Qwen2.5-3B-Instruct: 0.8358 [0.8312, 0.8404]
+  Qwen/Qwen3-1.7B: 0.8648 [0.8612, 0.8682]
+  Qwen/Qwen3-4B-Instruct-2507: 0.9130 [0.9100, 0.9160]
+  Salesforce/xLAM-2-3b-fc-r: 0.7450 [0.7392, 0.7510]
+  meta-llama/Llama-3.2-3B-Instruct: 0.8912 [0.8866, 0.8958]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen2.5-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.049799999999999955, -0.0346000000000003]
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen3-1.7B | 0.000 | 0.000 | 0.000 | [-0.07820500000000034, -0.0643999999999999]
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.000 | 0.000 | [-0.12600000000000022, -0.11260000000000059]
+  Qwen/Qwen2.5-1.5B-Instruct vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.040200000000000014, 0.05679999999999974]
+  Qwen/Qwen2.5-1.5B-Instruct vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.10499999999999987, -0.09000000000000041]
+  Qwen/Qwen2.5-3B-Instruct vs Qwen/Qwen3-1.7B | 0.000 | 0.000 | 0.000 | [-0.03499999999999992, -0.02320000000000033]
+  Qwen/Qwen2.5-3B-Instruct vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.000 | 0.000 | [-0.08279999999999987, -0.07160000000000033]
+  Qwen/Qwen2.5-3B-Instruct vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.08319999999999994, 0.09819999999999995]
+  Qwen/Qwen2.5-3B-Instruct vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.06199999999999972, -0.04900000000000049]
+  Qwen/Qwen3-1.7B vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.000 | 0.000 | [-0.05280000000000018, -0.04359999999999997]
+  Qwen/Qwen3-1.7B vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.11280000000000012, 0.12660000000000038]
+  Qwen/Qwen3-1.7B vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.032000000000000146, -0.02059999999999984]
+  Qwen/Qwen3-4B-Instruct-2507 vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.16139499999999982, 0.17440000000000055]
+  Qwen/Qwen3-4B-Instruct-2507 vs meta-llama/Llama-3.2-3B-Instruct | 1.000 | 0.000 | 0.000 | [0.01639999999999997, 0.027200000000000113]
+  Salesforce/xLAM-2-3b-fc-r vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.15360000000000018, -0.1385999999999996]
+
+pass@5 — items uncertainty (95% CI)
+  Qwen/Qwen2.5-1.5B-Instruct: 0.8876 [0.8606, 0.9122]
+  Qwen/Qwen2.5-3B-Instruct: 0.8933 [0.8665, 0.9174]
+  Qwen/Qwen3-1.7B: 0.8955 [0.8681, 0.9207]
+  Qwen/Qwen3-4B-Instruct-2507: 0.9403 [0.9199, 0.9590]
+  Salesforce/xLAM-2-3b-fc-r: 0.8432 [0.8132, 0.8716]
+  meta-llama/Llama-3.2-3B-Instruct: 0.9408 [0.9202, 0.9594]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen2.5-3B-Instruct | 0.336 | 0.001 | 0.336 | [-0.030595634920634718, 0.019025396825396942]
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen3-1.7B | 0.272 | 0.001 | 0.272 | [-0.03421567460317452, 0.01915138888888898]
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.000 | 0.000 | [-0.0818198412698409, -0.023932936507936216]
+  Qwen/Qwen2.5-1.5B-Instruct vs Salesforce/xLAM-2-3b-fc-r | 0.998 | 0.000 | 0.002 | [0.014736706349206328, 0.07534285714285738]
+  Qwen/Qwen2.5-1.5B-Instruct vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.07863492063492061, -0.02696805555555535]
+  Qwen/Qwen2.5-3B-Instruct vs Qwen/Qwen3-1.7B | 0.432 | 0.000 | 0.432 | [-0.031524999999999984, 0.02630178571428579]
+  Qwen/Qwen2.5-3B-Instruct vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.000 | 0.000 | [-0.07590515873015885, -0.01883313492063495]
+  Qwen/Qwen2.5-3B-Instruct vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.020300992063491924, 0.08136626984126977]
+  Qwen/Qwen2.5-3B-Instruct vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.07333432539682552, -0.02342857142857157]
+  Qwen/Qwen3-1.7B vs Qwen/Qwen3-4B-Instruct-2507 | 0.001 | 0.000 | 0.001 | [-0.07304841269841268, -0.01690416666666674]
+  Qwen/Qwen3-1.7B vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.022705357142857225, 0.08289781746031757]
+  Qwen/Qwen3-1.7B vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.06962757936507932, -0.020910515873015876]
+  Qwen/Qwen3-4B-Instruct-2507 vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.06641250000000007, 0.12976230158730157]
+  Qwen/Qwen3-4B-Instruct-2507 vs meta-llama/Llama-3.2-3B-Instruct | 0.491 | 0.000 | 0.491 | [-0.022150992063492168, 0.020849603174603323]
+  Salesforce/xLAM-2-3b-fc-r vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.12799464285714296, -0.06920575396825393]
+
+pass@5 — sampling uncertainty (empirical resampling range; diagnostic)
+  Qwen/Qwen2.5-1.5B-Instruct: 0.8876 [0.8711, 0.8854]
+  Qwen/Qwen2.5-3B-Instruct: 0.8933 [0.8819, 0.8934]
+  Qwen/Qwen3-1.7B: 0.8955 [0.8899, 0.8964]
+  Qwen/Qwen3-4B-Instruct-2507: 0.9403 [0.9324, 0.9418]
+  Salesforce/xLAM-2-3b-fc-r: 0.8432 [0.8242, 0.8404]
+  meta-llama/Llama-3.2-3B-Instruct: 0.9408 [0.9314, 0.9413]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen2.5-3B-Instruct | 0.022 | 0.000 | 0.022 | [-0.018810119047618958, -0.0002380952380953677]
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen3-1.7B | 0.000 | 0.000 | 0.000 | [-0.023023809523809557, -0.00707896825396831]
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.000 | 0.000 | [-0.06758730158730142, -0.0502690476190476]
+  Qwen/Qwen2.5-1.5B-Instruct vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.03517380952380955, 0.056945634920634924]
+  Qwen/Qwen2.5-1.5B-Instruct vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.06699246031746059, -0.0493095238095238]
+  Qwen/Qwen2.5-3B-Instruct vs Qwen/Qwen3-1.7B | 0.053 | 0.000 | 0.053 | [-0.012254166666666812, 0.0011271825396825]
+  Qwen/Qwen2.5-3B-Instruct vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.000 | 0.000 | [-0.056777976190476226, -0.042142658730158634]
+  Qwen/Qwen2.5-3B-Instruct vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.04522976190476207, 0.06525396825396834]
+  Qwen/Qwen2.5-3B-Instruct vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.0564287698412699, -0.04111845238095239]
+  Qwen/Qwen3-1.7B vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.000 | 0.000 | [-0.04948412698412685, -0.038079166666666636]
+  Qwen/Qwen3-1.7B vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.05230932539682561, 0.06942162698412715]
+  Qwen/Qwen3-1.7B vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.049024007936507984, -0.03719821428571421]
+  Qwen/Qwen3-4B-Instruct-2507 vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.09534067460317455, 0.1138730158730159]
+  Qwen/Qwen3-4B-Instruct-2507 vs meta-llama/Llama-3.2-3B-Instruct | 0.572 | 0.000 | 0.572 | [-0.006277777777777718, 0.007333531746031926]
+  Salesforce/xLAM-2-3b-fc-r vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.11342103174603163, -0.09449980158730162]
+
+pass@10 — items uncertainty (95% CI)
+  Qwen/Qwen2.5-1.5B-Instruct: 0.9100 [0.8840, 0.9340]
+  Qwen/Qwen2.5-3B-Instruct: 0.9100 [0.8840, 0.9340]
+  Qwen/Qwen3-1.7B: 0.9000 [0.8740, 0.9260]
+  Qwen/Qwen3-4B-Instruct-2507: 0.9520 [0.9320, 0.9700]
+  Salesforce/xLAM-2-3b-fc-r: 0.8740 [0.8440, 0.9020]
+  meta-llama/Llama-3.2-3B-Instruct: 0.9520 [0.9320, 0.9700]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen2.5-3B-Instruct | 0.482 | 0.059 | undefined (observed tie) | [-0.02400000000000002, 0.02404999999999929]
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen3-1.7B | 0.743 | 0.040 | 0.217 | [-0.018000000000000016, 0.038000000000000034]
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen3-4B-Instruct-2507 | 0.002 | 0.000 | 0.002 | [-0.06999999999999995, -0.014000000000000012]
+  Qwen/Qwen2.5-1.5B-Instruct vs Salesforce/xLAM-2-3b-fc-r | 0.987 | 0.004 | 0.009 | [0.0040000000000000036, 0.06600000000000006]
+  Qwen/Qwen2.5-1.5B-Instruct vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.06799999999999995, -0.016000000000000014]
+  Qwen/Qwen2.5-3B-Instruct vs Qwen/Qwen3-1.7B | 0.724 | 0.043 | 0.233 | [-0.020000000000000018, 0.038000000000000034]
+  Qwen/Qwen2.5-3B-Instruct vs Qwen/Qwen3-4B-Instruct-2507 | 0.001 | 0.001 | 0.001 | [-0.06999999999999995, -0.014000000000000012]
+  Qwen/Qwen2.5-3B-Instruct vs Salesforce/xLAM-2-3b-fc-r | 0.988 | 0.003 | 0.009 | [0.006000000000000005, 0.06600000000000006]
+  Qwen/Qwen2.5-3B-Instruct vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.06599999999999995, -0.019950000000000637]
+  Qwen/Qwen3-1.7B vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.000 | 0.000 | [-0.07999999999999996, -0.025999999999999912]
+  Qwen/Qwen3-1.7B vs Salesforce/xLAM-2-3b-fc-r | 0.948 | 0.013 | 0.039 | [-0.0040000000000000036, 0.05600000000000005]
+  Qwen/Qwen3-1.7B vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.07599999999999996, -0.027999999999999914]
+  Qwen/Qwen3-4B-Instruct-2507 vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.04800000000000004, 0.10799999999999998]
+  Qwen/Qwen3-4B-Instruct-2507 vs meta-llama/Llama-3.2-3B-Instruct | 0.463 | 0.079 | undefined (observed tie) | [-0.020000000000000018, 0.02200000000000002]
+  Salesforce/xLAM-2-3b-fc-r vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.10599999999999998, -0.04999999999999993]
+
+pass@10 — sampling uncertainty (empirical resampling range; diagnostic)
+  Qwen/Qwen2.5-1.5B-Instruct: 0.9100 [0.8880, 0.9040]
+  Qwen/Qwen2.5-3B-Instruct: 0.9100 [0.8920, 0.9060]
+  Qwen/Qwen3-1.7B: 0.9000 [0.8940, 0.9000]
+  Qwen/Qwen3-4B-Instruct-2507: 0.9520 [0.9380, 0.9500]
+  Salesforce/xLAM-2-3b-fc-r: 0.8740 [0.8440, 0.8640]
+  meta-llama/Llama-3.2-3B-Instruct: 0.9520 [0.9380, 0.9500]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen2.5-3B-Instruct | 0.245 | 0.120 | undefined (observed tie) | [-0.014000000000000012, 0.008000000000000007]
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen3-1.7B | 0.347 | 0.164 | 0.489 | [-0.010000000000000009, 0.008000000000000007]
+  Qwen/Qwen2.5-1.5B-Instruct vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.000 | 0.000 | [-0.05799999999999994, -0.03799999999999992]
+  Qwen/Qwen2.5-1.5B-Instruct vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.030000000000000027, 0.05600000000000005]
+  Qwen/Qwen2.5-1.5B-Instruct vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.05999999999999994, -0.03799999999999992]
+  Qwen/Qwen2.5-3B-Instruct vs Qwen/Qwen3-1.7B | 0.610 | 0.161 | 0.229 | [-0.006000000000000005, 0.010000000000000009]
+  Qwen/Qwen2.5-3B-Instruct vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.000 | 0.000 | [-0.05399999999999994, -0.03400000000000003]
+  Qwen/Qwen2.5-3B-Instruct vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.03200000000000003, 0.05800000000000005]
+  Qwen/Qwen2.5-3B-Instruct vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.05599999999999994, -0.03599999999999992]
+  Qwen/Qwen3-1.7B vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.000 | 0.000 | [-0.05399999999999994, -0.039999999999999925]
+  Qwen/Qwen3-1.7B vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.03200000000000003, 0.05400000000000005]
+  Qwen/Qwen3-1.7B vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.05399999999999994, -0.039999999999999925]
+  Qwen/Qwen3-4B-Instruct-2507 vs Salesforce/xLAM-2-3b-fc-r | 1.000 | 0.000 | 0.000 | [0.07799999999999996, 0.10199999999999998]
+  Qwen/Qwen3-4B-Instruct-2507 vs meta-llama/Llama-3.2-3B-Instruct | 0.351 | 0.178 | undefined (observed tie) | [-0.010000000000000009, 0.008000000000000007]
+  Salesforce/xLAM-2-3b-fc-r vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.10199999999999998, -0.07995000000000069]
+Note: Bootstrap win fractions are resampling stability, not posterior probabilities or p-values.
+Note: Item intervals resample whole observed item vectors and include finite-repeat noise; do not add their variance to sampling intervals.
+Note: Sampling intervals condition on these items and empirical generation probabilities; pass@k resampling can be biased for k>1.
+Note: Percentile bootstrap can collapse at boundaries or with no observed variation; a point interval does not prove certainty.
+Note: Pairwise intervals are unadjusted for multiple comparisons; no familywise significance claim is made.
+Note: Planning assumes independent items and independent iid generations across models; extrapolations require validation.
+FULL_STUDY_ANALYZED results/study-20261028T065939Z

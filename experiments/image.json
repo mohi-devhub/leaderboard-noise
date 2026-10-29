@@ -1,0 +1,6 @@
+{
+  "reference": "python:3.12.12-slim-trixie@sha256:f3fa41d74a768c2fce8016b98c191ae8c1bacd8f1152870a3f9f87d350920b7c",
+  "source": "https://hub.docker.com/_/python",
+  "resolved_date": "2026-10-27",
+  "digest": "sha256:f3fa41d74a768c2fce8016b98c191ae8c1bacd8f1152870a3f9f87d350920b7c"
+}

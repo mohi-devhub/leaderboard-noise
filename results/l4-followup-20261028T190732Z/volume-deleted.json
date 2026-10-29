@@ -1,0 +1,5 @@
+{
+  "reason": "preempted allocation stopped; all committed model checkpoints verified locally and preserved for continuation",
+  "verified_model_count": 2,
+  "sha256_verified": true
+}

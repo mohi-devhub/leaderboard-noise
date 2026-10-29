@@ -1,0 +1,48 @@
+{
+  "apps": [
+    {
+      "app_id": "ap-Cofk8Ky1vJx7KI49oEl3Pm",
+      "description": "evalnoise-l4-followup",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-29 04:20:32+05:30",
+      "stopped_at": "2026-10-29 06:03:36+05:30"
+    }
+  ],
+  "containers": [],
+  "volumes": [
+    {
+      "name": "qunti-check-artifacts",
+      "created_at": "2026-10-27 18:53:06+05:30",
+      "created_by": "achumohith14"
+    },
+    {
+      "name": "merlin-phase4-hf-cache",
+      "created_at": "2026-10-26 10:32:37+05:30",
+      "created_by": "achumohith14"
+    },
+    {
+      "name": "merlin-phase4-vllm-cache",
+      "created_at": "2026-10-26 10:32:37+05:30",
+      "created_by": "achumohith14"
+    },
+    {
+      "name": "huggingface-cache",
+      "created_at": "2026-10-22 22:47:31+05:30",
+      "created_by": "achumohith14"
+    },
+    {
+      "name": "vllm-cache",
+      "created_at": "2026-10-22 22:47:31+05:30",
+      "created_by": "achumohith14"
+    }
+  ],
+  "at": "2026-10-29T00:36:48.349538+00:00",
+  "owned_app_ids": [
+    "ap-C4FfuuJt0ioG1hkR9KcCAm",
+    "ap-Cofk8Ky1vJx7KI49oEl3Pm"
+  ],
+  "other_projects_modified": false,
+  "all_owned_apps_stopped": true,
+  "owned_running_containers": 0
+}

@@ -1,0 +1,42 @@
+{
+  "default": {
+    "correct_calls_at_batches_1_8_32": {
+      "meta-llama/Llama-3.2-3B-Instruct": [
+        458,
+        457,
+        458
+      ],
+      "Qwen/Qwen3-4B-Instruct-2507": [
+        457,
+        457,
+        459
+      ]
+    },
+    "llama_minus_qwen": [
+      1,
+      0,
+      -1
+    ],
+    "observed_strict_flip": true
+  },
+  "batch_invariant": {
+    "correct_calls_at_batches_1_8_32": {
+      "meta-llama/Llama-3.2-3B-Instruct": [
+        458,
+        458,
+        458
+      ],
+      "Qwen/Qwen3-4B-Instruct-2507": [
+        457,
+        457,
+        457
+      ]
+    },
+    "llama_minus_qwen": [
+      1,
+      1,
+      1
+    ],
+    "observed_strict_flip": false
+  }
+}

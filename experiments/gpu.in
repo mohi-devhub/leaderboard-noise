@@ -1,0 +1,4 @@
+# Official PyPI vLLM; resolved separately from the CPU BFCL environment.
+vllm==0.32.0
+pip-audit==2.10.0
+pip==26.2.2

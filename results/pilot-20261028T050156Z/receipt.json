@@ -1,0 +1,21 @@
+{
+  "gpu": "NVIDIA A10",
+  "job_count": 1,
+  "gpu_container_count": 1,
+  "initial_smoke_requests": 5,
+  "benchmark_predictions": 3200,
+  "execution_seconds": 591.572542,
+  "container_startup_seconds": 10.020822,
+  "controller_wall_seconds_before_cleanup": 636.735459,
+  "resource_ceiling_hourly_usd": "1.41720",
+  "timed_resource_estimate_usd": "0.237614587628",
+  "account_metered_change_usd": "0.26244345",
+  "estimated_session_spend_usd": "0.26244345",
+  "estimated_project_total_usd": "0.30354134853433333",
+  "actual_invoice_usd": null,
+  "connection_reconnects_used": 0,
+  "reservation_released_usd": 4.5,
+  "active_reservation_usd": 0,
+  "attribution_note": "larger of timed resource-ceiling estimate and provisional account gross-metered change; not settled invoice actual",
+  "full_run_approved": false
+}

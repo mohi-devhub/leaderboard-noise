@@ -1,0 +1,41 @@
+{
+  "status": "complete",
+  "models": [
+    "meta-llama/Llama-3.2-3B-Instruct",
+    "Qwen/Qwen3-4B-Instruct-2507",
+    "Qwen/Qwen2.5-3B-Instruct",
+    "Qwen/Qwen3-1.7B"
+  ],
+  "missing_models": [],
+  "predictions": 12000,
+  "gpu": "NVIDIA L4",
+  "gpu_uuids": [
+    "GPU-5d989e6c-850c-c1fc-e0ae-0db25e1b7567",
+    "GPU-839082a9-63d0-c378-9a25-614e4de41356"
+  ],
+  "gpu_uuid_by_model": {
+    "meta-llama/Llama-3.2-3B-Instruct": "GPU-839082a9-63d0-c378-9a25-614e4de41356",
+    "Qwen/Qwen3-4B-Instruct-2507": "GPU-839082a9-63d0-c378-9a25-614e4de41356",
+    "Qwen/Qwen2.5-3B-Instruct": "GPU-5d989e6c-850c-c1fc-e0ae-0db25e1b7567",
+    "Qwen/Qwen3-1.7B": "GPU-5d989e6c-850c-c1fc-e0ae-0db25e1b7567"
+  },
+  "same_physical_l4_within_each_completed_pair": true,
+  "truncations": 0,
+  "error_types": {
+    "None": 10641,
+    "value_error:string": 190,
+    "type_error:nested": 18,
+    "value_error:others": 84,
+    "value_error:list/tuple": 43,
+    "simple_function_checker:wrong_func_name": 60,
+    "simple_function_checker:missing_optional": 36,
+    "parallel_function_checker_no_order:cannot_find_match": 484,
+    "parallel_function_checker_no_order:wrong_count": 221,
+    "ast_decoder:decoder_failed": 129,
+    "type_error:simple": 58,
+    "multiple_function_checker:wrong_count": 30,
+    "value_error:dict_value": 6
+  },
+  "raw_sha256": "f28b96471ce3193e1ac3fdc7fbdfdc6dd38c24ada9f7e95dcf3df5fecd95173a",
+  "scored_sha256": "4db915e9ee8e143e7ded5fa004c40c83dd0dcdb1c2288059b8195c90e0e5ffa5"
+}

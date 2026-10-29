@@ -1,0 +1,95 @@
+# Does “deterministic” inference change who wins a small-model leaderboard?
+
+**Later update:** the six-model study is complete. See the [six-model article](STUDY.md) and [full report](../results/REPORT.md). The article below records the earlier completed pilot; its original approval status is historical.
+
+**Pilot article, October 28, 2026.** Two Qwen checkpoints were evaluated on 100 frozen BFCL items using NVIDIA A10. The six-model, 500-item study and optional code benchmark still await approval. [Complete pilot report and artifacts](../results/pilot-20261028T050156Z/REPORT.md).
+
+The default greedy outputs changed across batch settings on 11% of items for Qwen0.5B and 3% for Qwen1.5B. The batch-invariant arm had zero observed text changes for both models. The larger model stayed ahead in every configuration. This reproduces output sensitivity and an observed mitigation on A10; it does not demonstrate ranking instability for a near-tied pair.
+
+Imagine choosing between two small models for a tool-calling application. Their leaderboard numbers are close. Before treating the higher number as a meaningful win, we need to ask what would happen if we repeated the measurement. There are several different repetitions we might mean: asking different questions, drawing different answers, or serving the same greedy request in a different batch.
+
+This project asks a narrower systems question: **do batch-sensitive greedy outputs change small-model BFCL rankings, and can batch-invariant inference remove such changes at an acceptable throughput cost?** The accompanying `evalnoise` CLI addresses the broader practical need to analyze per-item binary outcomes with uncertainty.
+
+## What is already known
+
+Benchmark variance is established territory. [Madaan et al.](https://arxiv.org/abs/2406.10229) examine variability across benchmark measurements and training setups. [Miller](https://arxiv.org/abs/2411.00640) explains paired comparisons, repeated generations, dependence, and power analysis. [Wang](https://arxiv.org/abs/2512.21326) explicitly separates prediction and data noise and analyzes all model pairs. We do not introduce those methods.
+
+The systems mechanism is also established. [Thinking Machines Lab](https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/) explains how numerical computations can depend on batch composition. Temperature zero chooses the largest computed score, but small numerical changes near a tie can change that choice. Once a token differs, the continuation can diverge. Our pinned [vLLM batch-invariance documentation](https://docs.vllm.ai/en/v0.32.0/features/batch_invariance/) exposes a setting intended to remove batch dependence. Documentation alone cannot tell us how often correctness or rankings change in our workload, or what the measured speed tradeoff is.
+
+Our contribution is a controlled, inexpensive replication with auditable artifacts and reusable analysis. That remains useful even if the result is negative: a finding that text changes leave correctness and rankings unchanged is different from finding no text changes at all.
+
+## Freeze the measurement before seeing the winner
+
+The candidate roster includes Qwen2.5 0.5B/1.5B/3B, Llama 3.2 1B/3B, and Phi-3.5-mini instruction checkpoints. The pilot begins with the two smallest Qwen checkpoints; it cannot establish conclusions about the entire roster. Licenses differ, especially Qwen3B's research license and Llama's gated community license. We pin repository revisions and use no remote model code.
+
+For tool calling, we freeze a 500-item Python single-turn BFCL subset and a nested 100-item pilot using a predeclared seed. Official BFCL prompting-mode instructions and AST scoring define correctness. This is a subset experiment, not the complete official leaderboard score. The optional code extension uses EvalPlus with code executed on isolated CPU infrastructure.
+
+Each pilot model produces ten answers per question at temperature 0.7 using vLLM's n parameter. It also runs greedy decoding with request batch sizes 1, 8, and 32. Both arms use offline eager inference, bfloat16, engine concurrency 64, no prefix cache, and a 512-token output limit. The default arm and the batch-invariant arm otherwise share configuration, prompts, and checkpoint. This intervention controls offline submission batches rather than measuring a production HTTP concurrency load. We retain exact decoded text and token IDs alongside correctness bits.
+
+## Three measurements, three interpretations
+
+The first measurement is expected pass@1: the average chance that one generated answer passes. Averaging ten observed answers per question improves our estimate of that question's success rate. It does not create ten unrelated questions.
+
+To assess question-set uncertainty, the CLI resamples item IDs with replacement, carries all observed completions for each item, and uses the same item draws for every model. This pairing preserves which questions the models jointly find difficult. We report percentile confidence intervals on model scores and on paired differences. A separate bootstrap holds the questions fixed and resamples answers within each question. That is a conditional diagnostic of generation variation. We do not add those two bootstrap variances: observed item vectors already contain finite-generation noise.
+
+We also report unbiased pass@k estimates: the chance that at least one of k candidates succeeds, using all k-sized subsets of the observed n candidates. This is an oracle-style measure because someone must recognize the successful candidate. It is neither majority voting nor a guarantee that deployment can select the right answer.
+
+Finally, greedy batch interventions measure sensitivity to the inference configuration. We count items with changed text, changed token IDs, and changed correctness separately. A model can change wording while keeping the same pass/fail result; scores can change without reversing the observed ranking. Only the final comparison answers the headline question.
+
+## What a rank-flip probability means
+
+For each paired bootstrap draw, recompute model scores. The fraction with A strictly above B is a bootstrap win fraction. Ties have separate probability mass. A rank flip is a strict reversal of the observed ordering; an observed tie has no direction to reverse.
+
+These quantities describe stability under a specified resampling scheme. They are not Bayesian probabilities that a model is “truly better,” and they are not p-values. Comparing many model pairs also creates a multiple-comparison problem, so our unadjusted exploratory intervals do not justify a simultaneous best-model claim.
+
+Power projections answer a different question: how many items and generations might be needed to detect a prespecified pass@1 gap? We estimate between-item and within-item variance, correct the former for finite-repeat contamination, and use a normal-approximation planning formula. More generations reduce prediction noise but cannot remove the item-variance floor. A small pilot can misestimate that floor, so its allocation advice must remain approximate.
+
+## Measure the fix and its cost
+
+For each matching batch configuration, compare default and batch-invariant throughput on identical prompts. Report completions per second and generated tokens per second because output lengths can differ. Exclude initialization and warmup from steady-state decode throughput, while including their resource use in cost accounting. With only one pilot timing per configuration and a fixed arm order, the resulting ratios are descriptive rather than a precise performance benchmark.
+
+The project has a gross compute cap of $12 and requires review before a batch projected above $5. The two-model pilot reserves $4.50 conservatively; a reservation is not an actual bill. Apps must stop after the session, including after failures. Dependency hashes, vulnerability audits, frozen prompts, model revisions, installed versions, and run metadata make the result inspectable without pretending that a seed alone guarantees reproducibility.
+
+## What the A10 pilot found
+
+The official BFCL scorer evaluated all 3,200 planned benchmark predictions: 2,000 stochastic completions and 1,200 greedy completions across the two arms. No completion hit the 512-token limit. Format failures remained incorrect predictions in the denominator, including 83 of the 1,000 sampled 0.5B answers and ten of the 1,000 sampled 1.5B answers. They were not silently discarded as infrastructure errors.
+
+| Model | Expected pass@1, temperature 0.7 | Item-bootstrap 95% CI | pass@5 | pass@10 |
+|---|---:|---:|---:|---:|
+| Qwen2.5-0.5B-Instruct | 51.9% | 44.1–59.6% | 70.9% | 74.0% |
+| Qwen2.5-1.5B-Instruct | 83.9% | 78.0–89.4% | 93.0% | 94.0% |
+
+The paired difference favored 1.5B by 32.0 percentage points, with a 95% item-bootstrap interval of 24.5–39.5 points. None of the 5,000 paired pass@1 bootstrap draws reversed the order. That is a stability observation under this resampling design, not certainty about all possible evaluations. These two pilot models were clearly separated; they were not a close leaderboard contest.
+
+![Pass@1 item-bootstrap intervals on the A10 pilot](../figures/pilot-20261028T050156Z/pass-1-items.png)
+
+The greedy intervention answers a separate question:
+
+| Arm | Model | Items with changed text across batch sizes | Items with changed correctness |
+|---|---|---:|---:|
+| Default | 0.5B | 11/100 | 3/100 |
+| Default | 1.5B | 3/100 | 0/100 |
+| Batch invariant | 0.5B | 0/100 | 0/100 |
+| Batch invariant | 1.5B | 0/100 | 0/100 |
+
+Default greedy accuracy for 0.5B was 60%, 60%, and 62% at batch sizes 1, 8, and 32. The 1.5B model scored 85% throughout. With batch invariance enabled, the scores were 62% and 84% respectively at all three batch sizes. The mitigation stabilized this experiment's outputs but also selected a different stable score; it is not an accuracy-improvement procedure. No observed ranking flip existed in the baseline arm to remove.
+
+![Greedy intervention and descriptive throughput ratios](../figures/pilot-20261028T050156Z/greedy-intervention.png)
+
+Across the six matched greedy configurations, batch-invariant generated-token throughput was 0.57–0.75 times default throughput. This was one timing per configuration in baseline-first order. We did not profile the limiter or interleave five timing repetitions. The measured ratios are useful pilot observations; a general throughput-penalty estimate remains inconclusive. Both the exact GPU and these inference settings matter, and no L4 result is claimed.
+
+## How much more evaluation would help?
+
+At 100 items and ten samples/item, the approximate pass@1 minimum detectable difference was 10.8 percentage points for two-sided alpha 0.05 and 80% power. Under the pilot's estimated paired variance components, a five-point gap would require approximately 470 items at ten samples/item. Twenty samples/item reduced that projection only to 445 items. At the same 100 items, adding samples alone could not reach the five-point target because the estimated between-question variance floor was too high.
+
+These projections assume the same variance structure and independent questions/generations. A genuinely close pair can have a different paired variance, and questions sharing functions or templates may require additional dependence handling. The numbers do not guarantee that a 500-item study will distinguish every pair in the six-model roster.
+
+## Cost, reliability, and the next decision
+
+One successful job and one A10 container ran the entire smoke-plus-pilot sequence. Remote execution took 591.57 seconds; controller wall time before cleanup was 636.74 seconds. No connection retry or job resubmission was needed. The resource-ceiling estimate was $0.2376; the account gross-metered change was $0.2624. The budget records the larger as a conservative provisional session estimate, keeping settled invoice actuals unknown. Including prior failed setup attempts, recorded estimated project spend is $0.3035 of the $12 cap. The $4.50 reservation was released and the app stopped. [Receipt and attribution caveats](../results/pilot-20261028T050156Z/receipt.json).
+
+Earlier infrastructure failures are retained alongside the successful run. They are not scientific null results. The corrected image passed its compiler preflight and dependency audit, and the successful attempt used a detached job with a saved call ID so an allowed reconnection could reattach without resubmitting work. Unrelated Modal apps were preserved.
+
+The pilot supports an A10-specific observation: greedy batch sensitivity was measurable, the documented invariant setting removed observed within-arm text changes, and this widely separated pair's ranking remained stable. The predeclared broader roster is needed to study close comparisons. No models or items were selected after seeing results to manufacture a flip. The full six-model study and optional CPU code benchmark have not been launched; they require the user's post-pilot approval.
+
+The reusable result is `evalnoise`: a documented binary-result schema, paired confidence intervals and rank-stability summaries, explicit uncertainty assumptions, and approximate item/sample planning. The implementation and full pilot artifacts allow the measurement to be inspected and repeated.

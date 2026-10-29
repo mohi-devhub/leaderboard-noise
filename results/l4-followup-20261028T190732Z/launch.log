@@ -1,0 +1,49 @@
+✓ Initialized. View run at 
+https://modal.com/apps/achumohith14/main/ap-C4FfuuJt0ioG1hkR9KcCAm
+Building image im-J2ydVGhsLLt20vR0HtRnhj
+
+=> Step 0: FROM base
+
+=> Step 1: COPY . /
+Saving image...
+Image saved, took 1.16s
+
+Built image im-J2ydVGhsLLt20vR0HtRnhj in 2.77s
+
+
+Building image im-n7RWzzVzQ6fRnwkJOlDrbQ
+
+=> Step 0: FROM base
+
+=> Step 1: COPY . /
+Saving image...
+Image saved, took 1.89s
+
+Built image im-n7RWzzVzQ6fRnwkJOlDrbQ in 4.12s
+
+
+Building image im-obEKh2U42ueQJsLV8NzYcF
+
+=> Step 0: FROM base
+
+=> Step 1: RUN python /opt/compiler_smoke.py --output /opt/compiler-preflight.json
+cc (Debian 14.2.0-19) 14.2.0
+C compiler and Python headers preflight passed
+
+=> Step 2: RUN pip-audit --progress-spinner off --ignore-vuln PYSEC-2026-3447 --ignore-vuln GHSA-xmj3-9gf7-h52w --format json --output /opt/full-image-audit.json
+No known vulnerabilities found, 3 ignored
+Saving image...
+Image saved, took 7.32s
+
+Built image im-obEKh2U42ueQJsLV8NzYcF in 15.39s
+
+
+✓ Created objects.
+├── ✓ Uploaded scripts/gpu_worker.py
+├── ✓ Uploaded scripts/study_model_job.py
+├── ✓ Created Function submit.<locals>.gpu_job.
+└── ✓ Created Function submit.<locals>.controller.
+L4_DETACHED_SUBMITTED fc-01M61YWRTPWTKJW8XTEQRS1RFZ
+[modal-client] 2026-10-29T00:43:31+0530 Timed out waiting for final app logs.
+✓ App completed. View run at 
+https://modal.com/apps/achumohith14/main/ap-C4FfuuJt0ioG1hkR9KcCAm

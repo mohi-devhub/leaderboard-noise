@@ -1,0 +1,13 @@
+{
+  "app_id": "ap-vxekFhHsmfgaja7uwRVu48",
+  "completed_models": 1,
+  "predictions_saved": 9800,
+  "metered_app_usage_usd": "0.75502874",
+  "timed_residency_seconds": "2163.238245",
+  "timed_resource_ceiling_usd": "0.851594789115",
+  "estimated_session_spend_usd": "0.866594789115",
+  "actual_invoice_usd": null,
+  "all_reservations_released": true,
+  "no_second_call_accepted": true,
+  "stopped_at": "2026-10-28 13:05:45+05:30"
+}

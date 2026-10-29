@@ -1,0 +1,11 @@
+[
+  {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "remote_seconds": 4.273027859000001,
+    "forecast_seconds": 2072.6802868449995,
+    "execution_limit_seconds": 2711,
+    "estimated_project_total_after_model_usd": 0.50252312552,
+    "call_id": "fc-01M60MSQ28QKTQDWKV18ZYDG1Q",
+    "status": "failed"
+  }
+]

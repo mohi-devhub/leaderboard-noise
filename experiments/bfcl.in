@@ -1,0 +1,4 @@
+# Upstream package identifies this PyPI distribution in its official README.
+bfcl-eval==2026.3.23
+# qwen-agent is imported by the official model registry but omits this import dependency.
+soundfile==0.13.1

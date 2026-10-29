@@ -1,0 +1,270 @@
+# Batching changes 2–5% of greedy answers: combined A10/L4 report
+
+Batch size changed about 2–5% of greedy answers. For the near-tied Llama3B/Qwen3-4B pair, the observed flip was a one-item margin out of 500, within exploratory paired 95% intervals of roughly ±3 percentage points. The separate sampling analysis projects roughly 800–1,100 items to resolve a 3-point gap, with ten sampled answers per item per model.
+
+Under batch invariance, decoded outputs were identical across A10 and L4 for all four replicated models. Switching to invariance can itself change the winner: at A10 batch 1, the lead moves from Qwen3-4B to Llama3B. Median token throughput was 32–60% lower in the repeated A10 timing study.
+
+Completed October 29, 2026. All confidence intervals are exploratory. This report combines saved six-model A10 results and the four-model L4 replication. It does not pool repeated questions or add model runs.
+
+## Which model ranks higher at each default batch size?
+
+Every count is correct calls out of the same 500 items. Higher rank means a higher observed score, not established population superiority. Batch size is controlled offline request submission, with the engine limit fixed at 64 sequences.
+
+| Pair, A vs B | GPU | Default batch | A correct / 500 | B correct / 500 | Higher rank |
+|---|---|---|---|---|---|
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | A10 | 1 | 457 | 458 | Qwen3-4B-Instruct-2507 |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | A10 | 8 | 457 | 457 | Tie |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | A10 | 32 | 457 | 456 | Llama-3.2-3B-Instruct |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | L4 | 1 | 458 | 457 | Llama-3.2-3B-Instruct |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | L4 | 8 | 457 | 457 | Tie |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | L4 | 32 | 458 | 459 | Qwen3-4B-Instruct-2507 |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | A10 | 1 | 426 | 434 | Qwen3-1.7B |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | A10 | 8 | 428 | 432 | Qwen3-1.7B |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | A10 | 32 | 428 | 434 | Qwen3-1.7B |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | L4 | 1 | 427 | 432 | Qwen3-1.7B |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | L4 | 8 | 428 | 433 | Qwen3-1.7B |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | L4 | 32 | 428 | 434 | Qwen3-1.7B |
+
+On A10, Qwen3-4B ranks above Llama3B at batch 1, they tie at batch 8, and Llama3B ranks above Qwen3-4B at batch 32. On L4, Llama3B ranks above Qwen3-4B at batch 1, they tie at batch 8, and Qwen3-4B ranks above Llama3B at batch 32. Thus the strict full-set flip reproduces, but the winner at each untied setting reverses between GPUs.
+
+Qwen3-1.7B ranks above Qwen2.5-3B at every default batch size on both GPUs. A near tie does not require a flip.
+
+![Llama and Qwen default and invariant scores, zoomed y-axis](../figures/l4-continuation-20261028T224638Z/rank-order-pair1.png)
+
+![Qwen pair default and invariant scores, zoomed y-axis](../figures/l4-continuation-20261028T224638Z/rank-order-pair2.png)
+
+Both figures zoom the vertical axis. One correct call equals 0.2 percentage points.
+
+## Batch invariance removes the observed batch dependence
+
+| Pair, A vs B | GPU | Invariant A, batches 1 / 8 / 32 | Invariant B, batches 1 / 8 / 32 | Higher at every batch |
+|---|---|---|---|---|
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | A10 | 458 / 458 / 458 | 457 / 457 / 457 | Llama-3.2-3B-Instruct |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | L4 | 458 / 458 / 458 | 457 / 457 / 457 | Llama-3.2-3B-Instruct |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | A10 | 423 / 423 / 423 | 433 / 433 / 433 | Qwen3-1.7B |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | L4 | 423 / 423 / 423 | 433 / 433 / 433 | Qwen3-1.7B |
+
+Under batch invariance, Llama3B ranks above Qwen3-4B at all three batch sizes on both GPUs. Qwen3-1.7B ranks above Qwen2.5-3B throughout. For all four replicated models, invariant text and correctness match exactly between the recorded A10 and L4 runs.
+
+Across all 15 A10 model pairs, default decoding produced one full-set batch flip and invariant decoding produced none. Across the two L4 comparison pairs, the corresponding counts were one and zero. Changing from default to invariant decoding can itself change a winner at a fixed batch size. Stability is not the same as improved accuracy.
+
+## Bootstrap flips and exploratory uncertainty
+
+A full-set flip requires opposite strict orders at two batch settings on the actual 500 questions. Ties alone do not count. A bootstrap flip fraction asks how often that happens after resampling the questions together across models and batch settings.
+
+| Pair | GPU | Arm | Full-set strict flip | Bootstrap flip fraction [exploratory 95% interval] |
+|---|---|---|---|---|
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | A10 | default | Yes | 8.94% [0.50%, 23.66%] |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | A10 | batch_invariant | No | 0.00% [0.00%, 0.00%] |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | L4 | default | Yes | 10.28% [1.10%, 27.81%] |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | L4 | batch_invariant | No | 0.00% [0.00%, 0.00%] |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | A10 | default | No | 13.18% [0.60%, 35.80%] |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | A10 | batch_invariant | No | 0.00% [0.00%, 0.00%] |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | L4 | default | No | 8.48% [0.70%, 28.45%] |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | L4 | batch_invariant | No | 0.00% [0.00%, 0.00%] |
+
+All confidence intervals in this article and the combined report are exploratory and unadjusted for multiple comparisons. Flip fractions use 5,000 paired item resamples. Their outer percentile intervals use 500 outer and 1,000 inner draws. The discontinuous ranking statistic and inner Monte Carlo variation limit interpretation. A collapsed [0, 0] interval does not establish that population flips are impossible. Paired score-difference intervals for the close pairs include zero.
+
+The [saved paired comparisons](l4-continuation-20261028T224638Z/pairwise-gpu-comparison.json) retain exploratory score-difference intervals at every batch and separate Monte Carlo precision intervals. A nonzero bootstrap flip fraction can coexist with no observed full-set flip, as the Qwen pair demonstrates.
+
+## The throughput cost was measured on A10
+
+Invariant/default median token-rate ratios range from about 0.400 to 0.678 across 18 A10 configurations, or about 32–60% lower throughput. Each configuration has three matched repetitions on the same 100-item subset, alternating arm order. Table ranges are observed ranges across three trials, not confidence intervals.
+
+| Model on A10 | Batch | Token-rate ratio, median [observed range] | Completion-rate ratio, median [observed range] |
+|---|---|---|---|
+| Qwen2.5-1.5B-Instruct | serial | 0.562 [0.553, 0.580] | 0.562 [0.554, 0.581] |
+| Qwen2.5-1.5B-Instruct | batch8 | 0.598 [0.594, 0.624] | 0.598 [0.594, 0.624] |
+| Qwen2.5-1.5B-Instruct | batch32 | 0.678 [0.672, 0.678] | 0.662 [0.658, 0.679] |
+| Qwen2.5-3B-Instruct | serial | 0.424 [0.421, 0.433] | 0.422 [0.419, 0.431] |
+| Qwen2.5-3B-Instruct | batch8 | 0.490 [0.488, 0.490] | 0.493 [0.491, 0.493] |
+| Qwen2.5-3B-Instruct | batch32 | 0.568 [0.566, 0.570] | 0.574 [0.572, 0.576] |
+| Qwen3-1.7B | serial | 0.589 [0.584, 0.600] | 0.585 [0.580, 0.595] |
+| Qwen3-1.7B | batch8 | 0.619 [0.611, 0.620] | 0.614 [0.606, 0.615] |
+| Qwen3-1.7B | batch32 | 0.652 [0.650, 0.662] | 0.650 [0.647, 0.657] |
+| Llama-3.2-3B-Instruct | serial | 0.406 [0.404, 0.406] | 0.406 [0.404, 0.406] |
+| Llama-3.2-3B-Instruct | batch8 | 0.478 [0.478, 0.480] | 0.479 [0.478, 0.481] |
+| Llama-3.2-3B-Instruct | batch32 | 0.586 [0.585, 0.588] | 0.587 [0.587, 0.590] |
+| xLAM-2-3b-fc-r | serial | 0.426 [0.422, 0.427] | 0.427 [0.424, 0.429] |
+| xLAM-2-3b-fc-r | batch8 | 0.499 [0.494, 0.500] | 0.499 [0.494, 0.500] |
+| xLAM-2-3b-fc-r | batch32 | 0.578 [0.575, 0.578] | 0.573 [0.573, 0.577] |
+| Qwen3-4B-Instruct-2507 | serial | 0.400 [0.399, 0.405] | 0.399 [0.399, 0.404] |
+| Qwen3-4B-Instruct-2507 | batch8 | 0.475 [0.474, 0.480] | 0.475 [0.473, 0.479] |
+| Qwen3-4B-Instruct-2507 | batch32 | 0.571 [0.569, 0.573] | 0.570 [0.568, 0.572] |
+
+The timed region includes generation, synchronization, and output collection. Loading, smoke checks, and warmup are excluded from throughput and included in cost. Token counts and completion rates are both retained because output lengths can change. We scored all timing outputs to detect fast failures.
+
+These are configuration measurements without limiter profiling or production tuning. L4 has no repeated throughput study; its generation durations support cost accounting only. The 32–60% cost must not be read as an L4 measurement or a universal vLLM overhead.
+
+![A10 throughput ratios and three-trial ranges](../figures/study-20261028T065939Z/throughput-ranges.png)
+
+## Sampling accuracy remains a separate A10 experiment
+
+Each A10 model has ten sampled completions per item at temperature 0.7, using vLLM's n parameter. Exploratory pass@1 intervals resample whole items. Pass@5 and pass@10 use unbiased point estimators; their exploratory item intervals remain in the saved analysis. L4 adds no stochastic samples.
+
+| Model | A10 pass@1 | Exploratory 95% item-bootstrap interval | Unbiased pass@5 | Unbiased pass@10 |
+|---|---|---|---|---|
+| Qwen2.5-1.5B-Instruct | 79.36% | [76.36%, 82.30%] | 88.76% | 91.00% |
+| Qwen2.5-3B-Instruct | 83.58% | [80.56%, 86.48%] | 89.33% | 91.00% |
+| Qwen3-1.7B | 86.48% | [83.72%, 89.16%] | 89.55% | 90.00% |
+| Llama-3.2-3B-Instruct | 89.12% | [86.78%, 91.32%] | 94.08% | 95.20% |
+| xLAM-2-3b-fc-r | 74.50% | [71.32%, 77.70%] | 84.32% | 87.40% |
+| Qwen3-4B-Instruct-2507 | 91.30% | [88.94%, 93.50%] | 94.03% | 95.20% |
+
+![A10 sampling accuracy with exploratory item-bootstrap intervals](../figures/study-20261028T065939Z/pass-1-items.png)
+
+The intervals in this sampling figure are exploratory 95% item-bootstrap intervals.
+
+## Text changes and correctness changes
+
+An item changes text if any of its three batch outputs differ. Correctness changes count items whose official BFCL pass/fail result differs. Wilson intervals below are exploratory under an independent-item approximation. Questions recur across models and GPUs, so these observations must not be pooled as independent questions.
+
+| GPU | Model | Default text changes [exploratory Wilson 95% interval] | Invariant text changes [exploratory Wilson 95% interval] | Correctness changes, default / invariant |
+|---|---|---|---|---|
+| A10 | Qwen2.5-1.5B-Instruct | 13/500, 2.60% [1.53%, 4.40%] | 0/500, 0.00% [0.00%, 0.76%] | 4 / 0 |
+| A10 | Qwen2.5-3B-Instruct | 18/500, 3.60% [2.29%, 5.62%] | 0/500, 0.00% [0.00%, 0.76%] | 6 / 0 |
+| A10 | Qwen3-1.7B | 13/500, 2.60% [1.53%, 4.40%] | 0/500, 0.00% [0.00%, 0.76%] | 6 / 0 |
+| A10 | Llama-3.2-3B-Instruct | 10/500, 2.00% [1.09%, 3.64%] | 0/500, 0.00% [0.00%, 0.76%] | 0 / 0 |
+| A10 | xLAM-2-3b-fc-r | 20/500, 4.00% [2.60%, 6.10%] | 0/500, 0.00% [0.00%, 0.76%] | 4 / 0 |
+| A10 | Qwen3-4B-Instruct-2507 | 11/500, 2.20% [1.23%, 3.90%] | 0/500, 0.00% [0.00%, 0.76%] | 5 / 0 |
+| L4 | Llama-3.2-3B-Instruct | 12/500, 2.40% [1.38%, 4.15%] | 0/500, 0.00% [0.00%, 0.76%] | 2 / 0 |
+| L4 | Qwen3-4B-Instruct-2507 | 12/500, 2.40% [1.38%, 4.15%] | 0/500, 0.00% [0.00%, 0.76%] | 5 / 0 |
+| L4 | Qwen2.5-3B-Instruct | 23/500, 4.60% [3.08%, 6.81%] | 0/500, 0.00% [0.00%, 0.76%] | 8 / 0 |
+| L4 | Qwen3-1.7B | 12/500, 2.40% [1.38%, 4.15%] | 0/500, 0.00% [0.00%, 0.76%] | 4 / 0 |
+
+Zero invariant changes on 500 items gives a per-model exploratory Wilson upper bound of about 0.76%. Shared function templates can violate item independence. Stable scores can hide text changes, as Llama's A10 default counts show.
+
+## How much evaluation would a three-point gap need?
+
+These exploratory planning projections use A10 stochastic pass@1 variance estimates, 500 items and ten samples per model, a two-sided 5% test, and 80% power. They are approximations, not guarantees of a significant result.
+
+| Pair | Approximate MDD, percentage points | Items projected for a 3-point gap |
+|---|---|---|
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | 4.45 | 1100 |
+| Qwen3-1.7B vs Llama-3.2-3B-Instruct | 3.94 | 863 |
+| Qwen3-1.7B vs xLAM-2-3b-fc-r | 4.84 | 1300 |
+| Llama-3.2-3B-Instruct vs xLAM-2-3b-fc-r | 4.76 | 1257 |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | 3.87 | 834 |
+
+For both close pairs, increasing samples alone at the existing 500 questions cannot reach a three-point target under the estimated variance components. More answers reduce sampling noise but do not remove differences between questions.
+
+## All A10 pairs, including null and preselected comparisons
+
+The three published-score preselected pairs separated by 4.60, 11.40, and 16.00 points on default serial decoding. The two close pairs were selected exploratorily on A10, then preselected for L4. No model or question was replaced after results. Sampling fractions below mean reversal of the fixed observed stochastic order; they are distinct from batch flips.
+
+| A10 pair | Selection | Same physical GPU | Condition | Full-set batch flip | Flip fraction [exploratory 95% interval] |
+|---|---|---|---|---|---|
+| Qwen2.5-1.5B-Instruct vs Qwen2.5-3B-Instruct | other | No | default | False | 1.02% [0.00%, 15.80%] |
+| Qwen2.5-1.5B-Instruct vs Qwen2.5-3B-Instruct | other | No | batch_invariant | False | 0.00% [0.00%, 0.00%] |
+| Qwen2.5-1.5B-Instruct vs Qwen2.5-3B-Instruct | other | No | sampling | n/a | 0.24% [0.00%, 25.40%] |
+| Qwen2.5-1.5B-Instruct vs Qwen3-1.7B | other | No | default | False | 0.26% [0.00%, 10.62%] |
+| Qwen2.5-1.5B-Instruct vs Qwen3-1.7B | other | No | batch_invariant | False | 0.00% [0.00%, 0.00%] |
+| Qwen2.5-1.5B-Instruct vs Qwen3-1.7B | other | No | sampling | n/a | 0.00% [0.00%, 0.20%] |
+| Qwen2.5-1.5B-Instruct vs Llama-3.2-3B-Instruct | other | No | default | False | 0.00% [0.00%, 0.00%] |
+| Qwen2.5-1.5B-Instruct vs Llama-3.2-3B-Instruct | other | No | batch_invariant | False | 0.00% [0.00%, 0.00%] |
+| Qwen2.5-1.5B-Instruct vs Llama-3.2-3B-Instruct | other | No | sampling | n/a | 0.00% [0.00%, 0.00%] |
+| Qwen2.5-1.5B-Instruct vs xLAM-2-3b-fc-r | other | No | default | False | 0.20% [0.00%, 8.15%] |
+| Qwen2.5-1.5B-Instruct vs xLAM-2-3b-fc-r | other | No | batch_invariant | False | 0.00% [0.00%, 0.00%] |
+| Qwen2.5-1.5B-Instruct vs xLAM-2-3b-fc-r | other | No | sampling | n/a | 0.16% [0.00%, 17.00%] |
+| Qwen2.5-1.5B-Instruct vs Qwen3-4B-Instruct-2507 | other | No | default | False | 0.00% [0.00%, 0.15%] |
+| Qwen2.5-1.5B-Instruct vs Qwen3-4B-Instruct-2507 | other | No | batch_invariant | False | 0.00% [0.00%, 0.00%] |
+| Qwen2.5-1.5B-Instruct vs Qwen3-4B-Instruct-2507 | other | No | sampling | n/a | 0.00% [0.00%, 0.00%] |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | observed close | Yes | default | False | 13.18% [0.60%, 35.80%] |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | observed close | Yes | batch_invariant | False | 0.00% [0.00%, 0.00%] |
+| Qwen2.5-3B-Instruct vs Qwen3-1.7B | observed close | Yes | sampling | n/a | 3.44% [0.00%, 53.00%] |
+| Qwen2.5-3B-Instruct vs Llama-3.2-3B-Instruct | other | Yes | default | False | 0.02% [0.00%, 2.00%] |
+| Qwen2.5-3B-Instruct vs Llama-3.2-3B-Instruct | other | Yes | batch_invariant | False | 0.00% [0.00%, 0.00%] |
+| Qwen2.5-3B-Instruct vs Llama-3.2-3B-Instruct | other | Yes | sampling | n/a | 0.00% [0.00%, 2.50%] |
+| Qwen2.5-3B-Instruct vs xLAM-2-3b-fc-r | other | Yes | default | False | 0.00% [0.00%, 0.20%] |
+| Qwen2.5-3B-Instruct vs xLAM-2-3b-fc-r | other | Yes | batch_invariant | False | 0.00% [0.00%, 0.00%] |
+| Qwen2.5-3B-Instruct vs xLAM-2-3b-fc-r | other | Yes | sampling | n/a | 0.00% [0.00%, 0.00%] |
+| Qwen2.5-3B-Instruct vs Qwen3-4B-Instruct-2507 | other | Yes | default | False | 0.08% [0.00%, 9.80%] |
+| Qwen2.5-3B-Instruct vs Qwen3-4B-Instruct-2507 | other | Yes | batch_invariant | False | 0.00% [0.00%, 0.00%] |
+| Qwen2.5-3B-Instruct vs Qwen3-4B-Instruct-2507 | other | Yes | sampling | n/a | 0.00% [0.00%, 0.25%] |
+| Qwen3-1.7B vs Llama-3.2-3B-Instruct | published-score preselection | Yes | default | False | 0.14% [0.00%, 7.30%] |
+| Qwen3-1.7B vs Llama-3.2-3B-Instruct | published-score preselection | Yes | batch_invariant | False | 0.00% [0.00%, 0.00%] |
+| Qwen3-1.7B vs Llama-3.2-3B-Instruct | published-score preselection | Yes | sampling | n/a | 2.54% [0.00%, 51.51%] |
+| Qwen3-1.7B vs xLAM-2-3b-fc-r | published-score preselection | Yes | default | False | 0.00% [0.00%, 0.00%] |
+| Qwen3-1.7B vs xLAM-2-3b-fc-r | published-score preselection | Yes | batch_invariant | False | 0.00% [0.00%, 0.00%] |
+| Qwen3-1.7B vs xLAM-2-3b-fc-r | published-score preselection | Yes | sampling | n/a | 0.00% [0.00%, 0.00%] |
+| Qwen3-1.7B vs Qwen3-4B-Instruct-2507 | other | Yes | default | False | 0.44% [0.00%, 12.90%] |
+| Qwen3-1.7B vs Qwen3-4B-Instruct-2507 | other | Yes | batch_invariant | False | 0.00% [0.00%, 0.00%] |
+| Qwen3-1.7B vs Qwen3-4B-Instruct-2507 | other | Yes | sampling | n/a | 0.00% [0.00%, 10.61%] |
+| Llama-3.2-3B-Instruct vs xLAM-2-3b-fc-r | published-score preselection | Yes | default | False | 0.00% [0.00%, 0.00%] |
+| Llama-3.2-3B-Instruct vs xLAM-2-3b-fc-r | published-score preselection | Yes | batch_invariant | False | 0.00% [0.00%, 0.00%] |
+| Llama-3.2-3B-Instruct vs xLAM-2-3b-fc-r | published-score preselection | Yes | sampling | n/a | 0.00% [0.00%, 0.00%] |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | observed close | Yes | default | True | 8.94% [0.50%, 23.66%] |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | observed close | Yes | batch_invariant | False | 0.00% [0.00%, 0.00%] |
+| Llama-3.2-3B-Instruct vs Qwen3-4B-Instruct-2507 | observed close | Yes | sampling | n/a | 5.58% [0.00%, 63.16%] |
+| xLAM-2-3b-fc-r vs Qwen3-4B-Instruct-2507 | other | Yes | default | False | 0.00% [0.00%, 0.00%] |
+| xLAM-2-3b-fc-r vs Qwen3-4B-Instruct-2507 | other | Yes | batch_invariant | False | 0.00% [0.00%, 0.00%] |
+| xLAM-2-3b-fc-r vs Qwen3-4B-Instruct-2507 | other | Yes | sampling | n/a | 0.00% [0.00%, 0.00%] |
+
+The [full A10 pair data](study-20261028T065939Z/pairwise-flips.json) also retain exploratory Monte Carlo precision and paired difference intervals. Generic CLI win fractions are empirical bootstrap fractions, not posterior probabilities.
+
+## Exploratory paired gap intervals for the replicated pairs
+
+| Pair difference | GPU | Arm | Batch | Gap, percentage points | Exploratory 95% paired item-bootstrap interval |
+|---|---|---|---|---|---|
+| Llama-3.2-3B-Instruct minus Qwen3-4B-Instruct-2507 | A10 | default | 1 | -0.20 | [-3.20%, 2.80%] |
+| Llama-3.2-3B-Instruct minus Qwen3-4B-Instruct-2507 | A10 | default | 8 | +0.00 | [-3.00%, 3.00%] |
+| Llama-3.2-3B-Instruct minus Qwen3-4B-Instruct-2507 | A10 | default | 32 | +0.20 | [-2.80%, 3.20%] |
+| Llama-3.2-3B-Instruct minus Qwen3-4B-Instruct-2507 | A10 | batch_invariant | 1 | +0.20 | [-2.80%, 3.20%] |
+| Llama-3.2-3B-Instruct minus Qwen3-4B-Instruct-2507 | A10 | batch_invariant | 8 | +0.20 | [-2.80%, 3.20%] |
+| Llama-3.2-3B-Instruct minus Qwen3-4B-Instruct-2507 | A10 | batch_invariant | 32 | +0.20 | [-2.80%, 3.20%] |
+| Llama-3.2-3B-Instruct minus Qwen3-4B-Instruct-2507 | L4 | default | 1 | +0.20 | [-2.80%, 3.20%] |
+| Llama-3.2-3B-Instruct minus Qwen3-4B-Instruct-2507 | L4 | default | 8 | +0.00 | [-3.00%, 3.00%] |
+| Llama-3.2-3B-Instruct minus Qwen3-4B-Instruct-2507 | L4 | default | 32 | -0.20 | [-3.00%, 2.80%] |
+| Llama-3.2-3B-Instruct minus Qwen3-4B-Instruct-2507 | L4 | batch_invariant | 1 | +0.20 | [-2.80%, 3.20%] |
+| Llama-3.2-3B-Instruct minus Qwen3-4B-Instruct-2507 | L4 | batch_invariant | 8 | +0.20 | [-2.80%, 3.20%] |
+| Llama-3.2-3B-Instruct minus Qwen3-4B-Instruct-2507 | L4 | batch_invariant | 32 | +0.20 | [-2.80%, 3.20%] |
+| Qwen2.5-3B-Instruct minus Qwen3-1.7B | A10 | default | 1 | -1.60 | [-5.20%, 1.80%] |
+| Qwen2.5-3B-Instruct minus Qwen3-1.7B | A10 | default | 8 | -0.80 | [-4.20%, 2.60%] |
+| Qwen2.5-3B-Instruct minus Qwen3-1.7B | A10 | default | 32 | -1.20 | [-4.80%, 2.20%] |
+| Qwen2.5-3B-Instruct minus Qwen3-1.7B | A10 | batch_invariant | 1 | -2.00 | [-5.60%, 1.60%] |
+| Qwen2.5-3B-Instruct minus Qwen3-1.7B | A10 | batch_invariant | 8 | -2.00 | [-5.60%, 1.60%] |
+| Qwen2.5-3B-Instruct minus Qwen3-1.7B | A10 | batch_invariant | 32 | -2.00 | [-5.60%, 1.60%] |
+| Qwen2.5-3B-Instruct minus Qwen3-1.7B | L4 | default | 1 | -1.00 | [-4.40%, 2.40%] |
+| Qwen2.5-3B-Instruct minus Qwen3-1.7B | L4 | default | 8 | -1.00 | [-4.60%, 2.40%] |
+| Qwen2.5-3B-Instruct minus Qwen3-1.7B | L4 | default | 32 | -1.20 | [-4.60%, 2.20%] |
+| Qwen2.5-3B-Instruct minus Qwen3-1.7B | L4 | batch_invariant | 1 | -2.00 | [-5.60%, 1.60%] |
+| Qwen2.5-3B-Instruct minus Qwen3-1.7B | L4 | batch_invariant | 8 | -2.00 | [-5.60%, 1.60%] |
+| Qwen2.5-3B-Instruct minus Qwen3-1.7B | L4 | batch_invariant | 32 | -2.00 | [-5.60%, 1.60%] |
+
+## Physical GPU assignment
+
+| Tier | Model | Recorded GPU UUID |
+|---|---|---|
+| A10 | Qwen2.5-1.5B-Instruct | GPU-df755a7a-4f7b-ab01-e69f-d911ae000a49 |
+| A10 | Qwen2.5-3B-Instruct | GPU-2c28e71d-e91e-138a-ad5a-331a9804832e |
+| A10 | Qwen3-1.7B | GPU-2c28e71d-e91e-138a-ad5a-331a9804832e |
+| A10 | Llama-3.2-3B-Instruct | GPU-2c28e71d-e91e-138a-ad5a-331a9804832e |
+| A10 | xLAM-2-3b-fc-r | GPU-2c28e71d-e91e-138a-ad5a-331a9804832e |
+| A10 | Qwen3-4B-Instruct-2507 | GPU-2c28e71d-e91e-138a-ad5a-331a9804832e |
+| L4 | Llama-3.2-3B-Instruct | GPU-839082a9-63d0-c378-9a25-614e4de41356 |
+| L4 | Qwen3-4B-Instruct-2507 | GPU-839082a9-63d0-c378-9a25-614e4de41356 |
+| L4 | Qwen2.5-3B-Instruct | GPU-5d989e6c-850c-c1fc-e0ae-0db25e1b7567 |
+| L4 | Qwen3-1.7B | GPU-5d989e6c-850c-c1fc-e0ae-0db25e1b7567 |
+
+## Cost, interruption recovery, and cleanup
+
+| Scope | Forecast USD | Provisional gross metering USD | Conservative estimate USD |
+|---|---|---|---|
+| A10 remaining-five job | 6.5151 | 5.6008 | 6.3636 |
+| A10 six-model study | 7.3310 | 6.3560 | 7.2402 |
+| L4 follow-up, both allocations | 3.6089 | 2.7296 | 3.1575 |
+| Whole project, including pilot and failed attempts | Multiple approvals | Early attempts not fully attributable | 10.7213 / 12 |
+
+Cost rows overlap: the remaining-five job is part of the A10 study, and both studies are part of the project. Settled invoice actuals are unknown. Gross metering is provisional, attributed by exact app ID, and excludes credit offsets and unrelated qunti-check usage.
+
+The first L4 allocation was preempted after the Llama/Qwen pair completed. Its checkpoints and all 6,000 scored rows were preserved byte for byte. Only the unfinished Qwen pair resumed, on another L4. Failed partial work is charged but not scored or imputed. Post-preemption GPU queue waiting is excluded from resource time. A persistent execution claim prevents platform replay from regenerating outputs, and saved call IDs permit reconnection without job resubmission.
+
+Every requested comparison pair shares a physical GPU within its tier, and each model's arms stay on that card. The A10 anchor used an earlier A10. The two L4 pairs use separate cards after recovery. The complete article/report cohort has 70,800 scored outputs: 58,800 on A10, including 10,800 timing outputs, plus 12,000 greedy L4 outputs. The same 500 items recur throughout. There are 17 A10 length truncations and 913 A10 AST syntax/format failures, and no L4 length truncations. Incorrect outputs remain in the denominator.
+
+All owned study apps are stopped, running owned containers are zero, holds are released, and temporary results volumes were deleted after hash verification. qunti-check was untouched. This editorial merge uses saved artifacts only and launches no compute.
+
+[A10 receipt](study-20261028T065939Z/receipt.json), [combined L4/project receipt](l4-continuation-20261028T224638Z/receipt.json), [budget](../BUDGET.md), and [decisions](../DECISIONS.md) preserve the accounting and operational evidence.
+
+## Methods and interpretation
+
+The [merged article](../blog/STUDY.md) explains selection, prompting, seeds, mitigation, and inference controls. GPU family is not causally isolated: generation history, CPU caps, host, and driver also differ. Each comparison has only one recorded card per GPU family. The A10 default process sampled before greedy generation; L4 starts greedy evaluation after smoke and the same warmup protocol. L4 requests and caps two CPU cores; A10 requested two and capped four. Findings do not cover other serving schedules, training seeds, native tool APIs, or executed code.

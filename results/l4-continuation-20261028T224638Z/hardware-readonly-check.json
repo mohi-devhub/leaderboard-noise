@@ -1,0 +1,7 @@
+{
+  "gpu": "NVIDIA L4",
+  "gpu_uuid": "GPU-5d989e6c-850c-c1fc-e0ae-0db25e1b7567",
+  "driver": "610.57.04",
+  "container_id": "ta-01M62CPMVJFN2A4YV2QQQ5H7CR",
+  "source": "read-only nvidia-smi in the owned running container"
+}

@@ -1,0 +1,11 @@
+{
+  "session": "results/study-20261028T065939Z",
+  "gpu": "NVIDIA A10",
+  "sources_sha256": {
+    "summary.json": "87823f25ea3ba3b1511227604af722ae7163683636296685ef5302d5c5b48839",
+    "greedy-summary.json": "557202638c1a2b0886970f8d62cc6817dc7d850df5c5058bd9763dfeeb45f831",
+    "pairwise-flips.json": "b74262d58fdc7f25392cf2a3cd25ac988bbf285a5caa04ee5ae32e58366c93ab",
+    "throughput-summary.json": "e94159aa5f45aa16302c5368a921e9cce7b2dc1c81cf1c224b17914fef0b3aeb"
+  },
+  "script_sha256": "e661945c5fbd9df138abb460aec5e46011b95061d52262a9ec7b5cdeda8c2558"
+}

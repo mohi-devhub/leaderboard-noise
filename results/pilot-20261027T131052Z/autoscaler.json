@@ -1,0 +1,24 @@
+{
+  "current_settings": {
+    "min_containers": 1,
+    "max_containers": 1,
+    "scaledown_window": 2,
+    "buffer_containers": null
+  },
+  "override_events": [
+    {
+      "setting": "max_containers",
+      "updated_at": "1793107167.436774",
+      "actor_name": "achumohith14",
+      "actor_id": "us-cP7i8RPx7F1kQtJwvIdkkp",
+      "actor_type": "user"
+    },
+    {
+      "setting": "min_containers",
+      "updated_at": "1793107167.436774",
+      "actor_name": "achumohith14",
+      "actor_id": "us-cP7i8RPx7F1kQtJwvIdkkp",
+      "actor_type": "user"
+    }
+  ]
+}

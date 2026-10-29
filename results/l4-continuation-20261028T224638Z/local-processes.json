@@ -1,0 +1,12 @@
+{
+  "launch_exec_session": 59107,
+  "observer_exec_session": 3435,
+  "postprocess_exec_session": 47036,
+  "app_id": "ap-Cofk8Ky1vJx7KI49oEl3Pm",
+  "gpu_function_id": "fu-HvsIKPubgyxDQhPfrVlycv",
+  "controller_function_id": "fu-Y3uhBZZqbvuXMAX8XPzs5w",
+  "controller_call_id": "fc-01M62BBAC64D22CAV1FAMXFF3N",
+  "volume_name": "evalnoise-l4-continuation-20261028T224638Z",
+  "preserved_primary_session": "results/l4-followup-20261028T190732Z",
+  "note": "Resume only two unfinished models. Do not rerun completed primary pair. Execution claim fences platform replay. CPU watcher merges preserved checkpoints into full 12000-outcome report after cleanup."
+}

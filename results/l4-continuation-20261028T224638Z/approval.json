@@ -1,0 +1,26 @@
+{
+  "approved": true,
+  "session": "results/l4-continuation-20261028T224638Z",
+  "followup_cap_usd": 5,
+  "project_cap_usd": 12,
+  "approved_request": "Rerun only Qwen2.5-3B vs Qwen3-1.7B and Llama3B vs Qwen3-4B, both arms, on L4. Detached, checkpoints, $5 follow-up cap, before Oct31. Report full-set flip reproduction alongside A10. Stop owned apps.",
+  "scope": "Resume only the two unfinished requested models; reuse the six thousand verified primary-pair outcomes. Same original five-dollar total follow-up authorization and twelve-dollar project cap.",
+  "additional_sampling_or_throughput_trials": false,
+  "a10_session": "results/study-20261028T065939Z",
+  "pairs": [
+    [
+      "meta-llama/Llama-3.2-3B-Instruct",
+      "Qwen/Qwen3-4B-Instruct-2507"
+    ],
+    [
+      "Qwen/Qwen2.5-3B-Instruct",
+      "Qwen/Qwen3-1.7B"
+    ]
+  ],
+  "resume_from": "results/l4-followup-20261028T190732Z",
+  "followup_root": "results/l4-followup-20261028T190732Z",
+  "models_already_complete": [
+    "Qwen/Qwen3-4B-Instruct-2507",
+    "meta-llama/Llama-3.2-3B-Instruct"
+  ]
+}

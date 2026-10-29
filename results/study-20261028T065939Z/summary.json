@@ -1,0 +1,43 @@
+{
+  "gpu": "NVIDIA A10",
+  "gpu_uuids": [
+    "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+    "GPU-df755a7a-4f7b-ab01-e69f-d911ae000a49"
+  ],
+  "gpu_names": [
+    "NVIDIA A10"
+  ],
+  "gpu_name_by_model": {
+    "Qwen/Qwen2.5-1.5B-Instruct": "NVIDIA A10",
+    "Qwen/Qwen2.5-3B-Instruct": "NVIDIA A10",
+    "Qwen/Qwen3-1.7B": "NVIDIA A10",
+    "meta-llama/Llama-3.2-3B-Instruct": "NVIDIA A10",
+    "Salesforce/xLAM-2-3b-fc-r": "NVIDIA A10",
+    "Qwen/Qwen3-4B-Instruct-2507": "NVIDIA A10"
+  },
+  "gpu_uuid_by_model": {
+    "Qwen/Qwen2.5-1.5B-Instruct": "GPU-df755a7a-4f7b-ab01-e69f-d911ae000a49",
+    "Qwen/Qwen2.5-3B-Instruct": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+    "Qwen/Qwen3-1.7B": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+    "meta-llama/Llama-3.2-3B-Instruct": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+    "Salesforce/xLAM-2-3b-fc-r": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e",
+    "Qwen/Qwen3-4B-Instruct-2507": "GPU-2c28e71d-e91e-138a-ad5a-331a9804832e"
+  },
+  "models": [
+    "Qwen/Qwen2.5-1.5B-Instruct",
+    "Qwen/Qwen2.5-3B-Instruct",
+    "Qwen/Qwen3-1.7B",
+    "meta-llama/Llama-3.2-3B-Instruct",
+    "Salesforce/xLAM-2-3b-fc-r",
+    "Qwen/Qwen3-4B-Instruct-2507"
+  ],
+  "primary_predictions": 48000,
+  "timing_predictions": 10800,
+  "total_predictions": 58800,
+  "truncated": 17,
+  "syntax_failures": 913,
+  "observed_close_pairs": 2,
+  "preselected_close_pairs": 3,
+  "observed_close_pairs_same_gpu": 2,
+  "pairs_with_mitigation_order_change": 1
+}

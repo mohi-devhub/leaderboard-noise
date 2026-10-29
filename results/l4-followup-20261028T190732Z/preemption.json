@@ -1,0 +1,9 @@
+{
+  "gpu_terminated_at_utc": "2026-10-28T21:05:34+00:00",
+  "gpu_container_id": "ta-01M6208YS8CV3BZXBTJQX01Q3R",
+  "source": "preemption.log, Modal system log with container identity",
+  "auto_retry_observed": true,
+  "app_stopped_before_restart": true,
+  "completed_models_preserved": 2,
+  "unretained_work": "Qwen2.5-3B default arm was interrupted before its model checkpoint; retained prediction count for that model is unknown."
+}

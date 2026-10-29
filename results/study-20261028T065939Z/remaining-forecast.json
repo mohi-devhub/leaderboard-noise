@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-10-28T13:22:43.810531+00:00",
+  "completed_models_preserved": [
+    "Qwen/Qwen2.5-1.5B-Instruct"
+  ],
+  "remaining_models": [
+    "Qwen/Qwen2.5-3B-Instruct",
+    "Qwen/Qwen3-1.7B",
+    "meta-llama/Llama-3.2-3B-Instruct",
+    "Salesforce/xLAM-2-3b-fc-r",
+    "Qwen/Qwen3-4B-Instruct-2507"
+  ],
+  "prior_project_estimate_usd": 1.2001361376493334,
+  "forecast_job_usd": 6.515082297329319,
+  "conservative_job_usd": 9.51875025,
+  "global_execution_limit_seconds": 21714,
+  "resource_ceiling_includes_startup_and_queue_control": true,
+  "project_cap_usd": 12,
+  "requires_above_5_approval": true,
+  "approval_present": true,
+  "expected_gpu_family": "Modal A10",
+  "cloud": "auto",
+  "note": "One server-side CPU controller, one A10 job with per-model budget gates, and a temporary results volume. Stop within 30 minutes without A10 allocation. CPU/control/storage costs are covered by the $0.15 allowance; delete the volume only after all downloads verify."
+}

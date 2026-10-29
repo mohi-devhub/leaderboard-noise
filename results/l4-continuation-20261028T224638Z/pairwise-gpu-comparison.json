@@ -1,0 +1,352 @@
+[
+  {
+    "a": "meta-llama/Llama-3.2-3B-Instruct",
+    "b": "Qwen/Qwen3-4B-Instruct-2507",
+    "a10": {
+      "default": {
+        "definition": "opposite strict orders across batch settings",
+        "estimate": 0.0894,
+        "ci95": [
+          0.005,
+          0.2366249999999999
+        ],
+        "interval_kind": "exploratory outer paired-item bootstrap percentile interval",
+        "mc_wilson95": [
+          0.08180344452007887,
+          0.09762699231720204
+        ],
+        "mc_interval_kind": "Monte Carlo precision conditional on the empirical dataset; not population uncertainty",
+        "observed_differences": [
+          -0.002,
+          0.0,
+          0.002
+        ],
+        "observed_strict_flip": true,
+        "difference_ci95": [
+          [
+            -0.032,
+            0.028
+          ],
+          [
+            -0.03,
+            0.03
+          ],
+          [
+            -0.028,
+            0.032
+          ]
+        ],
+        "any_tie_fraction": 0.129,
+        "resamples": 5000,
+        "outer_resamples": 500,
+        "inner_resamples": 1000,
+        "seed": 20261232,
+        "collapsed_outer_interval": false,
+        "warning": "Discontinuous order statistics and absent empirical patterns can collapse these intervals; they do not prove no population flips. Inner Monte Carlo noise also contributes to outer interval width."
+      },
+      "batch_invariant": {
+        "definition": "opposite strict orders across batch settings",
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "interval_kind": "exploratory outer paired-item bootstrap percentile interval",
+        "mc_wilson95": [
+          0.0,
+          0.0007677019450571239
+        ],
+        "mc_interval_kind": "Monte Carlo precision conditional on the empirical dataset; not population uncertainty",
+        "observed_differences": [
+          0.002,
+          0.002,
+          0.002
+        ],
+        "observed_strict_flip": false,
+        "difference_ci95": [
+          [
+            -0.028,
+            0.032
+          ],
+          [
+            -0.028,
+            0.032
+          ],
+          [
+            -0.028,
+            0.032
+          ]
+        ],
+        "any_tie_fraction": 0.0516,
+        "resamples": 5000,
+        "outer_resamples": 500,
+        "inner_resamples": 1000,
+        "seed": 20261233,
+        "collapsed_outer_interval": true,
+        "warning": "Discontinuous order statistics and absent empirical patterns can collapse these intervals; they do not prove no population flips. Inner Monte Carlo noise also contributes to outer interval width."
+      }
+    },
+    "l4": {
+      "default": {
+        "definition": "opposite strict orders across batch settings",
+        "estimate": 0.1028,
+        "ci95": [
+          0.011,
+          0.27809999999999996
+        ],
+        "interval_kind": "exploratory outer paired-item bootstrap percentile interval",
+        "mc_wilson95": [
+          0.09468472980921208,
+          0.1115251326159413
+        ],
+        "mc_interval_kind": "Monte Carlo precision conditional on the empirical dataset; not population uncertainty",
+        "observed_differences": [
+          0.002,
+          0.0,
+          -0.002
+        ],
+        "observed_strict_flip": true,
+        "difference_ci95": [
+          [
+            -0.028,
+            0.032
+          ],
+          [
+            -0.03,
+            0.03
+          ],
+          [
+            -0.03,
+            0.028
+          ]
+        ],
+        "any_tie_fraction": 0.1298,
+        "resamples": 5000,
+        "outer_resamples": 500,
+        "inner_resamples": 1000,
+        "seed": 20261201,
+        "collapsed_outer_interval": false,
+        "warning": "Discontinuous order statistics and absent empirical patterns can collapse these intervals; they do not prove no population flips. Inner Monte Carlo noise also contributes to outer interval width."
+      },
+      "batch_invariant": {
+        "definition": "opposite strict orders across batch settings",
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "interval_kind": "exploratory outer paired-item bootstrap percentile interval",
+        "mc_wilson95": [
+          0.0,
+          0.0007677019450571239
+        ],
+        "mc_interval_kind": "Monte Carlo precision conditional on the empirical dataset; not population uncertainty",
+        "observed_differences": [
+          0.002,
+          0.002,
+          0.002
+        ],
+        "observed_strict_flip": false,
+        "difference_ci95": [
+          [
+            -0.028,
+            0.032
+          ],
+          [
+            -0.028,
+            0.032
+          ],
+          [
+            -0.028,
+            0.032
+          ]
+        ],
+        "any_tie_fraction": 0.053,
+        "resamples": 5000,
+        "outer_resamples": 500,
+        "inner_resamples": 1000,
+        "seed": 20261202,
+        "collapsed_outer_interval": true,
+        "warning": "Discontinuous order statistics and absent empirical patterns can collapse these intervals; they do not prove no population flips. Inner Monte Carlo noise also contributes to outer interval width."
+      }
+    },
+    "l4_gpu_uuid": "GPU-839082a9-63d0-c378-9a25-614e4de41356",
+    "default_strict_flip_reproduced": true,
+    "default_order_pattern_reproduced": false
+  },
+  {
+    "a": "Qwen/Qwen2.5-3B-Instruct",
+    "b": "Qwen/Qwen3-1.7B",
+    "a10": {
+      "default": {
+        "definition": "opposite strict orders across batch settings",
+        "estimate": 0.1318,
+        "ci95": [
+          0.006,
+          0.358
+        ],
+        "interval_kind": "exploratory outer paired-item bootstrap percentile interval",
+        "mc_wilson95": [
+          0.12270572364500049,
+          0.14145961206733965
+        ],
+        "mc_interval_kind": "Monte Carlo precision conditional on the empirical dataset; not population uncertainty",
+        "observed_differences": [
+          -0.016,
+          -0.008,
+          -0.012
+        ],
+        "observed_strict_flip": false,
+        "difference_ci95": [
+          [
+            -0.052,
+            0.018
+          ],
+          [
+            -0.042,
+            0.026
+          ],
+          [
+            -0.048,
+            0.02204999999999927
+          ]
+        ],
+        "any_tie_fraction": 0.0972,
+        "resamples": 5000,
+        "outer_resamples": 500,
+        "inner_resamples": 1000,
+        "seed": 20261152,
+        "collapsed_outer_interval": false,
+        "warning": "Discontinuous order statistics and absent empirical patterns can collapse these intervals; they do not prove no population flips. Inner Monte Carlo noise also contributes to outer interval width."
+      },
+      "batch_invariant": {
+        "definition": "opposite strict orders across batch settings",
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "interval_kind": "exploratory outer paired-item bootstrap percentile interval",
+        "mc_wilson95": [
+          0.0,
+          0.0007677019450571239
+        ],
+        "mc_interval_kind": "Monte Carlo precision conditional on the empirical dataset; not population uncertainty",
+        "observed_differences": [
+          -0.02,
+          -0.02,
+          -0.02
+        ],
+        "observed_strict_flip": false,
+        "difference_ci95": [
+          [
+            -0.056,
+            0.016
+          ],
+          [
+            -0.056,
+            0.016
+          ],
+          [
+            -0.056,
+            0.016
+          ]
+        ],
+        "any_tie_fraction": 0.023,
+        "resamples": 5000,
+        "outer_resamples": 500,
+        "inner_resamples": 1000,
+        "seed": 20261153,
+        "collapsed_outer_interval": true,
+        "warning": "Discontinuous order statistics and absent empirical patterns can collapse these intervals; they do not prove no population flips. Inner Monte Carlo noise also contributes to outer interval width."
+      }
+    },
+    "l4": {
+      "default": {
+        "definition": "opposite strict orders across batch settings",
+        "estimate": 0.0848,
+        "ci95": [
+          0.007,
+          0.284525
+        ],
+        "interval_kind": "exploratory outer paired-item bootstrap percentile interval",
+        "mc_wilson95": [
+          0.0773933274635884,
+          0.09284417223158703
+        ],
+        "mc_interval_kind": "Monte Carlo precision conditional on the empirical dataset; not population uncertainty",
+        "observed_differences": [
+          -0.01,
+          -0.01,
+          -0.012
+        ],
+        "observed_strict_flip": false,
+        "difference_ci95": [
+          [
+            -0.04404999999999998,
+            0.024
+          ],
+          [
+            -0.046,
+            0.024
+          ],
+          [
+            -0.046,
+            0.022
+          ]
+        ],
+        "any_tie_fraction": 0.098,
+        "resamples": 5000,
+        "outer_resamples": 500,
+        "inner_resamples": 1000,
+        "seed": 20261211,
+        "collapsed_outer_interval": false,
+        "warning": "Discontinuous order statistics and absent empirical patterns can collapse these intervals; they do not prove no population flips. Inner Monte Carlo noise also contributes to outer interval width."
+      },
+      "batch_invariant": {
+        "definition": "opposite strict orders across batch settings",
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "interval_kind": "exploratory outer paired-item bootstrap percentile interval",
+        "mc_wilson95": [
+          0.0,
+          0.0007677019450571239
+        ],
+        "mc_interval_kind": "Monte Carlo precision conditional on the empirical dataset; not population uncertainty",
+        "observed_differences": [
+          -0.02,
+          -0.02,
+          -0.02
+        ],
+        "observed_strict_flip": false,
+        "difference_ci95": [
+          [
+            -0.056,
+            0.016
+          ],
+          [
+            -0.056,
+            0.016
+          ],
+          [
+            -0.056,
+            0.016
+          ]
+        ],
+        "any_tie_fraction": 0.0264,
+        "resamples": 5000,
+        "outer_resamples": 500,
+        "inner_resamples": 1000,
+        "seed": 20261212,
+        "collapsed_outer_interval": true,
+        "warning": "Discontinuous order statistics and absent empirical patterns can collapse these intervals; they do not prove no population flips. Inner Monte Carlo noise also contributes to outer interval width."
+      }
+    },
+    "l4_gpu_uuid": "GPU-5d989e6c-850c-c1fc-e0ae-0db25e1b7567",
+    "default_strict_flip_reproduced": null,
+    "default_order_pattern_reproduced": true
+  }
+]

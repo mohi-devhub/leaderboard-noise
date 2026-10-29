@@ -1,0 +1,12 @@
+{
+  "session": "results/l4-followup-20261028T190732Z",
+  "started_at": "2026-10-28T19:12:46.283464+00:00",
+  "status": "l4_followup_reserved",
+  "estimated_spend_usd": 0,
+  "reserved_usd": 4.34276525,
+  "actual_invoice_usd": null,
+  "app_id": "ap-C4FfuuJt0ioG1hkR9KcCAm",
+  "gpu_function_id": "fu-9BTlgXdBCvthGQxqS1A6k4",
+  "controller_function_id": "fu-S93eQvqdiWnJddozBajxYR",
+  "call_id": "fc-01M61YWRTPWTKJW8XTEQRS1RFZ"
+}

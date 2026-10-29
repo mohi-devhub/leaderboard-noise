@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-28T13:03:43.841324+00:00",
+  "status": "one_model_complete_waiting_for_above_5_approval",
+  "tests": "30 passed",
+  "ruff_check": "passed",
+  "ruff_format": "passed",
+  "completed_models": 1,
+  "planned_models": 6,
+  "scored_predictions": 9800,
+  "installed_cli_exact_metric_match": true,
+  "evalnoise_apps_stopped": true,
+  "evalnoise_running_containers": 0,
+  "other_project_modified": false,
+  "estimated_project_spend_usd": 1.1901361376493333,
+  "active_reservations_usd": 0,
+  "remaining_job_submitted": false,
+  "sha256": {
+    "scripts/run_remaining.py": "93a43986dc6bb6d9c72c1a2c24c808d67f1bf9b0e88de057abda96ebe0b19b49",
+    "scripts/study_model_job.py": "270ecc9be9e4c2e5d0dda8156c75f6ff6db54857a4199238fc2f02f94f291e6c",
+    "scripts/report_partial_study.py": "1029d2426c199b4944127fcc47886a5434e2288ef44450138149832e3c7c0646",
+    "results/study-20261028T065939Z/partial-model1/scored.jsonl": "df7fc882b09bbfa9f0192656ab9b5eb476a8d46f3b96c2f0716402e42502f500",
+    "results/study-20261028T065939Z/partial-model1/REPORT.md": "691873cfe02de580ecc439a6110baa30df6cc8e3ec7c1cd6a27283061207c67b"
+  }
+}

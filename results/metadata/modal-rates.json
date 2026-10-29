@@ -1,0 +1,11 @@
+{
+  "retrieved_date": "2026-10-27",
+  "source": "modal billing rates --json",
+  "rates": {
+    "gpu_hour_cost_l4": "0.80000",
+    "cpu_hour_cost": "0.04730",
+    "mem_gib_hour_cost": "0.00800",
+    "egress_gib_cost": "0.04000",
+    "volume_storage_gib_month_cost": "0.09000"
+  }
+}

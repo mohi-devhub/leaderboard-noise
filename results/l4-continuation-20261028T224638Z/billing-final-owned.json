@@ -1,0 +1,209 @@
+[
+  {
+    "object_id": "ap-C4FfuuJt0ioG1hkR9KcCAm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T19:00:00",
+    "resource": "Network Egress",
+    "cost": "0.00046192",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-followup-20261028T190732Z\"}"
+  },
+  {
+    "object_id": "ap-C4FfuuJt0ioG1hkR9KcCAm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T19:00:00",
+    "resource": "L4",
+    "cost": "0.29955558",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-followup-20261028T190732Z\"}"
+  },
+  {
+    "object_id": "ap-C4FfuuJt0ioG1hkR9KcCAm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T19:00:00",
+    "resource": "Memory",
+    "cost": "0.02708445",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-followup-20261028T190732Z\"}"
+  },
+  {
+    "object_id": "ap-C4FfuuJt0ioG1hkR9KcCAm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T19:00:00",
+    "resource": "CPU",
+    "cost": "0.04013751",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-followup-20261028T190732Z\"}"
+  },
+  {
+    "object_id": "ap-C4FfuuJt0ioG1hkR9KcCAm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T20:00:00",
+    "resource": "Network Egress",
+    "cost": "0.00092012",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-followup-20261028T190732Z\"}"
+  },
+  {
+    "object_id": "ap-C4FfuuJt0ioG1hkR9KcCAm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T20:00:00",
+    "resource": "L4",
+    "cost": "0.79911252",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-followup-20261028T190732Z\"}"
+  },
+  {
+    "object_id": "ap-C4FfuuJt0ioG1hkR9KcCAm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T20:00:00",
+    "resource": "Memory",
+    "cost": "0.06792678",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-followup-20261028T190732Z\"}"
+  },
+  {
+    "object_id": "ap-C4FfuuJt0ioG1hkR9KcCAm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T20:00:00",
+    "resource": "CPU",
+    "cost": "0.10041906",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-followup-20261028T190732Z\"}"
+  },
+  {
+    "object_id": "ap-C4FfuuJt0ioG1hkR9KcCAm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T21:00:00",
+    "resource": "Network Egress",
+    "cost": "4.6E-7",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-followup-20261028T190732Z\"}"
+  },
+  {
+    "object_id": "ap-C4FfuuJt0ioG1hkR9KcCAm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T21:00:00",
+    "resource": "L4",
+    "cost": "0.07377793",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-followup-20261028T190732Z\"}"
+  },
+  {
+    "object_id": "ap-C4FfuuJt0ioG1hkR9KcCAm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T21:00:00",
+    "resource": "Memory",
+    "cost": "0.00781779",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-followup-20261028T190732Z\"}"
+  },
+  {
+    "object_id": "ap-C4FfuuJt0ioG1hkR9KcCAm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T21:00:00",
+    "resource": "CPU",
+    "cost": "0.01155567",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-followup-20261028T190732Z\"}"
+  },
+  {
+    "object_id": "ap-Cofk8Ky1vJx7KI49oEl3Pm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T22:00:00",
+    "resource": "Network Egress",
+    "cost": "0.00005479",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-continuation-20261028T224638Z\"}"
+  },
+  {
+    "object_id": "ap-Cofk8Ky1vJx7KI49oEl3Pm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T22:00:00",
+    "resource": "Memory",
+    "cost": "0.00090000",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-continuation-20261028T224638Z\"}"
+  },
+  {
+    "object_id": "ap-Cofk8Ky1vJx7KI49oEl3Pm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T22:00:00",
+    "resource": "CPU",
+    "cost": "0.00268025",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-continuation-20261028T224638Z\"}"
+  },
+  {
+    "object_id": "ap-Cofk8Ky1vJx7KI49oEl3Pm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T23:00:00",
+    "resource": "Network Egress",
+    "cost": "0.00071769",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-continuation-20261028T224638Z\"}"
+  },
+  {
+    "object_id": "ap-Cofk8Ky1vJx7KI49oEl3Pm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T23:00:00",
+    "resource": "L4",
+    "cost": "0.60399992",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-continuation-20261028T224638Z\"}"
+  },
+  {
+    "object_id": "ap-Cofk8Ky1vJx7KI49oEl3Pm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T23:00:00",
+    "resource": "Memory",
+    "cost": "0.05431999",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-continuation-20261028T224638Z\"}"
+  },
+  {
+    "object_id": "ap-Cofk8Ky1vJx7KI49oEl3Pm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-28T23:00:00",
+    "resource": "CPU",
+    "cost": "0.08916431",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-continuation-20261028T224638Z\"}"
+  },
+  {
+    "object_id": "ap-Cofk8Ky1vJx7KI49oEl3Pm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-29T00:00:00",
+    "resource": "Network Egress",
+    "cost": "0.00000129",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-continuation-20261028T224638Z\"}"
+  },
+  {
+    "object_id": "ap-Cofk8Ky1vJx7KI49oEl3Pm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-29T00:00:00",
+    "resource": "L4",
+    "cost": "0.44711100",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-continuation-20261028T224638Z\"}"
+  },
+  {
+    "object_id": "ap-Cofk8Ky1vJx7KI49oEl3Pm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-29T00:00:00",
+    "resource": "Memory",
+    "cost": "0.03912555",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-continuation-20261028T224638Z\"}"
+  },
+  {
+    "object_id": "ap-Cofk8Ky1vJx7KI49oEl3Pm",
+    "description": "evalnoise-l4-followup",
+    "environment": "main",
+    "interval_start": "2026-10-29T00:00:00",
+    "resource": "CPU",
+    "cost": "0.06279621",
+    "tags": "{\"project\": \"evalnoise\", \"session\": \"l4-continuation-20261028T224638Z\"}"
+  }
+]

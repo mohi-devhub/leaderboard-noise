@@ -1,0 +1,32 @@
+{
+  "status": "incomplete",
+  "models": [
+    "meta-llama/Llama-3.2-3B-Instruct",
+    "Qwen/Qwen3-4B-Instruct-2507"
+  ],
+  "missing_models": [
+    "Qwen/Qwen2.5-3B-Instruct",
+    "Qwen/Qwen3-1.7B"
+  ],
+  "predictions": 6000,
+  "gpu": "NVIDIA L4",
+  "gpu_uuids": [
+    "GPU-839082a9-63d0-c378-9a25-614e4de41356"
+  ],
+  "truncations": 0,
+  "error_types": {
+    "None": 5491,
+    "value_error:string": 82,
+    "type_error:nested": 12,
+    "value_error:others": 60,
+    "value_error:list/tuple": 18,
+    "simple_function_checker:wrong_func_name": 48,
+    "simple_function_checker:missing_optional": 12,
+    "parallel_function_checker_no_order:cannot_find_match": 173,
+    "parallel_function_checker_no_order:wrong_count": 79,
+    "ast_decoder:decoder_failed": 8,
+    "type_error:simple": 17
+  },
+  "raw_sha256": "59509d131456c6bfce125c85a1fc27a419e2275e725fd9fa73e9bffbeb831998",
+  "scored_sha256": "aebd3d97a8aeb2267522df43258ebd6e6f0e2063d8ffb945af571903a2b22a5a"
+}

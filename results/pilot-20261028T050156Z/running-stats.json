@@ -1,0 +1,50 @@
+{
+  "object_id": "fu-CDdjnxxplwHDPjVFNIDfPt",
+  "all_variants": false,
+  "variant_count": 0,
+  "since": "2026-10-28T04:05:47.473083+00:00",
+  "until": "2026-10-28T05:05:47.473083+00:00",
+  "input_success_count": 0,
+  "input_failure_count": 0,
+  "input_timeout_count": 0,
+  "input_running_at_end_count": 1,
+  "input_percentile_stats": {},
+  "container_total_count": 1,
+  "container_started_count": 1,
+  "container_error_count": 0,
+  "container_creating_at_end_count": 0,
+  "container_percentile_stats": {
+    "Startup time (s)": {
+      "unit": "seconds",
+      "percentiles": {
+        "p50": 10.020822,
+        "p90": 10.020822,
+        "p99": 10.020822
+      }
+    },
+    "CPU Usage (cores)": {
+      "unit": "cores",
+      "percentiles": {
+        "p50": 1.032866061483791,
+        "p90": 1.160362258948365,
+        "p99": 3.31172805197503
+      }
+    },
+    "Memory Usage (GiB)": {
+      "unit": "GiB",
+      "percentiles": {
+        "p50": 2.683502197265625,
+        "p90": 2.71072998046875,
+        "p99": 2.95782886505127
+      }
+    },
+    "GPU Utilization (%)": {
+      "unit": "percent",
+      "percentiles": {
+        "p50": 7.000000000000001,
+        "p90": 35.400000000000006,
+        "p99": 100.0
+      }
+    }
+  }
+}

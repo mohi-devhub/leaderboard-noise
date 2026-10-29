@@ -1,0 +1,212 @@
+"""Insert measured study tables into the hand-written article; never launch inference."""
+
+import argparse
+import json
+from pathlib import Path
+
+
+def short(name):
+    return name.rsplit("/", 1)[-1]
+
+
+def pct(value):
+    return "undefined" if value is None else f"{value:.2%}"
+
+
+def interval(values):
+    return "undefined" if values is None else f"[{pct(values[0])}, {pct(values[1])}]"
+
+
+def rate(record):
+    return f"{pct(record['estimate'])} {interval(record['ci95'])}"
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("session", type=Path)
+    parser.add_argument("--out", type=Path, default=Path("blog/STUDY.md"))
+    args = parser.parse_args()
+
+    def read(name):
+        return json.loads((args.session / name).read_text())
+
+    summary = read("summary.json")
+    receipt = read("receipt.json")
+    sampling = read("analysis-sampling.json")
+    greedy = read("greedy-summary.json")
+    pairs = read("pairwise-flips.json")
+    timing = read("throughput-summary.json")
+    names = summary["models"]
+    if (
+        len(names) != 6
+        or sampling["n_items"] != 500
+        or summary["total_predictions"] != 58800
+        or not receipt["own_apps_stopped"]
+        or receipt["active_reservations_usd"] != 0
+        or not receipt["within_project_cap"]
+    ):
+        raise RuntimeError("complete validated results and shutdown receipt are required")
+    actual_flips = {
+        arm: sum(p["arms"][arm]["observed_strict_flip"] for p in pairs)
+        for arm in ("default", "batch_invariant")
+    }
+    default_changes = [greedy["default"][name]["changed_text_fraction"] for name in names]
+    invariant_changes = [greedy["batch_invariant"][name]["changed_text"] for name in names]
+    order_changes = summary["pairs_with_mitigation_order_change"]
+    pair_noun = "pair" if order_changes == 1 else "pairs"
+    lines = [
+        f"We completed all six models and scored {summary['total_predictions']:,} predictions on NVIDIA A10, including {summary['primary_predictions']:,} primary predictions and {summary['timing_predictions']:,} separate timing outputs. Default greedy text-change rates ranged from {pct(min(default_changes))} to {pct(max(default_changes))} across models. The invariant arm changed text on {sum(invariant_changes)} of the 3,000 model-item observations. The same 500 questions recur across models, so those observations must not be treated as 3,000 independent questions.",
+        "",
+        f"On the full 500-item set, opposite strict orders across batch sizes occurred for **{actual_flips['default']}/15 default pairs and {actual_flips['batch_invariant']}/15 invariant pairs**. Bootstrap flip fractions below measure sensitivity to resampling questions and can be positive even without a full-set flip. Turning the mitigation on itself strictly reversed the order of {order_changes} model {pair_noun} at one or more fixed batch sizes. That is a different effect from batching sensitivity within either arm.",
+        "",
+    ]
+    observed_flips = [p for p in pairs if p["arms"]["default"]["observed_strict_flip"]]
+    for index, pair in enumerate(observed_flips, 1):
+        descriptions = []
+        for name in (pair["a"], pair["b"]):
+            scores = greedy["default"][name]["scores"]
+            counts = ", ".join(str(round(scores[k] * 500)) for k in ("serial", "batch8", "batch32"))
+            descriptions.append(f"{short(name)} passed {counts} of 500 items.")
+        lines += [
+            "At batch sizes 1, 8, and 32, respectively, "
+            + " ".join(descriptions)
+            + " The one-call differences matter because these models are near a tie. The observed reversal does not establish a statistically separated population winner.",
+            "",
+            f"![Observed strict ranking flip, zoomed y-axis](../figures/{args.session.name}/observed-rank-flip-{index}.png)",
+            "",
+        ]
+    lines += [
+        "## Sampling accuracy on the frozen subset",
+        "",
+        "Each model has 500 items and ten sampled answers per item. The displayed 95% intervals resample whole items. Pass@5 and pass@10 are unbiased point estimates; their item intervals are retained in the analysis JSON.",
+        "",
+        "| Model | pass@1 | Item-bootstrap 95% interval | pass@5 | pass@10 |",
+        "|---|---:|---|---:|---:|",
+    ]
+    for name in names:
+        values = [sampling["metrics"][f"pass@{k}"]["items"]["models"][name] for k in (1, 5, 10)]
+        lines.append(
+            f"| {short(name)} | {pct(values[0]['estimate'])} | {interval(values[0]['ci'])} | {pct(values[1]['estimate'])} | {pct(values[2]['estimate'])} |"
+        )
+    lines += [
+        "",
+        f"![Sampling accuracy with item-bootstrap intervals](../figures/{args.session.name}/pass-1-items.png)",
+        "",
+        "## Close pairs and rank flips",
+        "",
+        f"There were {summary['observed_close_pairs']} observed default-serial gaps within three points, including {summary['observed_close_pairs_same_gpu']} on the same physical A10. The three preselected pairs remain in the table even when they separate on our subset. Additional observed-close pairs are exploratory choices on these data.",
+        "",
+        "The published-score proxy did not preserve closeness for the three preselected comparisons: their measured default-serial gaps were "
+        + ", ".join(
+            f"{abs(p['default_serial_gap']) * 100:.2f} points"
+            for p in pairs
+            if p["preselected_from_published_scores"]
+        )
+        + ". The two close pairs found on this subset therefore provide exploratory evidence rather than confirmation of the preselected cluster.",
+        "",
+        "Each entry gives the batch-flip fraction and its exploratory outer-bootstrap 95% interval. Ties do not count as flips. A collapsed interval is not proof of no population flips. These intervals are unadjusted for multiple comparisons.",
+        "",
+        "| Pair | Selection | Default serial gap, A minus B | Default flip fraction [interval] | Invariant flip fraction [interval] |",
+        "|---|---|---:|---|---|",
+    ]
+    selected = [p for p in pairs if p["preselected_from_published_scores"] or p["observed_close"]]
+    for pair in selected:
+        selection = "preselected" if pair["preselected_from_published_scores"] else "observed close"
+        if not pair["same_physical_gpu"]:
+            selection += "; two devices"
+        lines.append(
+            f"| {short(pair['a'])} vs {short(pair['b'])} | {selection} | {pair['default_serial_gap'] * 100:+.2f} points | {rate(pair['arms']['default'])} | {rate(pair['arms']['batch_invariant'])} |"
+        )
+    lines += [
+        "",
+        f"![Close-pair bootstrap flip fractions](../figures/{args.session.name}/close-pair-flips.png)",
+        "",
+        "The [complete pair table](../results/"
+        + args.session.name
+        + "/pairwise-flips.json) preserves all 15 comparisons, score-difference intervals at every batch setting, observed full-set flips, ties, stochastic order reversals, and separate Monte Carlo precision intervals. A stable rank does not establish equal model quality or absence of output variation.",
+        "",
+        "## Text changes and correctness changes",
+        "",
+        "Text-change rates compare batch sizes 1, 8, and 32 on 500 items per model. Intervals are Wilson 95% intervals. The correctness column counts items whose pass/fail result changes across those batch settings.",
+        "",
+        "| Model | Default text changes, rate [interval] | Invariant text changes, rate [interval] | Correctness changes, default / invariant |",
+        "|---|---|---|---:|",
+    ]
+    for name in names:
+        a, b = (greedy[arm][name] for arm in ("default", "batch_invariant"))
+        cells = [
+            f"{r['changed_text']}/500, {pct(r['changed_text_fraction'])} {interval(r['changed_text_ci95'])}"
+            for r in (a, b)
+        ]
+        lines.append(
+            f"| {short(name)} | {cells[0]} | {cells[1]} | {a['changed_correctness']} / {b['changed_correctness']} |"
+        )
+    lines += [
+        "",
+        f"![Greedy text changes and Wilson intervals](../figures/{args.session.name}/greedy-text-changes.png)",
+        "",
+        "## Throughput cost across three repetitions",
+        "",
+        "Ratios are invariant throughput divided by default throughput. A ratio of 0.60 means 40% lower throughput for that condition. This is not a 40% increase in elapsed time. Ranges contain the three observed paired ratios and are not confidence intervals.",
+        "",
+        "| Model | Batch | Token-rate ratio, median [range] | Completion-rate ratio, median [range] |",
+        "|---|---:|---|---|",
+    ]
+    for r in timing:
+        tlo, thi = r["token_rate_ratio_range"]
+        clo, chi = r["completion_rate_ratio_range"]
+        lines.append(
+            f"| {short(r['model'])} | {r['configuration']} | {r['token_rate_ratio_median']:.3f} [{tlo:.3f}, {thi:.3f}] | {r['completion_rate_ratio_median']:.3f} [{clo:.3f}, {chi:.3f}] |"
+        )
+    lines += [
+        "",
+        f"![Throughput ratios with three repetitions](../figures/{args.session.name}/throughput-ranges.png)",
+        "",
+        "Token counts and completion rates are both retained because the mitigation can change output lengths. Incorrect outputs and length-truncated outputs remain in the accuracy denominator. The report also checks output agreement across repeated timing runs. These results apply to the recorded GPU, software, and submission settings.",
+        "",
+        "## How much evaluation would a three-point gap need?",
+        "",
+        "These stochastic pass@1 projections assume a two-sided 5% test and 80% power. They use finite-repeat-corrected variance estimates from this study. A model pair with a small observed gap can still require more items than this budget covers.",
+        "",
+        "| Pair | Approximate MDD at 500 items and ten samples, percentage points | Items projected for a three-point gap at ten samples/model |",
+        "|---|---:|---:|",
+    ]
+    for pair in selected:
+        plan = pair["planning_gap_3pp"]
+        if plan["status"] == "approximate_pilot_projection":
+            required = next(
+                r["items_for_target_gap"]
+                for r in plan["grid"]
+                if r["samples_per_item_per_model"] == 10
+            )
+            lines.append(
+                f"| {short(pair['a'])} vs {short(pair['b'])} | {plan['mdd_current_design'] * 100:.2f} | {required} |"
+            )
+        else:
+            lines.append(
+                f"| {short(pair['a'])} vs {short(pair['b'])} | {plan['status']} | undefined |"
+            )
+    lines += [
+        "",
+        "## Cost, completion, and scope of the result",
+        "",
+        f"The approved remaining-five forecast was ${receipt['forecast_remaining_job_usd']:.4f}. Modal reports **${float(receipt['app_specific_gross_metered_remaining_usage_usd']):.4f}** in app-specific gross metering for that job. Its conservative resource estimate is ${receipt['estimated_remaining_spend_usd']:.4f}. Across the entire project, including setup failures and the pilot, the conservative recorded estimate is **${float(receipt['estimated_project_total_usd']):.4f} of the $12 cap**. App metering is provisional; a settled invoice actual is unavailable. Unrelated qunti-check usage and credit offsets are excluded from app-specific gross figures.",
+        "",
+        f"The six models' measured execution total was {float(receipt['measured_model_execution_seconds']) / 3600:.3f} hours, including initialization and all processes. The receipt verifies {receipt['verified_remote_pre_model_budget_gates']} server-side continuation budget gates. Every model checkpoint was hash-verified before the temporary volume was deleted. All evalnoise study apps are stopped, there are zero running study containers, and all reservations are released. qunti-check was not modified.",
+        "",
+        f"All {summary['total_predictions']:,} planned predictions were scored, including {summary['truncated']} length-truncated outputs and {summary['syntax_failures']} AST syntax/format failures. The common-prompting subset, independence assumptions, exploratory comparison selection, nonregular flip intervals, two-device recovery, and unprofiled throughput limiter bound the interpretation. The [full numerical report](../results/{args.session.name}/REPORT.md) and [receipt](../results/{args.session.name}/receipt.json) retain the evidence behind each table.",
+    ]
+    text = args.out.read_text()
+    start, rest = text.split("<!-- results:start -->", 1)
+    _, end = rest.split("<!-- results:end -->", 1)
+    text = start + "<!-- results:start -->\n" + "\n".join(lines) + "\n<!-- results:end -->" + end
+    text = text.replace(
+        "October 28, 2026. Results are being collected. This article is incomplete until the final result tables and cost receipt are attached.",
+        "Inference completed October 28, 2026. Analysis finalized October 29 in Asia/Kolkata. A practical measurement and mitigation replication, with reusable per-item analysis.",
+    )
+    args.out.write_text(text)
+    print(f"Inserted measured results into {args.out}")
+
+
+if __name__ == "__main__":
+    main()

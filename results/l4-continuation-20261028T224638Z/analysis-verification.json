@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-29T00:34:13.926154+00:00",
+  "status": "complete",
+  "scored_predictions": 12000,
+  "installed_cli_exact_metric_match": true,
+  "own_apps_stopped": true,
+  "cost_caps_verified": true
+}

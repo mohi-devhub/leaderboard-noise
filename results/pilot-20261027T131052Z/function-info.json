@@ -1,0 +1,45 @@
+{
+  "name": "main.<locals>.run_model",
+  "object_id": "fu-1uXPnSbdyZVp4OI9iWgfp2",
+  "app_id": "ap-vsOQbIwnhLQjGkss8B54hw",
+  "cpu": [
+    2.0,
+    4.0
+  ],
+  "memory_mib": 16384,
+  "gpus": [
+    [
+      "L4",
+      1
+    ]
+  ],
+  "ephemeral_disk_mib": null,
+  "image_info": {
+    "image_name": null,
+    "image_id": "im-Ko3h32gLMlG4ZEvNkaVQBm"
+  },
+  "startup_timeout": 0,
+  "timeout": 1800,
+  "max_retries": 0,
+  "nonpreemptible": false,
+  "regions": null,
+  "routing_region": "",
+  "cloud": null,
+  "cluster_info": null,
+  "batching_info": null,
+  "concurrency_info": null,
+  "schedule": null,
+  "restrict_modal_access": false,
+  "block_network": false,
+  "single_use_containers": false,
+  "volumes": {},
+  "cloud_bucket_mounts": {},
+  "secrets": [],
+  "web_info": null,
+  "method_names": null,
+  "method_details": null,
+  "min_containers": null,
+  "max_containers": 1,
+  "scaledown_window": 2,
+  "buffer_containers": null
+}

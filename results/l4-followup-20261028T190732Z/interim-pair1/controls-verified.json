@@ -1,0 +1,6 @@
+{
+  "frozen_revision_prompts_and_seeds_match_A10": true,
+  "engine_and_inference_package_versions_match_A10": true,
+  "scored_items_per_condition_per_model": 500,
+  "scope": "primary pair complete; second pair still in progress"
+}

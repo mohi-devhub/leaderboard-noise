@@ -1,0 +1,17 @@
+{
+  "object_id": "fu-9ZJ2Z9ZGdkXW02gQ4YVkbj",
+  "all_variants": false,
+  "variant_count": 0,
+  "since": "2026-10-28T08:27:44.813074+00:00",
+  "until": "2026-10-28T09:27:44.813074+00:00",
+  "input_success_count": 0,
+  "input_failure_count": 0,
+  "input_timeout_count": 0,
+  "input_running_at_end_count": 0,
+  "input_percentile_stats": {},
+  "container_total_count": 0,
+  "container_started_count": 0,
+  "container_error_count": 0,
+  "container_creating_at_end_count": 0,
+  "container_percentile_stats": {}
+}

@@ -1,0 +1,62 @@
+{
+  "default": {
+    "meta-llama/Llama-3.2-3B-Instruct": {
+      "changed_text": 12,
+      "changed_text_fraction": 0.024,
+      "changed_text_ci95": [
+        0.013781314655496988,
+        0.04147705746390075
+      ],
+      "changed_correctness": 2,
+      "scores": {
+        "serial": 0.916,
+        "batch8": 0.914,
+        "batch32": 0.916
+      }
+    },
+    "Qwen/Qwen3-4B-Instruct-2507": {
+      "changed_text": 12,
+      "changed_text_fraction": 0.024,
+      "changed_text_ci95": [
+        0.013781314655496988,
+        0.04147705746390075
+      ],
+      "changed_correctness": 5,
+      "scores": {
+        "serial": 0.914,
+        "batch8": 0.914,
+        "batch32": 0.918
+      }
+    }
+  },
+  "batch_invariant": {
+    "meta-llama/Llama-3.2-3B-Instruct": {
+      "changed_text": 0,
+      "changed_text_fraction": 0.0,
+      "changed_text_ci95": [
+        0.0,
+        0.007624340461552236
+      ],
+      "changed_correctness": 0,
+      "scores": {
+        "serial": 0.916,
+        "batch8": 0.916,
+        "batch32": 0.916
+      }
+    },
+    "Qwen/Qwen3-4B-Instruct-2507": {
+      "changed_text": 0,
+      "changed_text_fraction": 0.0,
+      "changed_text_ci95": [
+        0.0,
+        0.007624340461552236
+      ],
+      "changed_correctness": 0,
+      "scores": {
+        "serial": 0.914,
+        "batch8": 0.914,
+        "batch32": 0.914
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "file": "Qwen2.5-3B-Instruct.json",
+  "sha256": "e5ec7db1027c4154524f49b1bde9c7a4db9db6aeb902cdad3937f6257e792ea9",
+  "predictions": 3000,
+  "verified": true
+}

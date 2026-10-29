@@ -1,0 +1,142 @@
+[
+  {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "file": "config.json",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json",
+    "sha256": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670"
+  },
+  {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "file": "tokenizer_config.json",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/tokenizer_config.json",
+    "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+  },
+  {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "file": "LICENSE",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/resolve/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/LICENSE",
+    "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+  },
+  {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "file": "config.json",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/config.json",
+    "sha256": "eed00b17e22553979d090fa492e587e92885e328914c8e0b0b78f0a0d3576b3b"
+  },
+  {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "file": "tokenizer_config.json",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/tokenizer_config.json",
+    "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+  },
+  {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "file": "LICENSE",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/LICENSE",
+    "sha256": "ef52482bb785733093dc9a2e8edd8e764c77d12d8e9d8f10a80c9b547d32d0f9"
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "file": "config.json",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "url": "https://huggingface.co/Qwen/Qwen3-1.7B/resolve/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e/config.json",
+    "sha256": "1ddb5b89ebc90dcb417a45c213d818577e65976454d29385c8f6140771d95197"
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "file": "tokenizer_config.json",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "url": "https://huggingface.co/Qwen/Qwen3-1.7B/resolve/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e/tokenizer_config.json",
+    "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101"
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "file": "LICENSE",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "url": "https://huggingface.co/Qwen/Qwen3-1.7B/resolve/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e/LICENSE",
+    "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "file": "config.json",
+    "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+    "url": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/config.json",
+    "sha256": "39fb36dc5416f445ebc4e71cb71fbcf6727e80a35836d8ba1a1474c318467b7a"
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "file": "tokenizer_config.json",
+    "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+    "url": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/tokenizer_config.json",
+    "sha256": "9823dcfdc1121869029da45192238e85cf44f0b232a6d9dc20e4fe6f4242a14e"
+  },
+  {
+    "model": "Salesforce/xLAM-2-3b-fc-r",
+    "file": "config.json",
+    "revision": "be83286f6a1a82c8bd4bfb751190271f58693f30",
+    "url": "https://huggingface.co/Salesforce/xLAM-2-3b-fc-r/resolve/be83286f6a1a82c8bd4bfb751190271f58693f30/config.json",
+    "sha256": "5f7841e6c047d7767b8d04dbb2138ebb417d5dd7b02bb970370e2fe784b62b2e"
+  },
+  {
+    "model": "Salesforce/xLAM-2-3b-fc-r",
+    "file": "tokenizer_config.json",
+    "revision": "be83286f6a1a82c8bd4bfb751190271f58693f30",
+    "url": "https://huggingface.co/Salesforce/xLAM-2-3b-fc-r/resolve/be83286f6a1a82c8bd4bfb751190271f58693f30/tokenizer_config.json",
+    "sha256": "54e44c3e118e5d8a1503537b337b2262cdea84d7dc8a52935f4a3c14dd82e823"
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "file": "config.json",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "url": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507/resolve/cdbee75f17c01a7cc42f958dc650907174af0554/config.json",
+    "sha256": "5beea1a4a34c62782bfb2f911c606741a3bab8f92d80a118fa053c28af12e8ba"
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "file": "tokenizer_config.json",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "url": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507/resolve/cdbee75f17c01a7cc42f958dc650907174af0554/tokenizer_config.json",
+    "sha256": "a62ff0a2472a0fa1b8eaabcb57c59b58afa42a22831dc141400b6e0cf2b65ce3"
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "file": "LICENSE",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "url": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507/resolve/cdbee75f17c01a7cc42f958dc650907174af0554/LICENSE",
+    "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "file": "LICENSE.txt",
+    "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+    "url": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/LICENSE.txt",
+    "sha256": "0b4284c1f87029e67654c7953afa16279961632cf73dcfe33374c4c2f298fa35"
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "file": "README.md",
+    "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+    "url": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/README.md",
+    "sha256": "8cea167f3aa4dbeea16d32caf6e446184e7e9aa9ebae7de6e3259ea049874570"
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "file": "USE_POLICY.md",
+    "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+    "url": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/0cb88a4f764b7a12671c53f0838cd831a0843b95/USE_POLICY.md",
+    "sha256": "40e2777d7faa6beaf98400654170f414d8ab29b921b5163ad4ea0a1d39894201"
+  },
+  {
+    "model": "Salesforce/xLAM-2-3b-fc-r",
+    "file": "README.md",
+    "revision": "be83286f6a1a82c8bd4bfb751190271f58693f30",
+    "url": "https://huggingface.co/Salesforce/xLAM-2-3b-fc-r/resolve/be83286f6a1a82c8bd4bfb751190271f58693f30/README.md",
+    "sha256": "c4b20fab7d3918710a0b87ab67158f20c0d12b77f2f9db28b80187d107c2cfed"
+  }
+]

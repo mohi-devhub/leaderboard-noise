@@ -1,0 +1,37 @@
+{
+  "pytest": {
+    "version": "9.0.3",
+    "first_upload_utc": "2026-04-07T17:16:16.130051Z",
+    "age_whole_days": 202,
+    "cooldown_met": true,
+    "source": "https://pypi.org/pypi/pytest/9.0.3/json"
+  },
+  "python-dotenv": {
+    "version": "1.2.2",
+    "first_upload_utc": "2026-03-01T16:00:25.090725Z",
+    "age_whole_days": 239,
+    "cooldown_met": true,
+    "source": "https://pypi.org/pypi/python-dotenv/1.2.2/json"
+  },
+  "datamodel-code-generator": {
+    "version": "0.64.0",
+    "first_upload_utc": "2026-06-14T17:24:48.809731Z",
+    "age_whole_days": 134,
+    "cooldown_met": true,
+    "source": "https://pypi.org/pypi/datamodel-code-generator/0.64.0/json"
+  },
+  "filelock": {
+    "version": "3.20.3",
+    "first_upload_utc": "2026-01-09T17:55:04.334442Z",
+    "age_whole_days": 290,
+    "cooldown_met": true,
+    "source": "https://pypi.org/pypi/filelock/3.20.3/json"
+  },
+  "setuptools": {
+    "version": "84.1.0",
+    "first_upload_utc": "2026-10-19T20:11:41.684844Z",
+    "age_whole_days": 7,
+    "cooldown_met": false,
+    "source": "https://pypi.org/pypi/setuptools/84.1.0/json"
+  }
+}

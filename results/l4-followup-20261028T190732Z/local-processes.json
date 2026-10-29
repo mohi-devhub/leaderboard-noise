@@ -1,0 +1,14 @@
+{
+  "observer_exec_session": 48182,
+  "postprocess_exec_session": 36749,
+  "launch_exec_session": 97450,
+  "launch_exited_successfully": true,
+  "app_id": "ap-C4FfuuJt0ioG1hkR9KcCAm",
+  "gpu_function_id": "fu-9BTlgXdBCvthGQxqS1A6k4",
+  "gpu_call_id": "fc-01M61YX3CNX0C514MAGKH0KPNY",
+  "gpu_container_id": "ta-01M6208YS8CV3BZXBTJQX01Q3R",
+  "controller_function_id": "fu-S93eQvqdiWnJddozBajxYR",
+  "controller_call_id": "fc-01M61YWRTPWTKJW8XTEQRS1RFZ",
+  "volume_name": "evalnoise-l4-followup-20261028T190732Z",
+  "note": "Existing detached job only. Never resubmit. Observer stops own app and downloads/checks files; CPU watcher then scores, compares, plots and checks installed CLI."
+}

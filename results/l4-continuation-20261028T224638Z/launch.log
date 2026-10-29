@@ -1,0 +1,52 @@
+✓ Initialized. View run at 
+https://modal.com/apps/achumohith14/main/ap-Cofk8Ky1vJx7KI49oEl3Pm
+Building image im-8hPuXTJC30LdTTLcVQWs8N
+
+=> Step 0: FROM base
+
+=> Step 1: COPY . /
+Saving image...
+Image saved, took 1.27s
+
+Built image im-8hPuXTJC30LdTTLcVQWs8N in 2.95s
+
+
+Building image im-cY1VnfLpqj6Unm4TWgiHkw
+
+=> Step 0: FROM base
+
+=> Step 1: ENV EVALNOISE_SESSION=l4-continuation-20261028T224638Z
+Saving image...
+Image saved, took 2.37s
+
+Built image im-cY1VnfLpqj6Unm4TWgiHkw in 4.66s
+
+
+Building image im-3NIzpicUFwLOMpbHR4GyH2
+
+=> Step 0: FROM base
+
+=> Step 1: RUN python /opt/compiler_smoke.py --output /opt/compiler-preflight.json
+cc (Debian 14.2.0-19) 14.2.0
+C compiler and Python headers preflight passed
+
+=> Step 2: RUN pip-audit --progress-spinner off --ignore-vuln PYSEC-2026-3447 --ignore-vuln GHSA-xmj3-9gf7-h52w --format json --output /opt/full-image-audit.json
+No known vulnerabilities found, 3 ignored
+Saving image...
+Image saved, took 3.44s
+
+Built image im-3NIzpicUFwLOMpbHR4GyH2 in 8.50s
+
+
+✓ Created objects.
+├── ✓ Uploaded scripts/gpu_worker.py
+├── ✓ Uploaded scripts/study_model_job.py
+├── ✓ Uploaded scripts/followup_state.py
+├── ✓ Created Function submit.<locals>.gpu_job.
+└── ✓ Created Function submit.<locals>.controller.
+    └── ⚠ Non-preemptible functions are billed at 3.0x the list rate for CPU and
+        Memory.
+L4_DETACHED_SUBMITTED fc-01M62BBAC64D22CAV1FAMXFF3N
+[modal-client] 2026-10-29T04:21:10+0530 Timed out waiting for final app logs.
+✓ App completed. View run at 
+https://modal.com/apps/achumohith14/main/ap-Cofk8Ky1vJx7KI49oEl3Pm

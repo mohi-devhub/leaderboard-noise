@@ -1,0 +1,40 @@
+500 paired items; 5000 resamples; seed=20261101
+
+pass@1 — items uncertainty (95% CI)
+  Qwen/Qwen2.5-3B-Instruct: 0.8540 [0.8220, 0.8840]
+  Qwen/Qwen3-1.7B: 0.8640 [0.8340, 0.8920]
+  Qwen/Qwen3-4B-Instruct-2507: 0.9140 [0.8880, 0.9360]
+  meta-llama/Llama-3.2-3B-Instruct: 0.9160 [0.8920, 0.9380]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+  Qwen/Qwen2.5-3B-Instruct vs Qwen/Qwen3-1.7B | 0.265 | 0.034 | 0.265 | [-0.04600000000000004, 0.02400000000000002]
+    planning: need_at_least_two_samples_per_item
+  Qwen/Qwen2.5-3B-Instruct vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.001 | 0.000 | [-0.09600000000000009, -0.02400000000000002]
+    planning: need_at_least_two_samples_per_item
+  Qwen/Qwen2.5-3B-Instruct vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.09400000000000008, -0.031950000000000756]
+    planning: need_at_least_two_samples_per_item
+  Qwen/Qwen3-1.7B vs Qwen/Qwen3-4B-Instruct-2507 | 0.002 | 0.001 | 0.002 | [-0.08400000000000007, -0.016000000000000014]
+    planning: need_at_least_two_samples_per_item
+  Qwen/Qwen3-1.7B vs meta-llama/Llama-3.2-3B-Instruct | 0.001 | 0.000 | 0.001 | [-0.08399999999999996, -0.020000000000000018]
+    planning: need_at_least_two_samples_per_item
+  Qwen/Qwen3-4B-Instruct-2507 vs meta-llama/Llama-3.2-3B-Instruct | 0.430 | 0.056 | 0.430 | [-0.03200000000000003, 0.028000000000000025]
+    planning: need_at_least_two_samples_per_item
+
+pass@1 — sampling uncertainty (95% CI)
+  Qwen/Qwen2.5-3B-Instruct: 0.8540 [0.8540, 0.8540]
+  Qwen/Qwen3-1.7B: 0.8640 [0.8640, 0.8640]
+  Qwen/Qwen3-4B-Instruct-2507: 0.9140 [0.9140, 0.9140]
+  meta-llama/Llama-3.2-3B-Instruct: 0.9160 [0.9160, 0.9160]
+  A vs B | P(A>B) | P(tie) | rank flip | difference CI
+  Qwen/Qwen2.5-3B-Instruct vs Qwen/Qwen3-1.7B | 0.000 | 0.000 | 0.000 | [-0.010000000000000009, -0.010000000000000009]
+  Qwen/Qwen2.5-3B-Instruct vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.000 | 0.000 | [-0.06000000000000005, -0.06000000000000005]
+  Qwen/Qwen2.5-3B-Instruct vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.062000000000000055, -0.062000000000000055]
+  Qwen/Qwen3-1.7B vs Qwen/Qwen3-4B-Instruct-2507 | 0.000 | 0.000 | 0.000 | [-0.050000000000000044, -0.050000000000000044]
+  Qwen/Qwen3-1.7B vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.052000000000000046, -0.052000000000000046]
+  Qwen/Qwen3-4B-Instruct-2507 vs meta-llama/Llama-3.2-3B-Instruct | 0.000 | 0.000 | 0.000 | [-0.0020000000000000018, -0.0020000000000000018]
+Note: Bootstrap win fractions are resampling stability, not posterior probabilities or p-values.
+Note: Item intervals resample whole observed item vectors and include finite-repeat noise; do not add their variance to sampling intervals.
+Note: Sampling intervals condition on these items and empirical generation probabilities; pass@k resampling can be biased for k>1.
+Note: Percentile bootstrap can collapse at boundaries or with no observed variation; a point interval does not prove certainty.
+Note: Pairwise intervals are unadjusted for multiple comparisons; no familywise significance claim is made.
+Note: Planning assumes independent items and independent iid generations across models; extrapolations require validation.
+Note: One sample per item cannot identify within-item sampling uncertainty.

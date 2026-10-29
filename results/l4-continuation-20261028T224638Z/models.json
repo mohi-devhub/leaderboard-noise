@@ -1,0 +1,21 @@
+[
+  {
+    "id": "Qwen/Qwen2.5-3B-Instruct",
+    "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+    "license": "other",
+    "gated": false,
+    "source": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct",
+    "seed_model_index": 11
+  },
+  {
+    "id": "Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "license": "apache-2.0",
+    "gated": false,
+    "source": "https://huggingface.co/Qwen/Qwen3-1.7B",
+    "seed_model_index": 12,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  }
+]

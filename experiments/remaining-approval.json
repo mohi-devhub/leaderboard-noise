@@ -1,0 +1,8 @@
+{
+  "approved": true,
+  "session": "results/study-20261028T065939Z",
+  "approved_at": "2026-10-28T13:19:13.297585+00:00",
+  "forecast_job_usd": 6.515082297329319,
+  "project_hard_cap_usd": 12,
+  "user_instruction": "Approved remaining-five A10 job. Launch detached, checkpoint after each model to volume, finish before Oct 31, report results and stop evalnoise apps; preserve qunti-check."
+}

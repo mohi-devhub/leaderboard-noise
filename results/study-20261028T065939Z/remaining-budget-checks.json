@@ -1,0 +1,42 @@
+[
+  {
+    "model": "Qwen/Qwen2.5-3B-Instruct",
+    "project_resource_estimate_before_model_usd": "1.399519",
+    "next_model_bounded_allowance_usd": "1.697572",
+    "project_bound_after_next_model_usd": "3.097091",
+    "project_cap_usd": "12",
+    "source_log_line": "2026-10-28 18:53:13+05:30 REMOTE_BUDGET_GATE Qwen/Qwen2.5-3B-Instruct total_estimate=1.399519 next=1.697572"
+  },
+  {
+    "model": "Qwen/Qwen3-1.7B",
+    "project_resource_estimate_before_model_usd": "2.707529",
+    "next_model_bounded_allowance_usd": "1.329100",
+    "project_bound_after_next_model_usd": "4.036629",
+    "project_cap_usd": "12",
+    "source_log_line": "2026-10-28 19:47:59+05:30 REMOTE_BUDGET_GATE Qwen/Qwen3-1.7B total_estimate=2.707529 next=1.329100"
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "project_resource_estimate_before_model_usd": "3.633750",
+    "next_model_bounded_allowance_usd": "1.697572",
+    "project_bound_after_next_model_usd": "5.331322",
+    "project_cap_usd": "12",
+    "source_log_line": "2026-10-28 20:26:46+05:30 REMOTE_BUDGET_GATE meta-llama/Llama-3.2-3B-Instruct total_estimate=3.633750 next=1.697572"
+  },
+  {
+    "model": "Salesforce/xLAM-2-3b-fc-r",
+    "project_resource_estimate_before_model_usd": "4.850417",
+    "next_model_bounded_allowance_usd": "1.697572",
+    "project_bound_after_next_model_usd": "6.547989",
+    "project_cap_usd": "12",
+    "source_log_line": "2026-10-28 21:17:43+05:30 REMOTE_BUDGET_GATE Salesforce/xLAM-2-3b-fc-r total_estimate=4.850417 next=1.697572"
+  },
+  {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "project_resource_estimate_before_model_usd": "6.085258",
+    "next_model_bounded_allowance_usd": "2.158162",
+    "project_bound_after_next_model_usd": "8.243420",
+    "project_cap_usd": "12",
+    "source_log_line": "2026-10-28 22:09:25+05:30 REMOTE_BUDGET_GATE Qwen/Qwen3-4B-Instruct-2507 total_estimate=6.085258 next=2.158162"
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "created_at": "2026-10-28T22:50:31.603663+00:00",
+  "models": [
+    {
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "a10_greedy_startup_warmup_seconds_plus_60": 1819.3227115789998,
+      "forecast_seconds": 3092.8486096842994,
+      "execution_limit_seconds": 3639
+    },
+    {
+      "model": "Qwen/Qwen3-1.7B",
+      "a10_greedy_startup_warmup_seconds_plus_60": 1305.286500538999,
+      "forecast_seconds": 2218.9870509162984,
+      "execution_limit_seconds": 2611
+    }
+  ],
+  "planned_predictions": 6000,
+  "gpu": "L4",
+  "prior_project_estimate_usd": 9.19941815392205,
+  "prior_followup_estimate_usd": 1.6356467186697157,
+  "followup_root": "results/l4-followup-20261028T190732Z",
+  "followup_cap_usd": 5,
+  "project_cap_usd": 12,
+  "effective_followup_cap_usd": 2.80058184607795,
+  "forecast_usd": 1.7891041790325515,
+  "conservative_bound_usd": 2.7001528472222227,
+  "gpu_resource_hourly_usd": 1.0226000000000002,
+  "controller_resource_hourly_usd": 0.047474999999999996,
+  "combined_resource_hourly_usd": 1.070075,
+  "execution_limit_seconds": 6370,
+  "gpu_startup_limit_seconds": 300,
+  "allocation_limit_seconds": 1800,
+  "allocation_billed_gpu_allowance_seconds": 1800,
+  "preemption_restart_gpu_allowance_seconds": 300,
+  "controller_nonpreemptible": true,
+  "controller_cpu_memory_price_multiplier": 3,
+  "stop_and_accounting_buffer_seconds": 120,
+  "non_gpu_allowance_usd": 0.15,
+  "forecast_time_multiplier_assumption": 1.7,
+  "bounded_time_multiplier": 2,
+  "note": "L4 time multipliers are planning assumptions, not measured speed ratios. Two CPU cores are both requested and capped; RAM remains capped at 16 GiB. Generation settings and all 500 items match A10. Greedy only; no additional stochastic or throughput trials."
+}

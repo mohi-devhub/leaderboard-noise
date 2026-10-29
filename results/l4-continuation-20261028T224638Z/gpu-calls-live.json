@@ -1,0 +1,12 @@
+[
+  {
+    "function_call_id": "fc-01M62BBG4JE18J8456RW8EBRJF",
+    "service_method_name": null,
+    "enqueued_at": "2026-10-28T22:51:06.267066Z",
+    "started_at": null,
+    "container_id": null,
+    "startup_time_seconds": null,
+    "execution_time_seconds": null,
+    "status": "pending"
+  }
+]
